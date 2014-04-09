@@ -17,13 +17,19 @@ public class PathManager : MonoBehaviour {
 	}
 	
 	void Update () {
-		//Move Troops
-		MoveTroops ();
+		ManageTroops ();
 	}
 
-	void MoveTroops ()
+	void ManageTroops ()
 	{
 		foreach (Troop _troop in troops) {
+
+			//First make this troop look for an enemy which is nearby
+			if(_troop.HasEnemyInRange()) {
+				_troop.Attack();
+				continue;
+			}
+
 			if(_troop.nextPathNodeID >= totalNodes -1)continue;
 
 			float _troopDistanceToNode = _troop.Move (GetNodeForTroop(_troop.type, _troop.nextPathNodeID)).magnitude;
