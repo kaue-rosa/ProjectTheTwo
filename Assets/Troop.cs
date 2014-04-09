@@ -27,11 +27,13 @@ public class Troop : MonoBehaviour {
 		return direction;
 	}
 
-	public void LookForEnemy() {
+	public void LookForEnemy()
+	{
 	
 	}
 
-	public void Attack() {
+	public void Attack() 
+	{
 	
 	}
 
