@@ -26,4 +26,13 @@ public class Troop : MonoBehaviour {
 		transform.position += direction.normalized * Time.deltaTime * troopSpeed;
 		return direction;
 	}
+
+	public void LookForEnemy() {
+	
+	}
+
+	public void Attack() {
+	
+	}
+
 }
