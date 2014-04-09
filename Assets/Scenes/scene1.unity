@@ -199,8 +199,10 @@ GameObject:
   - 33: {fileID: 205584996}
   - 23: {fileID: 205584995}
   - 114: {fileID: 205584994}
+  - 114: {fileID: 205584999}
+  - 114: {fileID: 205584998}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Troop_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -260,6 +262,28 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &205584998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 205584993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce46661ac2848964c9c81206a963ed4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &205584999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 205584993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fb39ce9fb7150f44be6bf9ecdba7b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &243757624
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,8 +700,10 @@ GameObject:
   - 33: {fileID: 1523943178}
   - 23: {fileID: 1523943177}
   - 114: {fileID: 1523943176}
+  - 114: {fileID: 1523943181}
+  - 114: {fileID: 1523943180}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Troop_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -737,6 +763,28 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &1523943180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1523943175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce46661ac2848964c9c81206a963ed4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1523943181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1523943175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fb39ce9fb7150f44be6bf9ecdba7b42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1656535141
 GameObject:
   m_ObjectHideFlags: 0
