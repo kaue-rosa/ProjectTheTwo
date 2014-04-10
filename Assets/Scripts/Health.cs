@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Health : MonoBehaviour 
 {
-	private float maxHealth;
+	private float maxHealth = 100;
 	public void GetMaxHealth()
 	{
 		TroopStats stats = GetComponent<TroopStats>();
