@@ -17,7 +17,6 @@ public class TroopSpawner : MonoBehaviour
 			Troop _troop = _troopGm.GetComponent<Troop>();
 			_troop.TroopPathManager = this.pm;
 			currentTimer = 0;
-			print ("hey");
 		}
 	}
 
