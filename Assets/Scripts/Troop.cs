@@ -18,7 +18,7 @@ public class Troop : MonoBehaviour {
 		set
 		{
 			pm = value;
-				pm.ManageTroop(this);
+			//pm.ManageTroop(this);
 		}
 	}
 	[HideInInspector] public int nextPathNodeID = 0;
@@ -26,22 +26,18 @@ public class Troop : MonoBehaviour {
 	public float troopSpeed = 2;
 	public TroopType type = TroopType.LEFT_TROOP;
 
-	private GameObject combatTarget;
-
+	private Troop combatTarget;
 	private TroopStats unitStats;
 
 	// Use this for initialization
-	void Awake()
-	{
-		unitStats = GetComponent<TroopStats>();
-		if(!unitStats)
-			Debug.LogWarning("Stats Script not found in " + name);
-	}
 	void Start () 
 	{
-			if(pm)pm.ManageTroop (this);
-
-	}	
+		unitStats = GetComponent<TroopStats>();
+		if(!unitStats)Debug.LogWarning("Stats Script not found in " + name);
+		if(pm)pm.ManageTroop (this);
+		StartCoroutine ("LookForEnemy");
+	}
+	
 	// Update is called once per frame
 	public Vector3 Move (Transform nextNode) 
 	{
@@ -50,40 +46,50 @@ public class Troop : MonoBehaviour {
 		return direction;
 	}
 
-	public bool LookForEnemy() 
+	public IEnumerator LookForEnemy() 
 	{
-		if(!combatTarget)
+		while(true)
 		{
 			Collider[] targets = Physics.OverlapSphere(transform.position, unitStats.RangeOfSight); // read all enemies around
-				
-			foreach(Collider c in targets)
+			foreach(Collider c in targets) // for each enemy found
 			{
 				Troop enemyScript = c.GetComponent<Troop>();
-			
 				if(c.gameObject.layer == LayerMask.NameToLayer("Troop") && CheckIsEnemy(enemyScript.type))
 				{	
-					combatTarget = c.gameObject; // assign the target
-					return true;
+					if(!combatTarget ) // make sure forget the old target
+					{
+						combatTarget = c.GetComponent<Troop>(); // assign the target
+					}
 				}
 			}
-			return false;
+			yield return null; // every frame
 		}
-		else return true;
 	}
 
 	private bool CheckIsEnemy(TroopType unitType)
 	{
-		if(unitType != this.type )
-		{
-			return true;
-		}
+		if(unitType != this.type )return true;
 		return false;
 	}
 
+	public bool HasEnemyInRange() 
+	{
+		if (combatTarget)return true;
+		return false;
+	}
 
 	public void Attack() 
 	{
-		Debug.Log("Attack");
+		StartCoroutine (combatTarget.TakeDamage ());
 	}
+
+	public IEnumerator TakeDamage ()
+	{
+		yield return null;
+		TroopPathManager.StopManageTroop (this);
+		Destroy (this.gameObject);
+	}
+
+
 
 }

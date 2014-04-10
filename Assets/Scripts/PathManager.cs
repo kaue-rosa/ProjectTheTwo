@@ -22,12 +22,10 @@ public class PathManager : MonoBehaviour {
 
 	void ManageTroops ()
 	{
-		foreach (Troop _troop in troops)
-		{
-
+		foreach (Troop _troop in troops) {
+			print (_troop);
 			//First make this troop look for an enemy which is nearby
-			if(_troop.LookForEnemy()) 
-			{
+			if(_troop.HasEnemyInRange()) {
 				_troop.Attack();
 				continue;
 			}
@@ -35,8 +33,7 @@ public class PathManager : MonoBehaviour {
 			if(_troop.nextPathNodeID >= totalNodes -1)continue;
 
 			float _troopDistanceToNode = _troop.Move (GetNodeForTroop(_troop.type, _troop.nextPathNodeID)).magnitude;
-			if (_troopDistanceToNode < 0.1f) 
-			{
+			if (_troopDistanceToNode < 0.1f) {
 				_troop.nextPathNodeID += 1;
 			}
 		}
@@ -45,6 +42,11 @@ public class PathManager : MonoBehaviour {
 	public void ManageTroop(Troop _troop) {
 		troops.Add (_troop);
 	}
+
+	public void StopManageTroop(Troop _troop) {
+		troops.Remove (_troop);
+	}
+
 	public Transform GetNodeForTroop(TroopType _tt, int _nextPathID) {
 		if (_tt == TroopType.LEFT_TROOP)
 			return leftToRightNodes [_nextPathID];

@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
-  rangeOfSight: 10
+  rangeOfSight: 1
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
