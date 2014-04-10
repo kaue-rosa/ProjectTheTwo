@@ -8,7 +8,19 @@ public enum TroopType {
 
 public class Troop : MonoBehaviour {
 	
-	[SerializeField] private PathManager pm;
+	[SerializeField] private PathManager pm = null;
+	public PathManager TroopPathManager
+	{
+		get
+		{
+			return pm;
+		}
+		set
+		{
+			pm = value;
+				pm.ManageTroop(this);
+		}
+	}
 	[HideInInspector] public int nextPathNodeID = 0;
 
 	public float troopSpeed = 2;
@@ -17,7 +29,7 @@ public class Troop : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		pm.ManageTroop (this);
+		if(pm)pm.ManageTroop (this);
 	}
 	
 	// Update is called once per frame
