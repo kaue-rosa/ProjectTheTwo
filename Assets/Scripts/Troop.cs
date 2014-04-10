@@ -31,16 +31,17 @@ public class Troop : MonoBehaviour {
 	private TroopStats unitStats;
 
 	// Use this for initialization
-	void Start () 
+	void Awake()
 	{
 		unitStats = GetComponent<TroopStats>();
 		if(!unitStats)
 			Debug.LogWarning("Stats Script not found in " + name);
-
-			if(pm)pm.ManageTroop (this);
-		StartCoroutine ("LookForEnemy");
 	}
-	
+	void Start () 
+	{
+			if(pm)pm.ManageTroop (this);
+
+	}	
 	// Update is called once per frame
 	public Vector3 Move (Transform nextNode) 
 	{
@@ -49,30 +50,25 @@ public class Troop : MonoBehaviour {
 		return direction;
 	}
 
-	public IEnumerator LookForEnemy() 
+	public bool LookForEnemy() 
 	{
-		while(true)
+		if(!combatTarget)
 		{
-			
 			Collider[] targets = Physics.OverlapSphere(transform.position, unitStats.RangeOfSight); // read all enemies around
-			
-			foreach(Collider c in targets) // for each enemy found
+				
+			foreach(Collider c in targets)
 			{
 				Troop enemyScript = c.GetComponent<Troop>();
-
+			
 				if(c.gameObject.layer == LayerMask.NameToLayer("Troop") && CheckIsEnemy(enemyScript.type))
 				{	
-
-					if(!combatTarget ) // make sure forget the old target
-					{
-						combatTarget = c.gameObject; // assign the target
-						Debug.Log(combatTarget);
-					}
+					combatTarget = c.gameObject; // assign the target
+					return true;
 				}
 			}
-			yield return null; // every frame
+			return false;
 		}
-
+		else return true;
 	}
 
 	private bool CheckIsEnemy(TroopType unitType)
@@ -84,14 +80,10 @@ public class Troop : MonoBehaviour {
 		return false;
 	}
 
-	public bool HasEnemyInRange() 
-	{
-		return false;
-	}
 
 	public void Attack() 
 	{
-	
+		Debug.Log("Attack");
 	}
 
 }

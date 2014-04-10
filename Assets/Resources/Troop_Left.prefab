@@ -13,7 +13,8 @@ GameObject:
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
-  m_Layer: 0
+  - 135: {fileID: 13500000}
+  m_Layer: 8
   m_Name: Troop_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,6 +82,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fb39ce9fb7150f44be6bf9ecdba7b42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 10
+  rangeOfSight: 10
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -96,6 +99,18 @@ MonoBehaviour:
   nextPathNodeID: 0
   troopSpeed: 1.5
   type: 0
+--- !u!135 &13500000
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: .500000119
+  m_Center: {x: 5.96046448e-08, y: 0, z: -8.94069672e-08}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

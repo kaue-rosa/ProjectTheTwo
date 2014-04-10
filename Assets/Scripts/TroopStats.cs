@@ -12,7 +12,7 @@ public class TroopStats : MonoBehaviour
 		}
 	}
 
-	[SerializeField]private float rangeOfSight = 10;
+	[SerializeField]private float rangeOfSight = 5;
 	public float RangeOfSight
 	{
 		get
