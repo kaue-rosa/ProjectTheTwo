@@ -22,19 +22,25 @@ public class Troop : MonoBehaviour {
 		}
 	}
 	[HideInInspector] public int nextPathNodeID = 0;
-
-	public float troopSpeed = 2;
 	public TroopType type = TroopType.LEFT_TROOP;
 
 	private Troop combatTarget;
 	private TroopStats unitStats;
+	private Health health;
+
+	private float attackTimer = 0;
 
 	// Use this for initialization
 	void Start () 
 	{
+		health = GetComponent<Health>();
+		if(!health)Debug.LogWarning("Health Script not found in " + name);
+
 		unitStats = GetComponent<TroopStats>();
 		if(!unitStats)Debug.LogWarning("Stats Script not found in " + name);
+
 		if(pm)pm.ManageTroop (this);
+
 		StartCoroutine ("LookForEnemy");
 	}
 	
@@ -42,7 +48,7 @@ public class Troop : MonoBehaviour {
 	public Vector3 Move (Transform nextNode) 
 	{
 		Vector3 direction = nextNode.position - transform.position;
-		transform.position += direction.normalized * Time.deltaTime * troopSpeed;
+		transform.position += direction.normalized * Time.deltaTime * unitStats.MovementSpeed;
 		return direction;
 	}
 
@@ -80,16 +86,27 @@ public class Troop : MonoBehaviour {
 
 	public void Attack() 
 	{
-		StartCoroutine (combatTarget.TakeDamage ());
+		if(attackTimer <= 0)
+		{
+			attackTimer = unitStats.AttackSpeed;
+			//Debug.Log("Attack");
+			combatTarget.TakeDamage(unitStats.AttackDamage);
+		}
+		else 
+		{
+			attackTimer -= Time.deltaTime;
+		}
 	}
 
-	public IEnumerator TakeDamage ()
+	public void TakeDamage (float damage)
 	{
-		yield return null;
+		health.TakeDamage(damage);
+	}
+
+	public void Die()
+	{
 		TroopPathManager.StopManageTroop (this);
 		Destroy (this.gameObject);
 	}
-
-
 
 }

@@ -3,6 +3,10 @@ using System.Collections;
 
 public class Health : MonoBehaviour 
 {
+	private Troop troop;
+
+	[SerializeField] private string damagePrefabName = "";
+
 	private float maxHealth = 100;
 	public void GetMaxHealth()
 	{
@@ -17,17 +21,26 @@ public class Health : MonoBehaviour
 
 	void Start ()
 	{
+		troop = GetComponent<Troop>();
+		if(!troop) Debug.LogWarning("Troop component missing in "+name);
+
 		GetMaxHealth();
+		currentHealth = maxHealth;
 	}
 
 
 	void Update () 
 	{
-		
+		if(currentHealth <= 0)
+			troop.Die();
+
 	}
 
 	public void TakeDamage(float damage)
 	{
 		currentHealth -= damage;
+
+		if(damagePrefabName != "")
+			Instantiate((GameObject)Resources.Load(damagePrefabName),transform.position,transform.rotation);
 	}
 }
