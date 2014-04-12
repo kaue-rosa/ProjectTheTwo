@@ -71,7 +71,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce46661ac2848964c9c81206a963ed4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagePrefabName: Particles/Attack Particle
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -83,8 +82,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fb39ce9fb7150f44be6bf9ecdba7b42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  rangeOfSight: 2
+  maxHealth: 50
+  rangeOfSight: 1
   movementSpeed: 2
   attackDamage: 50
   attackSpeed: 1
@@ -100,8 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pm: {fileID: 0}
-  nextPathNodeID: 0
   type: 0
+  nextPathNodeID: 0
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

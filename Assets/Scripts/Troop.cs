@@ -45,8 +45,12 @@ public class Troop : MonoBehaviour {
 
 		StartCoroutine ("LookForEnemy");
 	}
-	
-	// Update is called once per frame
+
+	void LateUpdate() {
+		print (health.health);
+		if (health.health <= 0) this.Die ();
+	}
+
 	public Vector3 Move (Transform nextNode) 
 	{
 		Vector3 direction = nextNode.position - transform.position;
@@ -101,7 +105,10 @@ public class Troop : MonoBehaviour {
 
 	public void TakeDamage (float damage)
 	{
-		health.TakeDamage(damage);
+		//health.TakeDamage(damage);
+		Instantiate((GameObject)Resources.Load("Particles/Attack Particle"),transform.position,transform.rotation);
+		health.health -= damage;
+
 	}
 
 	public void Die()

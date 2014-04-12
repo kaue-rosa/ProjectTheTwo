@@ -5,31 +5,35 @@ public class Health : MonoBehaviour
 {
 	private Troop troop;
 
-	[SerializeField] private string damagePrefabName = "";
+	//[SerializeField] private string damagePrefabName = "";
 
-	private float maxHealth = 100;
-	private float currentHealth = 100;
+	private float _health = 100;
+	private float _maxHealth = 100;
+	private float _currentHealth = 100;
 
-	public float MaxHealth
+	public float health
 	{
-		get{return maxHealth;}
-		set{maxHealth = value;}
+		get{return _health;}
+		set{_health = value;}
 	}
 
-	public float CurrentHealth
+	public float maxHealth
 	{
-		get{return currentHealth;}
-		set{currentHealth = value;}
+		get{return _maxHealth;}
+		set{_maxHealth = value;}
+	}
+
+	public float currentHealth
+	{
+		get{return _currentHealth;}
+		set{_currentHealth = value;}
 	}
 
 	void Start ()
 	{
-		troop = GetComponent<Troop>();
-		if(!troop) Debug.LogWarning("Troop component missing in " + name);
-		
-		currentHealth = MaxHealth;
+		currentHealth = maxHealth;
 	}
-
+	/*
 	//TODO: Get Rid of this!!!!!!!!!!!!!!!
 	void Update () 
 	{
@@ -44,5 +48,5 @@ public class Health : MonoBehaviour
 
 		if(damagePrefabName != "")
 			Instantiate((GameObject)Resources.Load(damagePrefabName),transform.position,transform.rotation);
-	}
+	}*/
 }

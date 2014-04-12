@@ -23,7 +23,7 @@ public class PathManager : MonoBehaviour {
 	void ManageTroops ()
 	{
 		foreach (Troop _troop in troops) {
-			print (_troop);
+		
 			//First make this troop look for an enemy which is nearby
 			if(_troop.HasEnemyInRange()) {
 				_troop.Attack();
