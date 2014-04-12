@@ -43,7 +43,7 @@ public class PathManager : MonoBehaviour {
 		troops.Add (_troop);
 	}
 
-	public void StopManageTroop(Troop _troop) {
+	public void StopManagingTroop(Troop _troop) {
 		troops.Remove (_troop);
 	}
 

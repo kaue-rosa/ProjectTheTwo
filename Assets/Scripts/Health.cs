@@ -8,34 +8,36 @@ public class Health : MonoBehaviour
 	[SerializeField] private string damagePrefabName = "";
 
 	private float maxHealth = 100;
-	public void GetMaxHealth()
-	{
-		TroopStats stats = GetComponent<TroopStats>();
-		if(stats)
-			maxHealth = stats.MaxHealth;
-		else
-			Debug.LogWarning("This obj Doesnt Have Stats!");
-	}
-	private float currentHealth;
+	private float currentHealth = 100;
 
+	public float MaxHealth
+	{
+		get{return maxHealth;}
+		set{maxHealth = value;}
+	}
+
+	public float CurrentHealth
+	{
+		get{return currentHealth;}
+		set{currentHealth = value;}
+	}
 
 	void Start ()
 	{
 		troop = GetComponent<Troop>();
-		if(!troop) Debug.LogWarning("Troop component missing in "+name);
-
-		GetMaxHealth();
-		currentHealth = maxHealth;
+		if(!troop) Debug.LogWarning("Troop component missing in " + name);
+		
+		currentHealth = MaxHealth;
 	}
 
-
+	//TODO: Get Rid of this!!!!!!!!!!!!!!!
 	void Update () 
 	{
 		if(currentHealth <= 0)
 			troop.Die();
-
 	}
 
+	//TODO: And This!!!!!!!!!!!!!!!!!!!
 	public void TakeDamage(float damage)
 	{
 		currentHealth -= damage;

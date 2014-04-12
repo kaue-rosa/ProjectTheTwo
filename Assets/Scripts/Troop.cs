@@ -21,8 +21,10 @@ public class Troop : MonoBehaviour {
 			//pm.ManageTroop(this);
 		}
 	}
-	[HideInInspector] public int nextPathNodeID = 0;
+
 	public TroopType type = TroopType.LEFT_TROOP;
+
+	[HideInInspector] public int nextPathNodeID = 0;
 
 	private Troop combatTarget;
 	private TroopStats unitStats;
@@ -89,7 +91,6 @@ public class Troop : MonoBehaviour {
 		if(attackTimer <= 0)
 		{
 			attackTimer = unitStats.AttackSpeed;
-			//Debug.Log("Attack");
 			combatTarget.TakeDamage(unitStats.AttackDamage);
 		}
 		else 
@@ -105,7 +106,7 @@ public class Troop : MonoBehaviour {
 
 	public void Die()
 	{
-		TroopPathManager.StopManageTroop (this);
+		TroopPathManager.StopManagingTroop (this);
 		Destroy (this.gameObject);
 	}
 

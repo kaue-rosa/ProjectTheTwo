@@ -114,7 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pm: {fileID: 506575931}
   prefabName: Troop_Right
-  timeToSpawn: 3
+  timeToSpawn: .5
 --- !u!1 &97785083
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,7 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pm: {fileID: 506575931}
   prefabName: Troop_Left
-  timeToSpawn: 3
+  timeToSpawn: .5
 --- !u!1 &129605876
 GameObject:
   m_ObjectHideFlags: 0
