@@ -13,6 +13,8 @@ public class TroopStats : MonoBehaviour
 	[SerializeField]private float attackDamage = 50f;
 	[SerializeField]private float attackSpeed = 1f;
 
+	[SerializeField]private float spawnTime = 1f;
+
 	public float CurrentHealth
 	{
 		get{return currentHealth;}
@@ -44,5 +46,10 @@ public class TroopStats : MonoBehaviour
 	public float AttackSpeed
 	{
 		get{return attackSpeed;}
+	}
+
+	public float SpawnTime
+	{
+		get{return spawnTime;}
 	}
 }
