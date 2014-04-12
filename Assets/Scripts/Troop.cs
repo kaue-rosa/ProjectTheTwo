@@ -8,8 +8,8 @@ public enum TroopType {
 
 public class Troop : MonoBehaviour {
 	
-	[SerializeField] private PathManager pm = null;
-	public PathManager TroopPathManager
+	[SerializeField] private TroopManager pm = null;
+	public TroopManager TroopPathManager
 	{
 		get
 		{

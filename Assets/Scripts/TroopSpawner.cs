@@ -3,7 +3,7 @@ using System.Collections;
 
 public class TroopSpawner : MonoBehaviour
 {
-	[SerializeField] private PathManager pm = null;
+	[SerializeField] private TroopManager pm = null;
 	[SerializeField] private string prefabName = "";
 	[SerializeField] private float timeToSpawn = 1;
 	private float currentTimer = 0;
