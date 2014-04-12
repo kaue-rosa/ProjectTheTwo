@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9045a8ba2e92e674bbcf998487fe88a8
+guid: 286ad1242210f8a4aa38c18c328afb09
 TextureImporter:
   serializedVersion: 2
   mipmaps:
@@ -20,10 +20,10 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: -3
   maxTextureSize: 1024
   textureSettings:
-    filterMode: -1
+    filterMode: 0
     aniso: 1
     mipBias: -1
     wrapMode: 1
@@ -41,7 +41,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: base_sprites_0
+    - name: placeholder_sprites_0
       rect:
         serializedVersion: 2
         x: 0
@@ -49,6 +49,33 @@ TextureImporter:
         width: 60
         height: 64
       alignment: 0
-      pivot: {x: .5, y: .5}
+      pivot: {x: 0, y: 0}
+    - name: placeholder_sprites_1
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 989
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: placeholder_sprites_2
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 989
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: placeholder_sprites_3
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 989
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
   spritePackingTag: 
   userData: 
