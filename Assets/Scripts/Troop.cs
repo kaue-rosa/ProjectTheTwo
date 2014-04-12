@@ -43,7 +43,7 @@ public class Troop : MonoBehaviour {
 	}
 
 	void LateUpdate() {
-		if (unitStats.Health <= 0) this.Die ();
+		if (unitStats.CurrentHealth <= 0) this.Die ();
 	}
 
 	public Vector3 Move (Transform nextNode) 
@@ -102,7 +102,7 @@ public class Troop : MonoBehaviour {
 	{
 		//health.TakeDamage(damage);
 		Instantiate((GameObject)Resources.Load("Particles/Attack Particle"),transform.position,transform.rotation);
-		unitStats.Health -= damage;
+		unitStats.CurrentHealth -= damage;
 
 	}
 

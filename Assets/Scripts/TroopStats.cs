@@ -4,9 +4,8 @@ using System.Collections;
 public class TroopStats : MonoBehaviour 
 {
 	//HP
-	[SerializeField]private float health = 100;
-	[SerializeField]private float maxHealth = 100;
 	[SerializeField]private float currentHealth = 100;
+	[SerializeField]private float maxHealth = 100;
 
 	//Battle
 	[SerializeField]private float rangeOfSight = 5f;
@@ -14,22 +13,16 @@ public class TroopStats : MonoBehaviour
 	[SerializeField]private float attackDamage = 50f;
 	[SerializeField]private float attackSpeed = 1f;
 
-	public float Health
+	public float CurrentHealth
 	{
-		get{return health;}
-		set{health = value;}
+		get{return currentHealth;}
+		set{currentHealth = value;}
 	}
 	
 	public float MaxHealth
 	{
 		get{return maxHealth;}
 		set{maxHealth = value;}
-	}
-	
-	public float CurrentHealth
-	{
-		get{return currentHealth;}
-		set{currentHealth = value;}
 	}
 
 	public float RangeOfSight
