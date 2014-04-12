@@ -100,7 +100,7 @@ Transform:
   m_LocalPosition: {x: 12, y: 1, z: 4.30000019}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 472732809}
+  m_Father: {fileID: 1425478674}
 --- !u!114 &17971664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,11 +112,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0d4c59bff25b6a4c9fc733074a0cc36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  team: 0
   pm: {fileID: 506575931}
   prefabName:
-  - Troop_Right
+  - TroopBall
   timeToSpawn: 3
   troopToSpawn: {fileID: 0}
+  path: {fileID: 472732808}
 --- !u!1 &97785083
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,7 +145,7 @@ Transform:
   m_LocalPosition: {x: -12, y: 1, z: 4.30000019}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 472732809}
+  m_Father: {fileID: 1425478674}
 --- !u!114 &97785085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,12 +157,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0d4c59bff25b6a4c9fc733074a0cc36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  team: 1
   pm: {fileID: 506575931}
   prefabName:
-  - Troop_Left
+  - TroopBall
   - TroopSqr
+  - TroopCpl
   timeToSpawn: 3
   troopToSpawn: {fileID: 0}
+  path: {fileID: 1297622147}
 --- !u!1 &129605876
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,6 +228,32 @@ Light:
   m_ShadowAngle: 0
   m_IndirectIntensity: 1
   m_AreaSize: {x: 1, y: 1}
+--- !u!1 &213219399
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 213219400}
+  m_Layer: 0
+  m_Name: PathNode
+  m_TagString: Untagged
+  m_Icon: {fileID: 813524716, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &213219400
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 213219399}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8, y: 1, z: 4.30000019}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1297622148}
 --- !u!1 &243757624
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,7 +293,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 362320848}
   m_Layer: 0
-  m_Name: Path3
+  m_Name: PathNode
   m_TagString: Untagged
   m_Icon: {fileID: 813524716, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -288,7 +319,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 472732809}
   m_Layer: 0
-  m_Name: WayPoints
+  m_Name: PathRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -304,11 +335,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 362320848}
   - {fileID: 1834572781}
   - {fileID: 718953589}
-  - {fileID: 97785084}
-  - {fileID: 362320848}
-  - {fileID: 17971663}
   m_Father: {fileID: 1425478674}
 --- !u!1 &506575929
 GameObject:
@@ -348,12 +377,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f27efd69615c64b43926d627cc83b9cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftToRightNodes:
-  - {fileID: 97785084}
-  - {fileID: 718953589}
-  - {fileID: 1834572781}
-  - {fileID: 362320848}
-  - {fileID: 17971663}
   troops: []
 --- !u!1 &675809990
 GameObject:
@@ -433,7 +456,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 718953589}
   m_Layer: 0
-  m_Name: Path1
+  m_Name: PathNode
   m_TagString: Untagged
   m_Icon: {fileID: 813524716, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -599,6 +622,61 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1031012735}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1104936006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1104936007}
+  m_Layer: 0
+  m_Name: PathNode
+  m_TagString: Untagged
+  m_Icon: {fileID: 813524716, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1104936007
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1104936006}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8, y: 1, z: 4.30000019}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1297622148}
+--- !u!1 &1297622147
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1297622148}
+  m_Layer: 0
+  m_Name: PathLeft
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1297622148
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1297622147}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 213219400}
+  - {fileID: 1765644146}
+  - {fileID: 1104936007}
+  m_Father: {fileID: 1425478674}
 --- !u!1 &1425478673
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,6 +704,9 @@ Transform:
   m_Children:
   - {fileID: 129605877}
   - {fileID: 243757625}
+  - {fileID: 1297622148}
+  - {fileID: 97785084}
+  - {fileID: 17971663}
   - {fileID: 472732809}
   m_Father: {fileID: 0}
 --- !u!1 &1656535141
@@ -697,6 +778,32 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1656535141}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1765644145
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1765644146}
+  m_Layer: 0
+  m_Name: PathNode
+  m_TagString: Untagged
+  m_Icon: {fileID: 813524716, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1765644146
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1765644145}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: -.204704046}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1297622148}
 --- !u!1 &1834572780
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,7 +813,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1834572781}
   m_Layer: 0
-  m_Name: Path2
+  m_Name: PathNode
   m_TagString: Untagged
   m_Icon: {fileID: 813524716, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
