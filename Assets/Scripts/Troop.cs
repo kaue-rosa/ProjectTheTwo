@@ -28,16 +28,12 @@ public class Troop : MonoBehaviour {
 
 	private Troop combatTarget;
 	private TroopStats unitStats;
-	private Health health;
 
 	private float attackTimer = 0;
 
 	// Use this for initialization
 	void Start () 
 	{
-		health = GetComponent<Health>();
-		if(!health)Debug.LogWarning("Health Script not found in " + name);
-
 		unitStats = GetComponent<TroopStats>();
 		if(!unitStats)Debug.LogWarning("Stats Script not found in " + name);
 
@@ -47,8 +43,7 @@ public class Troop : MonoBehaviour {
 	}
 
 	void LateUpdate() {
-		print (health.health);
-		if (health.health <= 0) this.Die ();
+		if (unitStats.Health <= 0) this.Die ();
 	}
 
 	public Vector3 Move (Transform nextNode) 
@@ -107,7 +102,7 @@ public class Troop : MonoBehaviour {
 	{
 		//health.TakeDamage(damage);
 		Instantiate((GameObject)Resources.Load("Particles/Attack Particle"),transform.position,transform.rotation);
-		health.health -= damage;
+		unitStats.Health -= damage;
 
 	}
 

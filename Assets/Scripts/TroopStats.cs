@@ -3,50 +3,53 @@ using System.Collections;
 
 public class TroopStats : MonoBehaviour 
 {
-	[SerializeField]private float maxHealth = 10f;
+	//HP
+	[SerializeField]private float health = 100;
+	[SerializeField]private float maxHealth = 100;
+	[SerializeField]private float currentHealth = 100;
+
+	//Battle
+	[SerializeField]private float rangeOfSight = 5f;
+	[SerializeField]private float movementSpeed = 2f;
+	[SerializeField]private float attackDamage = 50f;
+	[SerializeField]private float attackSpeed = 1f;
+
+	public float Health
+	{
+		get{return health;}
+		set{health = value;}
+	}
+	
 	public float MaxHealth
 	{
-		get
-		{ 
-			return maxHealth;
-		}
+		get{return maxHealth;}
+		set{maxHealth = value;}
+	}
+	
+	public float CurrentHealth
+	{
+		get{return currentHealth;}
+		set{currentHealth = value;}
 	}
 
-	[SerializeField]private float rangeOfSight = 5f;
 	public float RangeOfSight
 	{
-		get
-		{
-			return rangeOfSight;
-		}
+		get{return rangeOfSight;}
 	}
 
-	[SerializeField]private float movementSpeed = 2f;
 	public float MovementSpeed
 	{
-		get
-		{
-			return movementSpeed;
-		}
+		get{return movementSpeed;}
 	}
 
-
-	[SerializeField]private float attackDamage = 50f;
 	public float AttackDamage
 	{
-		get
-		{
-			return attackDamage;
-		}
+		get{return attackDamage;}
 	}
 
 	
-	[SerializeField]private float attackSpeed = 1f;
 	public float AttackSpeed
 	{
-		get
-		{
-			return attackSpeed;
-		}
+		get{return attackSpeed;}
 	}
 }
