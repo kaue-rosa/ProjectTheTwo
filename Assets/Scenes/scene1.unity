@@ -113,8 +113,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pm: {fileID: 506575931}
-  prefabName: Troop_Right
+  prefabName:
+  - Troop_Right
   timeToSpawn: 3
+  troopToSpawn: {fileID: 0}
 --- !u!1 &97785083
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,8 +156,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pm: {fileID: 506575931}
-  prefabName: Troop_Left
+  prefabName:
+  - Troop_Left
+  - TroopSqr
   timeToSpawn: 3
+  troopToSpawn: {fileID: 0}
 --- !u!1 &129605876
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,7 +345,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 506575929}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99a0ac07f18ef4b40b9ff3e8a395c27c, type: 3}
+  m_Script: {fileID: 11500000, guid: f27efd69615c64b43926d627cc83b9cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   leftToRightNodes:
