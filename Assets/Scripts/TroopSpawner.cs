@@ -6,16 +6,13 @@ using System.Collections.Generic;
 public class TroopSpawner : MonoBehaviour
 {
 	[SerializeField] private Team team;
-
 	[SerializeField] private TroopManager pm = null;
-	//[SerializeField] private string[] prefabName = "";
 	[SerializeField] private List<string> prefabName = new List<string>();
-	private string nextTroopName = "";
 	[SerializeField] private float timeToSpawn = 1;
 	[SerializeField] private Troop troopToSpawn;
-
 	[SerializeField] private GameObject path;
 
+	private string nextTroopName = "";
 	private float currentTimer = 0;
 
 

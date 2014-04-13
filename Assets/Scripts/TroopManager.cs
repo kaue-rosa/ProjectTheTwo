@@ -4,8 +4,6 @@ using System.Collections.Generic;
 
 public class TroopManager : MonoBehaviour 
 {
-	private int totalNodes = 0;
-
 	public List<Troop> troops = new List<Troop>();
 
 	void Start () 
