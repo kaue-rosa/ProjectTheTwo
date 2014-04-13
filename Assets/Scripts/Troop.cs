@@ -76,13 +76,12 @@ public class Troop : MonoBehaviour {
 	{
 		unitStats = GetComponent<TroopStats>();
 		if(!unitStats)Debug.LogWarning("Stats Script not found in " + name);
-
 		if(pm)pm.ManageTroop (this);
-
 		StartCoroutine ("LookForEnemy");
 	}
 
-	void LateUpdate() {
+	void LateUpdate()
+	{
 		if (unitStats.CurrentHealth <= 0) this.Die ();
 	}
 
