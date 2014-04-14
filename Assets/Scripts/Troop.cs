@@ -11,7 +11,7 @@ public enum Team
 public class Troop : MonoBehaviour {
 
 	private Team myTeam;
-	public Team MyTeam
+	public Team TroopTeam
 	{
 		get
 		{
@@ -67,22 +67,27 @@ public class Troop : MonoBehaviour {
 	}
 
 	private Troop combatTarget;
-	private TroopStats unitStats;
+	private TroopStats troopStats;
+
+	public int TroopAttackValue
+	{
+		get{return troopStats.AttackDamage;}
+	}
 
 	private float attackTimer = 0;
 
 	// Use this for initialization
 	void Start () 
 	{
-		unitStats = GetComponent<TroopStats>();
-		if(!unitStats)Debug.LogWarning("Stats Script not found in " + name);
+		troopStats = GetComponent<TroopStats>();
+		if(!troopStats)Debug.LogWarning("Stats Script not found in " + name);
 		if(pm)pm.ManageTroop (this);
 		StartCoroutine ("LookForEnemy");
 	}
 
 	void LateUpdate()
 	{
-		if (unitStats.CurrentHealth <= 0) this.Die ();
+		if (troopStats.CurrentHealth <= 0) this.Die ();
 	}
 
 	public void AssignPath(GameObject path)
@@ -99,7 +104,7 @@ public class Troop : MonoBehaviour {
 	public Vector3 Move (Transform nextNode) 
 	{
 		Vector3 direction = nextNode.position - transform.position;
-		transform.position += direction.normalized * Time.deltaTime * unitStats.MovementSpeed;
+		transform.position += direction.normalized * Time.deltaTime * troopStats.MovementSpeed;
 		return direction;
 	}
 
@@ -107,11 +112,11 @@ public class Troop : MonoBehaviour {
 	{
 		while(true)
 		{
-			Collider[] targets = Physics.OverlapSphere(transform.position, unitStats.RangeOfSight); // read all enemies around
+			Collider[] targets = Physics.OverlapSphere(transform.position, troopStats.RangeOfSight); // read all enemies around
 			foreach(Collider c in targets) // for each enemy found
 			{
 				Troop enemyScript = c.GetComponent<Troop>();
-				if(c.gameObject.layer == LayerMask.NameToLayer("Troop") && CheckIsEnemy(enemyScript.MyTeam))
+				if(c.gameObject.layer == LayerMask.NameToLayer("Troop") && CheckIsEnemy(enemyScript.TroopTeam))
 				{	
 					if(!combatTarget ) // make sure forget the old target
 					{
@@ -139,8 +144,8 @@ public class Troop : MonoBehaviour {
 	{
 		if(attackTimer <= 0)
 		{
-			attackTimer = unitStats.AttackSpeed;
-			combatTarget.TakeDamage(unitStats.AttackDamage);
+			attackTimer = troopStats.AttackSpeed;
+			combatTarget.TakeDamage(troopStats.AttackDamage);
 		}
 		else 
 		{
@@ -148,18 +153,24 @@ public class Troop : MonoBehaviour {
 		}
 	}
 
-	public void TakeDamage (float damage)
+	public void TakeDamage (int damage)
 	{
 		//health.TakeDamage(damage);
 		Instantiate((GameObject)Resources.Load("Particles/Attack Particle"),transform.position,transform.rotation);
-		unitStats.CurrentHealth -= damage;
+		troopStats.CurrentHealth -= damage;
 
 	}
 
 	public void Die()
 	{
 		TroopPathManager.StopManagingTroop (this);
+		this.StopCoroutine("LookForEnemy");
 		Destroy (this.gameObject);
 	}
 
+	public void EnterGateEffect ()
+	{
+		//should face first, or do some effect
+		troopStats.CurrentHealth = 0;
+	}
 }

@@ -5,10 +5,7 @@ using System.Collections.Generic;
 public class TroopManager : MonoBehaviour 
 {
 	public List<Troop> troops = new List<Troop>();
-
-	void Start () 
-	{
-	}
+	public List<Gate> gates = new List<Gate>();
 	
 	void Update () {
 		ManageTroops ();
@@ -26,7 +23,12 @@ public class TroopManager : MonoBehaviour
 				continue;
 			}
 
-			if(_troop.NextPathNodeID >= _troop.TotalPathNodes)continue;
+			if(_troop.NextPathNodeID >= _troop.TotalPathNodes)
+			{
+				DamageGate(_troop.TroopAttackValue, _troop.TroopTeam);
+				KillTroop(_troop);
+				continue;
+			}
 
 			float _troopDistanceToNode = _troop.Move (_troop.MyPath[_troop.NextPathNodeID].transform).magnitude;
 			if (_troopDistanceToNode < 0.1f)
@@ -44,5 +46,25 @@ public class TroopManager : MonoBehaviour
 	public void StopManagingTroop(Troop _troop) 
 	{
 		troops.Remove (_troop);
+	}
+
+	public void ManageGate (Gate _gate)
+	{
+		gates.Add (_gate);
+	}
+
+	void DamageGate (int troopAttackValue, Team troopTeam)
+	{
+		//find the gate to damage
+		for (int i = 0; i < gates.Count; i++) 
+		{
+			if(gates[i].GateTeam != troopTeam)
+				gates[i].TakeDamage(troopAttackValue);
+		}
+	}
+
+	void KillTroop (Troop _troop)
+	{
+		_troop.EnterGateEffect();
 	}
 }
