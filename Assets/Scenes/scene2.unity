@@ -121,6 +121,7 @@ MonoBehaviour:
   prefabName:
   - Troop01
   - Troop02
+  - Troop03
   troopToSpawn: {fileID: 0}
   path: {fileID: 472732808}
 --- !u!114 &97785087
@@ -274,7 +275,6 @@ MonoBehaviour:
   tm: {fileID: 0}
   prefabName:
   - Troop01
-  - Troop02
   troopToSpawn: {fileID: 0}
   path: {fileID: 2040320732}
 --- !u!114 &312849866
@@ -326,6 +326,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1425478674}
     m_Modifications:
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: prefabName.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
       propertyPath: m_LocalPosition.x
       value: 10
@@ -365,6 +369,46 @@ Prefab:
     - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
       propertyPath: gateTeam
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: prefabName.Array.data[2]
+      value: Troop02
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: prefabName.Array.data[3]
+      value: Troop02
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: prefabName.Array.data[4]
+      value: Troop02
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: prefabName.Array.data[5]
+      value: Troop02
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: prefabName.Array.data[6]
+      value: Troop02
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: prefabName.Array.data[7]
+      value: Troop02
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: prefabName.Array.data[8]
+      value: Troop02
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: prefabName.Array.data[9]
+      value: Troop02
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: prefabName.Array.data[10]
+      value: Troop02
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: prefabName.Array.data[11]
+      value: Troop02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
@@ -698,6 +742,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1425478674}
     m_Modifications:
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: prefabName.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
       propertyPath: m_LocalPosition.x
       value: -10
@@ -737,6 +785,10 @@ Prefab:
     - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
       propertyPath: timeToSpawn
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: prefabName.Array.data[2]
+      value: Troop03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
