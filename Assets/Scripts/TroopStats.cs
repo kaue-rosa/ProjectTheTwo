@@ -45,7 +45,7 @@ public class TroopStats : MonoBehaviour
 	
 	public float AttackSpeed
 	{
-		get{return attackSpeed;}
+		get{return 1/attackSpeed;}
 	}
 
 	public float SpawnTime

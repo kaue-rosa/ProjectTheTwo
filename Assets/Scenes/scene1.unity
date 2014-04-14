@@ -115,7 +115,7 @@ MonoBehaviour:
   team: 0
   pm: {fileID: 506575931}
   prefabName:
-  - TroopBall
+  - Troop01
   timeToSpawn: 3
   troopToSpawn: {fileID: 0}
   path: {fileID: 472732808}
@@ -160,9 +160,9 @@ MonoBehaviour:
   team: 1
   pm: {fileID: 506575931}
   prefabName:
-  - TroopBall
-  - TroopSqr
-  - TroopCpl
+  - Troop01
+  - Troop02
+  - Troop03
   timeToSpawn: 3
   troopToSpawn: {fileID: 0}
   path: {fileID: 1297622147}
@@ -485,6 +485,7 @@ GameObject:
   - 92: {fileID: 970301338}
   - 124: {fileID: 970301337}
   - 81: {fileID: 970301336}
+  - 114: {fileID: 970301341}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -553,6 +554,18 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &970301341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 970301335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 865d3e353391f3a4eab7fa23b6ccb640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  correctionFactor: .0250000004
 --- !u!1 &1031012735
 GameObject:
   m_ObjectHideFlags: 0

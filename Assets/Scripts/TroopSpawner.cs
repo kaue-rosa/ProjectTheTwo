@@ -34,17 +34,16 @@ public class TroopSpawner : MonoBehaviour
 			_troop.MyTeam = team;
 			_troop.AssignPath(path);
 			currentTimer = 0;
+			timeToSpawn = _troop.gameObject.GetComponent<TroopStats>().SpawnTime;
 		}
 	}
 
 	void OnGUI()
 	{
-		if(prefabName.Count>1)
+		for(int i = 0; i<prefabName.Count; i++)
 		{
-			if(GUILayout.Button("Ball"))
-				nextTroopName = prefabName[0];
-			if(GUILayout.Button("Square"))
-				nextTroopName = prefabName[prefabName.Count-1];
+			if(GUILayout.Button("Unit " + i))
+				nextTroopName = prefabName[i];
 		}
 	}
 

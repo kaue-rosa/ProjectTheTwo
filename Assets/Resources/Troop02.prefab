@@ -42,12 +42,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 100
-  maxHealth: 50
-  rangeOfSight: 1
+  maxHealth: 100
+  rangeOfSight: 3
   movementSpeed: 3
   attackDamage: 25
   attackSpeed: 2
-  spawnTime: .5
+  spawnTime: 1.5
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
