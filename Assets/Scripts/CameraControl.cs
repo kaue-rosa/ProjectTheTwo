@@ -9,7 +9,7 @@ public class CameraControl : MonoBehaviour
 	private Vector3 initialPositionOnScreen = Vector3.zero;
 	private Vector3 currentPositionOnScreen = Vector3.zero;
 
-	[SerializeField] private float correctionFactor = 0.2f;
+	[SerializeField] private float correctionFactor = 0.025f;
 
 	void Start () 
 	{
