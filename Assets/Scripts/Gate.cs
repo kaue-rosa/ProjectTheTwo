@@ -9,11 +9,25 @@ public class Gate : MonoBehaviour
 	[SerializeField] private Transform troopsFolder = null;
 	[SerializeField] private TroopManager tm = null;
 	[SerializeField] private List<string> prefabName = new List<string>();
+	public List<string>PrefabName
+	{
+		get{return prefabName;}
+	}
 	[SerializeField] private Troop troopToSpawn = null;
 	[SerializeField] private GameObject path = null;
 
+	private bool visible = false;
+	public bool IsVisible
+	{
+		get {return visible;}
+	}
 
 	private string nextTroopName = "";
+	public string NextTroopName
+	{
+		get{return nextTroopName;}
+		set{nextTroopName = value;}
+	}
 	private float currentTimer = 0;
 	private float timeToSpawn = 0;
 	private GateStats stats = null;
@@ -71,13 +85,22 @@ public class Gate : MonoBehaviour
 		Debug.LogError ("I'm DEAD :D", this);
 	}
 
-	void OnGUI()
+	void OnBecameVisible()
 	{
-		for(int i = 0; i<prefabName.Count; i++)
-		{
-			if(GUILayout.Button("Unit " + i))
-				nextTroopName = prefabName[i];
-		}
+		visible = true;
 	}
+	void OnBecameInvisible()
+	{
+		visible = false;
+	}
+
+//	void OnGUI()
+//	{
+//		for(int i = 0; i<prefabName.Count; i++)
+//		{
+//			if(GUILayout.Button("Unit " + i))
+//				nextTroopName = prefabName[i];
+//		}
+//	}
 
 }

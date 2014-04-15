@@ -34,4 +34,9 @@ public class GateStats : MonoBehaviour {
 		set{level = value;}
 	}
 
+	void Start()
+	{
+		currentHealth = maxHealth;
+	}
+
 }
