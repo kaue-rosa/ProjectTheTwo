@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class UIManager : MonoBehaviour 
 {
-	[SerializeField] private GameObject healthBarPreFab;
+	[SerializeField] private GameObject healthBarPreFab = null;
 	[SerializeField] private float healthBarHight = 3f;
 	[SerializeField]private float healthBarFactor = 3f;
 	private float healthBarSize = 100f;

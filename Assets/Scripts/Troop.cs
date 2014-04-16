@@ -10,6 +10,8 @@ public enum Team
 
 public class Troop : MonoBehaviour {
 
+	private Element element = new Element();
+
 	private Team myTeam;
 	public Team TroopTeam
 	{
@@ -145,7 +147,7 @@ public class Troop : MonoBehaviour {
 		if(attackTimer <= 0)
 		{
 			attackTimer = troopStats.AttackSpeed;
-			combatTarget.TakeDamage(troopStats.AttackDamage);
+			combatTarget.TakeDamage(troopStats.AttackDamage, troopStats.MyElement);
 		}
 		else 
 		{
@@ -153,11 +155,12 @@ public class Troop : MonoBehaviour {
 		}
 	}
 
-	public void TakeDamage (int damage)
+	public void TakeDamage (int damage, GameElement attakerElement)
 	{
+
 		//health.TakeDamage(damage);
 		Instantiate((GameObject)Resources.Load("Particles/Attack Particle"),transform.position,transform.rotation);
-		troopStats.CurrentHealth -= damage;
+		troopStats.CurrentHealth -= (int) Mathf.Round((damage * element.ElementCheck(attakerElement)));
 
 	}
 

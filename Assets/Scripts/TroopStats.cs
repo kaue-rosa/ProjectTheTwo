@@ -4,6 +4,8 @@ using System.Collections;
 public class TroopStats : MonoBehaviour 
 {
 	//HP
+	[SerializeField]private GameElement element = GameElement.NORMAL;
+
 	[SerializeField]private int currentHealth = 100;
 	[SerializeField]private int maxHealth = 100;
 
@@ -14,6 +16,11 @@ public class TroopStats : MonoBehaviour
 	[SerializeField]private float attackSpeed = 1f;
 
 	[SerializeField]private float spawnTime = 1f;
+
+	public GameElement MyElement
+	{
+		get{return element;}
+	}
 
 	public int CurrentHealth
 	{
