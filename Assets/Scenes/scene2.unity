@@ -190,13 +190,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: 1
   gateTeam: 0
-  troopsFolder: {fileID: 0}
   tm: {fileID: 0}
-  prefabName:
-  - Troop01
-  - Troop02
-  - Troop03
-  troopToSpawn: {fileID: 0}
+  troopsFolder: {fileID: 0}
+  troopPrefabs:
+  - {fileID: 100000, guid: 21f13df3cdfbb884d8e453c880e54046, type: 2}
+  - {fileID: 100000, guid: 924795f36b12c264bbe360d3bba1cc3e, type: 2}
+  - {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
   path: {fileID: 472732808}
 --- !u!212 &97785086
 SpriteRenderer:
@@ -389,6 +388,7 @@ GameObject:
   - 114: {fileID: 312849865}
   - 114: {fileID: 312849866}
   - 212: {fileID: 312849864}
+  - 114: {fileID: 312849867}
   m_Layer: 0
   m_Name: Gate2
   m_TagString: Untagged
@@ -446,13 +446,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: 0
   gateTeam: 1
-  troopsFolder: {fileID: 0}
   tm: {fileID: 0}
-  prefabName:
-  - Troop01
-  - Troop02
-  - Troop03
-  troopToSpawn: {fileID: 0}
+  troopsFolder: {fileID: 0}
+  troopPrefabs:
+  - {fileID: 100000, guid: 21f13df3cdfbb884d8e453c880e54046, type: 2}
+  - {fileID: 100000, guid: 924795f36b12c264bbe360d3bba1cc3e, type: 2}
+  - {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
   path: {fileID: 2040320732}
 --- !u!114 &312849866
 MonoBehaviour:
@@ -470,6 +469,19 @@ MonoBehaviour:
   maxHealth: 500
   xp: 100
   level: 2
+--- !u!114 &312849867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 312849862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a54e8f89903fc045a3d8be6463f5471, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  troopChangeChancePercentage: 10
+  changeTimer: 1
 --- !u!1 &362320847
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,6 +746,10 @@ Prefab:
       propertyPath: prefabName.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
       propertyPath: m_LocalPosition.x
       value: -10
@@ -786,6 +802,18 @@ Prefab:
       propertyPath: player
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 100000, guid: 21f13df3cdfbb884d8e453c880e54046, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 100000, guid: 924795f36b12c264bbe360d3bba1cc3e, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
   m_RootGameObject: {fileID: 97785083}
@@ -929,6 +957,10 @@ Prefab:
       propertyPath: prefabName.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
       propertyPath: m_LocalPosition.x
       value: 10
@@ -977,6 +1009,18 @@ Prefab:
       propertyPath: player
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 100000, guid: 21f13df3cdfbb884d8e453c880e54046, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 100000, guid: 924795f36b12c264bbe360d3bba1cc3e, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
   m_RootGameObject: {fileID: 312849862}

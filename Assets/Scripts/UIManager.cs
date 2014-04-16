@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -59,10 +59,10 @@ public class UIManager : MonoBehaviour
 		{
 			if(gates[i].IsVisible&&gates[i].IsPlayer)
 			{
-				for(int ii = 0; ii<gates[i].PrefabName.Count; ii++)
+				for(int ii = 0; ii<gates[i].TroopPrefabs.Count; ii++)
 				{
 					if(GUILayout.Button("Unit " + ii))
-						gates[i].NextTroopName = gates[i].PrefabName[ii];
+						gates[i].NextTroopToSpawnName = gates[i].TroopPrefabs[ii].name;
 				}
 			}
 		}

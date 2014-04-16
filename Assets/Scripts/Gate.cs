@@ -12,14 +12,14 @@ public class Gate : MonoBehaviour
 	}
 
 	[SerializeField] private Team gateTeam = Team.TeamA;
-	[SerializeField] private Transform troopsFolder = null;
 	[SerializeField] private TroopManager tm = null;
-	[SerializeField] private List<string> prefabName = new List<string>();
-	public List<string>PrefabName
+	[SerializeField] private Transform troopsFolder = null;
+	[SerializeField] private List<GameObject> troopPrefabs = new List<GameObject>();
+	public List<GameObject>TroopPrefabs
 	{
-		get{return prefabName;}
+		get{return troopPrefabs;}
+		set{value = TroopPrefabs;}
 	}
-	[SerializeField] private Troop troopToSpawn = null;
 	[SerializeField] private GameObject path = null;
 
 	private bool visible = false;
@@ -28,11 +28,11 @@ public class Gate : MonoBehaviour
 		get {return visible;}
 	}
 
-	private string nextTroopName = "";
-	public string NextTroopName
+	private string nextTroopToSpawnName = "";
+	public string NextTroopToSpawnName
 	{
-		get{return nextTroopName;}
-		set{nextTroopName = value;}
+		get{return nextTroopToSpawnName;}
+		set{nextTroopToSpawnName = value;}
 	}
 	private float currentTimer = 0;
 	private float timeToSpawn = 0;
@@ -49,8 +49,7 @@ public class Gate : MonoBehaviour
 		//only if we didn't assign, try to do it automatically
 		if (!tm)tm = FindObjectOfType<TroopManager> ();
 		tm.ManageGate (this);
-		nextTroopName = prefabName[0];
-		if(troopToSpawn)timeToSpawn = troopToSpawn.GetComponent<TroopStats>().SpawnTime;
+		nextTroopToSpawnName = troopPrefabs[0].name;
 		stats = GetComponent<GateStats> ();
 		if (!stats)Debug.LogError ("@Gate.Start(). No reference to stats");
 	}
@@ -68,7 +67,7 @@ public class Gate : MonoBehaviour
 	{
 		//make sure we spawn the troop under a game object, for organization porposes.
 		if (!troopsFolder)troopsFolder = new GameObject("Troops " + gateTeam).transform;
-		GameObject _troopGm = (GameObject)Instantiate ((GameObject)Resources.Load (nextTroopName), transform.position, transform.rotation);
+		GameObject _troopGm = (GameObject)Instantiate ((GameObject)Resources.Load (nextTroopToSpawnName), transform.position, transform.rotation);
 		_troopGm.transform.parent = troopsFolder;
 		Troop _troop = _troopGm.GetComponent<Troop> ();
 		_troop.TroopPathManager = this.tm;
@@ -99,14 +98,4 @@ public class Gate : MonoBehaviour
 	{
 		visible = false;
 	}
-
-//	void OnGUI()
-//	{
-//		for(int i = 0; i<prefabName.Count; i++)
-//		{
-//			if(GUILayout.Button("Unit " + i))
-//				nextTroopName = prefabName[i];
-//		}
-//	}
-
 }
