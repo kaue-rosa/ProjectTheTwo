@@ -188,6 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f48ed5d783c3fd848bf63609f612200f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: 1
   gateTeam: 0
   troopsFolder: {fileID: 0}
   tm: {fileID: 0}
@@ -443,6 +444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f48ed5d783c3fd848bf63609f612200f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: 0
   gateTeam: 1
   troopsFolder: {fileID: 0}
   tm: {fileID: 0}
@@ -780,6 +782,10 @@ Prefab:
       propertyPath: gateTeam
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: player
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
   m_RootGameObject: {fileID: 97785083}
@@ -966,6 +972,10 @@ Prefab:
     - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
       propertyPath: prefabName.Array.data[2]
       value: Troop03
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: player
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
