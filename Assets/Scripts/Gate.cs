@@ -5,6 +5,12 @@ using System.Collections.Generic;
 
 public class Gate : MonoBehaviour
 {
+	[SerializeField]private bool player = false;
+	public bool IsPlayer
+	{
+		get {return player;}
+	}
+
 	[SerializeField] private Team gateTeam = Team.TeamA;
 	[SerializeField] private Transform troopsFolder = null;
 	[SerializeField] private TroopManager tm = null;

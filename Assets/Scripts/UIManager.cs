@@ -41,11 +41,6 @@ public class UIManager : MonoBehaviour
 
 	void Update () 
 	{
-		for(int i=0; i<gates.Length; i++)
-		{
-			if(gates[i].IsVisible)
-				Debug.Log(gates[i].name);
-		}
 	}
 
 	void LateUpdate () 
@@ -62,7 +57,7 @@ public class UIManager : MonoBehaviour
 	{
 		for(int i=0; i<gates.Length; i++)
 		{
-			if(gates[i].IsVisible)
+			if(gates[i].IsVisible&&gates[i].IsPlayer)
 			{
 				for(int ii = 0; ii<gates[i].PrefabName.Count; ii++)
 				{
