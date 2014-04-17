@@ -18,7 +18,6 @@ public class Element
 
 	public Element()
 	{
-		AssignDictionary();
 	}
 
 	public virtual void AssignDictionary()
@@ -29,9 +28,9 @@ public class Element
 		baseElementsMultiplyer.Add (GameElement.NORMAL, 1f);
 	}
 
-	public virtual float ElementCheck(GameElement attackElement)
+	public virtual float ElementCheck(GameElement comparedElement)
 	{
-		return baseElementsMultiplyer[attackElement];
+		return baseElementsMultiplyer[comparedElement];
 	}
 }
 
@@ -53,8 +52,30 @@ public class ElementWater:Element
 		baseElementsMultiplyer[GameElement.ROCK] = .5f;
 	}
 
-	public override float ElementCheck(GameElement attackElement)
+	public override float ElementCheck(GameElement comparedElement)
 	{
-		return baseElementsMultiplyer[attackElement];
+		return baseElementsMultiplyer[comparedElement];
+	}
+}
+
+public class ElementFire:Element
+{
+	public ElementFire()
+	{
+		AssignDictionary();
+		
+	}
+	
+	public override void AssignDictionary()
+	{
+		base.AssignDictionary();
+		
+		baseElementsMultiplyer[GameElement.WATER] = .5f;
+		baseElementsMultiplyer[GameElement.ROCK] = 2f;
+	}
+	
+	public override float ElementCheck(GameElement comparedElement)
+	{
+		return baseElementsMultiplyer[comparedElement];
 	}
 }

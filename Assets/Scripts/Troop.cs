@@ -8,9 +8,9 @@ public enum Team
 	TeamB,
 }
 
-public class Troop : MonoBehaviour {
-
-	private Element element = new Element();
+public class Troop : MonoBehaviour 
+{
+	private Dictionary<GameElement, Element> elements = new Dictionary<GameElement, Element>();
 
 	private Team myTeam;
 	public Team TroopTeam
@@ -84,6 +84,12 @@ public class Troop : MonoBehaviour {
 		troopStats = GetComponent<TroopStats>();
 		if(!troopStats)Debug.LogWarning("Stats Script not found in " + name);
 		if(pm)pm.ManageTroop (this);
+
+		elements.Add(GameElement.WATER, new ElementWater());
+		elements.Add(GameElement.FIRE, new ElementFire());
+
+
+
 		StartCoroutine ("LookForEnemy");
 	}
 
@@ -158,9 +164,8 @@ public class Troop : MonoBehaviour {
 	public void TakeDamage (int damage, GameElement attakerElement)
 	{
 
-		//health.TakeDamage(damage);
 		Instantiate((GameObject)Resources.Load("Particles/Attack Particle"),transform.position,transform.rotation);
-		troopStats.CurrentHealth -= (int) Mathf.Round((damage * element.ElementCheck(attakerElement)));
+		troopStats.CurrentHealth -= (int) Mathf.Round((damage * elements[attakerElement].ElementCheck(troopStats.MyElement)));
 
 	}
 
