@@ -11,6 +11,8 @@ public class Gate : MonoBehaviour
 		get {return player;}
 	}
 
+	private GameElement gateElement = GameElement.NORMAL;
+
 	[SerializeField] private Team gateTeam = Team.TeamA;
 	[SerializeField] private TroopManager tm = null;
 	[SerializeField] private Transform troopsFolder = null;
