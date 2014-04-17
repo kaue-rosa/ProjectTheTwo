@@ -87,6 +87,9 @@ public class Troop : MonoBehaviour
 
 		elements.Add(GameElement.WATER, new ElementWater());
 		elements.Add(GameElement.FIRE, new ElementFire());
+		elements.Add(GameElement.ROCK, new ElementRock());
+		elements.Add(GameElement.AIR, new ElementAir());
+		elements.Add(GameElement.ELECTRIC, new ElementElectric());
 
 
 

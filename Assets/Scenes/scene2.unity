@@ -196,6 +196,8 @@ MonoBehaviour:
   - {fileID: 100000, guid: 21f13df3cdfbb884d8e453c880e54046, type: 2}
   - {fileID: 100000, guid: 924795f36b12c264bbe360d3bba1cc3e, type: 2}
   - {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+  - {fileID: 100000, guid: 20b2206bd325e224dbdbb2a63f1b9184, type: 2}
+  - {fileID: 100000, guid: 1d4262f81e59008478d0037566649fb2, type: 2}
   path: {fileID: 472732808}
 --- !u!212 &97785086
 SpriteRenderer:
@@ -452,6 +454,8 @@ MonoBehaviour:
   - {fileID: 100000, guid: 21f13df3cdfbb884d8e453c880e54046, type: 2}
   - {fileID: 100000, guid: 924795f36b12c264bbe360d3bba1cc3e, type: 2}
   - {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+  - {fileID: 100000, guid: 20b2206bd325e224dbdbb2a63f1b9184, type: 2}
+  - {fileID: 100000, guid: 1d4262f81e59008478d0037566649fb2, type: 2}
   path: {fileID: 2040320732}
 --- !u!114 &312849866
 MonoBehaviour:
@@ -748,7 +752,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
       propertyPath: troopPrefabs.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
       propertyPath: m_LocalPosition.x
@@ -812,6 +816,206 @@ Prefab:
       objectReference: {fileID: 100000, guid: 924795f36b12c264bbe360d3bba1cc3e, type: 2}
     - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
       propertyPath: troopPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 100000, guid: 20b2206bd325e224dbdbb2a63f1b9184, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 100000, guid: 1d4262f81e59008478d0037566649fb2, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[6]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[7]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[8]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[9]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[10]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[11]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[12]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[13]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[14]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[15]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[16]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[17]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[18]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[19]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[20]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[21]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[22]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[23]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[24]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[25]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[26]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[27]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[28]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[29]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[30]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[31]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[32]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[33]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[34]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[35]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[36]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[37]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[38]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[39]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[40]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[41]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[42]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[43]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[44]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[45]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[46]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[47]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[48]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[49]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[50]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[51]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[52]
       value: 
       objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
     m_RemovedComponents: []
@@ -959,7 +1163,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
       propertyPath: troopPrefabs.Array.size
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1021,6 +1225,14 @@ Prefab:
       propertyPath: troopPrefabs.Array.data[2]
       value: 
       objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 100000, guid: 20b2206bd325e224dbdbb2a63f1b9184, type: 2}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: troopPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 100000, guid: 1d4262f81e59008478d0037566649fb2, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
   m_RootGameObject: {fileID: 312849862}
