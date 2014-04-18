@@ -16,13 +16,13 @@ public class Element : MonoBehaviour
 {
 	private static Element newElementClass= null;
 	private static string[,] elementsMultiplier;
-	[SerializeField] private TextAsset csv = null;
+	[SerializeField] private TextAsset elementsSchemeCSV = null;
 	
 	void Start () {
 		if (!newElementClass){newElementClass = this;}
 		else{return;}
 
-		elementsMultiplier = CSVReader.SplitCsvGrid (csv.text);
+		elementsMultiplier = CSVReader.SplitCsvGrid (elementsSchemeCSV.text);
 		GetMultiplayerForAttackerElement (GameElement.NORMAL,GameElement.NORMAL);
 	}
 
