@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿/*CSVReader by Dock. (24/8/11) http://starfruitgames.com*/
+
+using UnityEngine;
 using System.Collections;
 using System.Linq; 
 
