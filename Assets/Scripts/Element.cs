@@ -21,7 +21,7 @@ public class Element : MonoBehaviour
 	void Start () {
 		if (!newElementClass){newElementClass = this;}
 		else{return;}
-		
+
 		elementsMultiplier = CSVReader.SplitCsvGrid (csv.text);
 		GetMultiplayerForAttackerElement (GameElement.NORMAL,GameElement.NORMAL);
 	}
