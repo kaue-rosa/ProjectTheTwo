@@ -33,7 +33,6 @@ public class Troop : MonoBehaviour
 		set
 		{
 			pm = value;
-			//pm.ManageTroop(this);
 		}
 	}
 
@@ -75,15 +74,30 @@ public class Troop : MonoBehaviour
 	}
 
 	private float attackTimer = 0;
+	private float lastXPosition = 0;
 
 	// Use this for initialization
 	void Start () 
 	{
+		lastXPosition = transform.position.x;
 		troopStats = GetComponent<TroopStats>();
 		if(!troopStats)Debug.LogWarning("Stats Script not found in " + name);
 		if(pm)pm.ManageTroop (this);
-
 		StartCoroutine ("LookForEnemy");
+	}
+
+	void Update()
+	{
+		//face the troop in the correct direction
+		if (transform.position.x < lastXPosition) {
+			transform.localScale = new Vector3(-1,1,1);
+		}
+		else if (transform.position.x > lastXPosition)
+		{
+			transform.localScale = new Vector3(1,1,1);
+		}
+		lastXPosition = transform.position.x;
+
 	}
 
 	void LateUpdate()

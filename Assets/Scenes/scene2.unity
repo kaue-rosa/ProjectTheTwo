@@ -484,7 +484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a54e8f89903fc045a3d8be6463f5471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  troopChangeChancePercentage: 10
+  troopChangeChancePercentage: 0
   changeTimer: 1
 --- !u!1 &362320847
 GameObject:
