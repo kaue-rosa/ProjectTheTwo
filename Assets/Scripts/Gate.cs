@@ -49,7 +49,10 @@ public class Gate : MonoBehaviour
 	{
 		if(IsPlayer)
 		{
-			troopPrefabs = PlayerManager.control.selectedTroops;
+			if(PlayerManager.control.SelectedTroops.Count>0)
+				troopPrefabs = PlayerManager.control.SelectedTroops;
+			else
+				troopPrefabs = PlayerManager.control.TotalTroops;
 		}
 	}
 
