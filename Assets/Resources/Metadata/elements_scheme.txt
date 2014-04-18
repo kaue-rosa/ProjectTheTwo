@@ -1,0 +1,7 @@
+elements,deffender_normal,deffender_water,deffender_fire,deffender_rock,deffender_air,deffender_electricity
+attacker_normal,1,1,1,1,1,1
+attacker_water,1,1,2,2,0.5,0.5
+attacker_fire,1,0.5,1,0.5,2,2
+attacker_rock,1,0.5,2,1,0.5,2
+attacker_air,1,2,0.5,2,1,0.5
+attacker_electricity,1,2,0.5,0.5,2,1

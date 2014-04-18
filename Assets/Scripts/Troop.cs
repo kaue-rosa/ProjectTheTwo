@@ -10,8 +10,6 @@ public enum Team
 
 public class Troop : MonoBehaviour 
 {
-	private Dictionary<GameElement, Element> elements = new Dictionary<GameElement, Element>();
-
 	private Team myTeam;
 	public Team TroopTeam
 	{
@@ -84,14 +82,6 @@ public class Troop : MonoBehaviour
 		troopStats = GetComponent<TroopStats>();
 		if(!troopStats)Debug.LogWarning("Stats Script not found in " + name);
 		if(pm)pm.ManageTroop (this);
-
-		elements.Add(GameElement.WATER, new ElementWater());
-		elements.Add(GameElement.FIRE, new ElementFire());
-		elements.Add(GameElement.ROCK, new ElementRock());
-		elements.Add(GameElement.AIR, new ElementAir());
-		elements.Add(GameElement.ELECTRIC, new ElementElectric());
-
-
 
 		StartCoroutine ("LookForEnemy");
 	}
@@ -168,8 +158,7 @@ public class Troop : MonoBehaviour
 	{
 
 		Instantiate((GameObject)Resources.Load("Particles/Attack Particle"),transform.position,transform.rotation);
-		troopStats.CurrentHealth -= (int) Mathf.Round((damage * elements[attakerElement].ElementCheck(troopStats.MyElement)));
-
+		troopStats.CurrentHealth -= (int) Mathf.Round(damage * Element.GetMultiplayerForAttackerElement(attakerElement,this.troopStats.MyElement));
 	}
 
 	public void Die()
@@ -181,7 +170,7 @@ public class Troop : MonoBehaviour
 
 	public void EnterGateEffect ()
 	{
-		//should face first, or do some effect
+		//should fade first, or do some effect
 		troopStats.CurrentHealth = 0;
 	}
 }
