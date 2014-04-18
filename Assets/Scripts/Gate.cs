@@ -96,6 +96,7 @@ public class Gate : MonoBehaviour
 
 	void Die ()
 	{
+		GameMatch.machIsOver = true;
 		Debug.LogError ("I'm DEAD :D", this);
 	}
 
