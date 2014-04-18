@@ -101,8 +101,8 @@ public class ElementRock:Element
 		
 		baseElementsMultiplyer[GameElement.WATER] = .5f;
 		baseElementsMultiplyer[GameElement.FIRE] = 2f;
-		baseElementsMultiplyer[GameElement.AIR] = 2f;
-		baseElementsMultiplyer[GameElement.ELECTRIC] = .5f;
+		baseElementsMultiplyer[GameElement.AIR] = .5f;
+		baseElementsMultiplyer[GameElement.ELECTRIC] = 2f;
 	}
 	
 	public override float ElementCheck(GameElement comparedElement)

@@ -45,6 +45,13 @@ public class Gate : MonoBehaviour
 		get{return gateTeam;}
 	}
 
+	void Awake()
+	{
+		if(IsPlayer)
+		{
+			troopPrefabs = PlayerManager.control.selectedTroops;
+		}
+	}
 
 	void Start()
 	{
