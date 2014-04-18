@@ -77,8 +77,8 @@ NavMeshSettings:
 --- !u!1 &504598406
 GameObject:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 100000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
+  m_PrefabInternal: {fileID: 1668745476}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 504598408}
@@ -93,8 +93,9 @@ GameObject:
 --- !u!114 &504598407
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 11400000, guid: 4e5925043ec1c9b47829ebbd07d6334a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1668745476}
   m_GameObject: {fileID: 504598406}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -107,16 +108,79 @@ MonoBehaviour:
   - {fileID: 100000, guid: 924795f36b12c264bbe360d3bba1cc3e, type: 2}
   - {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
   - {fileID: 100000, guid: 21f13df3cdfbb884d8e453c880e54046, type: 2}
-  selectedTroops: []
   maxNumberOfTroops: 3
 --- !u!4 &504598408
 Transform:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabParentObject: {fileID: 400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
+  m_PrefabInternal: {fileID: 1668745476}
   m_GameObject: {fileID: 504598406}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: .314994037, y: -.183646858, z: 3.7765398}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!1001 &1668745476
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 11400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
+      propertyPath: totalTroops.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: .314994037
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -.183646858
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 3.7765398
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
+      propertyPath: totalTroops.Array.data[0]
+      value: 
+      objectReference: {fileID: 100000, guid: 20b2206bd325e224dbdbb2a63f1b9184, type: 2}
+    - target: {fileID: 11400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
+      propertyPath: totalTroops.Array.data[1]
+      value: 
+      objectReference: {fileID: 100000, guid: 1d4262f81e59008478d0037566649fb2, type: 2}
+    - target: {fileID: 11400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
+      propertyPath: totalTroops.Array.data[2]
+      value: 
+      objectReference: {fileID: 100000, guid: 924795f36b12c264bbe360d3bba1cc3e, type: 2}
+    - target: {fileID: 11400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
+      propertyPath: totalTroops.Array.data[3]
+      value: 
+      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
+      propertyPath: totalTroops.Array.data[4]
+      value: 
+      objectReference: {fileID: 100000, guid: 21f13df3cdfbb884d8e453c880e54046, type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
+  m_RootGameObject: {fileID: 504598406}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1

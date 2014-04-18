@@ -7,20 +7,31 @@ public class PlayerManager : MonoBehaviour
 {
 	public static PlayerManager control;
 
-	[SerializeField]private List<GameObject> totalTroops = new List<GameObject>();
-	public List<GameObject> selectedTroops = new List<GameObject>();
+	[SerializeField] private List<GameObject> totalTroops = new List<GameObject>();
+	private List<GameObject> selectedTroops = new List<GameObject>();
+
+	public List<GameObject> TotalTroops
+	{
+		get {return totalTroops;}
+	}
+	public List<GameObject> SelectedTroops
+	{
+		get {return selectedTroops;}
+	}
 
 	[SerializeField]private int maxNumberOfTroops = 3;
 
 	void Awake()
 	{
-		if(!control)
+		DontDestroyOnLoad(gameObject);
+
+		if(control == null)
 		{
 			control = this;
 		}
 		else if (control != this)
 		{
-			Destroy(this.gameObject);
+			Destroy(gameObject);
 		}
 	}
 
