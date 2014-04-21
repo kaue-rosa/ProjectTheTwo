@@ -172,7 +172,11 @@ public class Troop : MonoBehaviour
 	{
 
 		Instantiate((GameObject)Resources.Load("Particles/Attack Particle"),transform.position,transform.rotation);
-		troopStats.CurrentHealth -= (int) Mathf.Round(damage * Element.GetMultiplayerForAttackerElement(attakerElement,this.troopStats.MyElement));
+
+		int trueDamage = (int) Mathf.Round(damage * Element.GetMultiplayerForAttackerElement(attakerElement,this.troopStats.MyElement));
+
+		troopStats.CurrentHealth -= (int)(trueDamage - (trueDamage*troopStats.Deffense)); 
+	
 	}
 
 	public void Die()

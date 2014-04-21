@@ -7,6 +7,8 @@ public class GateStats : MonoBehaviour {
 	[SerializeField]private int currentHealth = 100;
 	[SerializeField]private int maxHealth = 100;
 
+	[SerializeField]private float deffense = 10f;
+
 	[SerializeField]private int xp = 100;
 	[SerializeField]private int level = 2;
 	
@@ -20,6 +22,11 @@ public class GateStats : MonoBehaviour {
 	{
 		get{return maxHealth;}
 		set{maxHealth = value;}
+	}
+
+	public float Deffense
+	{
+		get{ return deffense*.01f; }
 	}
 	
 	public int Xp

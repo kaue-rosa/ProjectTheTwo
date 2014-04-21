@@ -18,7 +18,8 @@ public class Gate : MonoBehaviour
 	[SerializeField] private Transform troopsFolder = null;
 	[SerializeField] private List<GameObject> troopPrefabs = new List<GameObject>();
 
-	public bool CanSpawn {
+	public bool CanSpawn
+	{
 		get;
 		set;
 	}
@@ -101,7 +102,10 @@ public class Gate : MonoBehaviour
 
 	public void TakeDamage (int damage)
 	{
-		stats.CurrentHealth -= damage;
+		int trueDamage = damage;
+
+		stats.CurrentHealth -= trueDamage - (trueDamage*stats.Deffense);
+
 		if (stats.CurrentHealth <= 0) {
 			this.Die();
 		}
