@@ -4,18 +4,14 @@ using System.Collections.Generic;
 
 public class TroopManager : MonoBehaviour 
 {
+	[SerializeField] private GameMatch gameMatch = null;
 	public List<Troop> troops = new List<Troop>();
 	public List<Gate> gates = new List<Gate>();
-	
-	void Update () {
-		ManageTroops ();
-	}
 
-	void ManageTroops ()
+	public void ManageTroops ()
 	{
 		foreach (Troop _troop in troops) 
 		{
-		
 			//First make this troop look for an enemy which is nearby
 			if(_troop.HasEnemyInRange())
 			{
@@ -38,21 +34,6 @@ public class TroopManager : MonoBehaviour
 		}
 	}
 
-	public void ManageTroop(Troop _troop)
-	{
-		troops.Add (_troop);
-	}
-
-	public void StopManagingTroop(Troop _troop) 
-	{
-		troops.Remove (_troop);
-	}
-
-	public void ManageGate (Gate _gate)
-	{
-		gates.Add (_gate);
-	}
-
 	void DamageGate (int troopAttackValue, Team troopTeam)
 	{
 		//find the gate to damage
@@ -66,5 +47,25 @@ public class TroopManager : MonoBehaviour
 	void KillTroop (Troop _troop)
 	{
 		_troop.EnterGateEffect();
+	}
+
+	public void OnGateDestroyed()
+	{
+		gameMatch.SetMatchOver();
+	}
+
+	public void ManageTroop(Troop _troop)
+	{
+		troops.Add (_troop);
+	}
+	
+	public void StopManagingTroop(Troop _troop) 
+	{
+		troops.Remove (_troop);
+	}
+	
+	public void ManageGate (Gate _gate)
+	{
+		gates.Add (_gate);
 	}
 }

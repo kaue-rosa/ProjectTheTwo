@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -17,6 +17,12 @@ public class Gate : MonoBehaviour
 	[SerializeField] private TroopManager tm = null;
 	[SerializeField] private Transform troopsFolder = null;
 	[SerializeField] private List<GameObject> troopPrefabs = new List<GameObject>();
+
+	public bool CanSpawn {
+		get;
+		set;
+	}
+
 	public List<GameObject>TroopPrefabs
 	{
 		get{return troopPrefabs;}
@@ -64,14 +70,18 @@ public class Gate : MonoBehaviour
 		nextTroopToSpawnName = troopPrefabs[0].name;
 		stats = GetComponent<GateStats> ();
 		if (!stats)Debug.LogError ("@Gate.Start(). No reference to stats");
+		CanSpawn = true;
 	}
 
 	void Update()
 	{
-		currentTimer += Time.deltaTime;
-		if (currentTimer >= timeToSpawn)
+		if (CanSpawn)
 		{
-			SpawnTroop();
+			currentTimer += Time.deltaTime;
+			if (currentTimer >= timeToSpawn)
+			{
+				SpawnTroop ();
+			}
 		}
 	}
 
@@ -99,8 +109,7 @@ public class Gate : MonoBehaviour
 
 	void Die ()
 	{
-		GameMatch.machIsOver = true;
-		//Debug.LogError ("I'm DEAD :D", this);
+		tm.OnGateDestroyed ();
 	}
 
 	void OnBecameVisible()
