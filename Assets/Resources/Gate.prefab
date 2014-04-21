@@ -10,7 +10,6 @@ GameObject:
   - 4: {fileID: 400000}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
-  - 212: {fileID: 21200002}
   m_Layer: 0
   m_Name: Gate
   m_TagString: Untagged
@@ -68,12 +67,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f48ed5d783c3fd848bf63609f612200f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: 0
   gateTeam: 1
-  troopsFolder: {fileID: 0}
   tm: {fileID: 0}
-  prefabName:
-  - Troop01
-  troopToSpawn: {fileID: 0}
+  troopsFolder: {fileID: 0}
+  troopPrefabs: []
   path: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
@@ -112,29 +110,6 @@ SpriteRenderer:
   m_SortingOrder: -100
   m_SortingLayerID: 0
   m_Sprite: {fileID: 21300000, guid: 286ad1242210f8a4aa38c18c328afb09, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
---- !u!212 &21200002
-SpriteRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_SortingLayerID: 0
-  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
