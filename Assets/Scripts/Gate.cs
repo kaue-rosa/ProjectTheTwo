@@ -115,7 +115,10 @@ public class Gate : MonoBehaviour
 
 	public void TakeDamage (int damage)
 	{
-		stats.CurrentHealth -= damage;
+		int trueDamage = damage;
+
+		stats.CurrentHealth -= (int) Mathf.Round(trueDamage - (trueDamage*stats.Deffense));
+
 		if (stats.CurrentHealth <= 0) {
 			this.Die();
 		}
