@@ -47,11 +47,6 @@ public class GateStats : MonoBehaviour {
 		currentHealth = maxHealth;
 	}
 
-	void Update()
-	{
-		print (Level);
-	}
-
 	public void GiveXP (int xpToGive)
 	{
 		this.xp += xpToGive;
