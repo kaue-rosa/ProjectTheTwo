@@ -44,7 +44,6 @@ MonoBehaviour:
   - {fileID: 100000, guid: 924795f36b12c264bbe360d3bba1cc3e, type: 2}
   - {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
   - {fileID: 100000, guid: 21f13df3cdfbb884d8e453c880e54046, type: 2}
-  selectedTroops: []
   maxNumberOfTroops: 3
 --- !u!1001 &100100000
 Prefab:
