@@ -7,8 +7,12 @@ public class GateStats : MonoBehaviour {
 	[SerializeField]private int currentHealth = 100;
 	[SerializeField]private int maxHealth = 100;
 
-	[SerializeField]private int xp = 100;
-	[SerializeField]private int level = 2;
+	//XP
+	[SerializeField]private int xp = 0;
+	[SerializeField]private int level = 0;
+	[SerializeField]private int defeatGivenXp = 0;
+
+	private int maxGateXp = 1000;
 	
 	public int CurrentHealth
 	{
@@ -30,8 +34,12 @@ public class GateStats : MonoBehaviour {
 	
 	public int Level
 	{
-		get{return level;}
-		set{level = value;}
+		get{return (int) Mathf.Floor(Xp*0.01f);}
+	}
+
+	public int DefeatGivenXp
+	{
+		get{ return defeatGivenXp;}
 	}
 
 	void Start()
@@ -39,4 +47,15 @@ public class GateStats : MonoBehaviour {
 		currentHealth = maxHealth;
 	}
 
+	void Update()
+	{
+		print (Level);
+	}
+
+	public void GiveXP (int xpToGive)
+	{
+		this.xp += xpToGive;
+		//TODO: have the max gate xp set somewhere
+		if (this.xp > maxGateXp)this.xp = maxGateXp;
+	}
 }

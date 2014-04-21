@@ -5,22 +5,52 @@ using System.Collections.Generic;
 
 public class Gate : MonoBehaviour
 {
-	[SerializeField]private bool player = false;
-	public bool IsPlayer
-	{
-		get {return player;}
-	}
-
-	private GameElement gateElement = GameElement.NORMAL;
-
+	[SerializeField] private bool isPlayer = false;
 	[SerializeField] private Team gateTeam = Team.TeamA;
 	[SerializeField] private TroopManager tm = null;
 	[SerializeField] private Transform troopsFolder = null;
 	[SerializeField] private List<GameObject> troopPrefabs = new List<GameObject>();
+	[SerializeField] private GameObject path = null;
 
-	public bool CanSpawn {
+	private GameElement gateElement = GameElement.NORMAL;
+	private string nextTroopToSpawnName = "";
+	private float currentTimer = 0;
+	private float timeToSpawn = 0;
+	private GateStats stats = null;
+	private bool visible = false;
+
+	public bool IsPlayer
+	{
+		get {return isPlayer;}
+	}
+
+	public string NextTroopToSpawnName
+	{
+		get{return nextTroopToSpawnName;}
+		set{nextTroopToSpawnName = value;}
+	}
+
+	public Team GateTeam
+	{
+		get{return gateTeam;}
+	}
+
+	public bool CanSpawn
+	{
 		get;
 		set;
+	}
+
+	public bool IsAlive
+	{
+		get;
+		set;
+	}
+
+	public GateStats Stats
+	{
+		get{return stats;}
+		set{ stats = value;}
 	}
 
 	public List<GameObject>TroopPrefabs
@@ -28,27 +58,10 @@ public class Gate : MonoBehaviour
 		get{return troopPrefabs;}
 		set{value = TroopPrefabs;}
 	}
-	[SerializeField] private GameObject path = null;
 
-	private bool visible = false;
 	public bool IsVisible
 	{
 		get {return visible;}
-	}
-
-	private string nextTroopToSpawnName = "";
-	public string NextTroopToSpawnName
-	{
-		get{return nextTroopToSpawnName;}
-		set{nextTroopToSpawnName = value;}
-	}
-	private float currentTimer = 0;
-	private float timeToSpawn = 0;
-	private GateStats stats = null;
-
-	public Team GateTeam
-	{
-		get{return gateTeam;}
 	}
 
 	void Awake()
@@ -71,11 +84,12 @@ public class Gate : MonoBehaviour
 		stats = GetComponent<GateStats> ();
 		if (!stats)Debug.LogError ("@Gate.Start(). No reference to stats");
 		CanSpawn = true;
+		IsAlive = true;
 	}
 
 	void Update()
 	{
-		if (CanSpawn)
+		if (IsAlive && CanSpawn)
 		{
 			currentTimer += Time.deltaTime;
 			if (currentTimer >= timeToSpawn)
@@ -109,7 +123,8 @@ public class Gate : MonoBehaviour
 
 	void Die ()
 	{
-		tm.OnGateDestroyed ();
+		tm.OnGateDestroyed (this);
+		this.IsAlive = false;
 	}
 
 	void OnBecameVisible()

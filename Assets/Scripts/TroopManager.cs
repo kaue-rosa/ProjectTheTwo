@@ -49,9 +49,10 @@ public class TroopManager : MonoBehaviour
 		_troop.EnterGateEffect();
 	}
 
-	public void OnGateDestroyed()
+	public void OnGateDestroyed(Gate gateDestroyed)
 	{
-		gameMatch.SetMatchOver();
+		int matchXP = gateDestroyed.Stats.DefeatGivenXp;
+		gameMatch.SetMatchOver(matchXP);
 	}
 
 	public void ManageTroop(Troop _troop)

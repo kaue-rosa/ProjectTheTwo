@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f48ed5d783c3fd848bf63609f612200f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: 1
+  isPlayer: 0
   gateTeam: 0
   tm: {fileID: 0}
   troopsFolder: {fileID: 0}
@@ -282,7 +282,8 @@ MonoBehaviour:
   currentHealth: 100
   maxHealth: 500
   xp: 100
-  level: 2
+  level: 0
+  defeatGivenXp: 0
 --- !u!1 &129605876
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,7 +489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f48ed5d783c3fd848bf63609f612200f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: 0
+  isPlayer: 0
   gateTeam: 1
   tm: {fileID: 0}
   troopsFolder: {fileID: 0}
@@ -514,7 +515,8 @@ MonoBehaviour:
   currentHealth: 50
   maxHealth: 50
   xp: 100
-  level: 2
+  level: 0
+  defeatGivenXp: 500
 --- !u!114 &312849867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1087,6 +1089,10 @@ Prefab:
       propertyPath: troopPrefabs.Array.data[52]
       value: 
       objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+    - target: {fileID: 11400002, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: level
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
   m_RootGameObject: {fileID: 97785083}
@@ -1349,6 +1355,14 @@ Prefab:
     - target: {fileID: 11400002, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
       propertyPath: currentHealth
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: defeatGivenXp
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: level
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}

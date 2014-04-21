@@ -4,7 +4,6 @@ using System.Collections;
 public class GameMatch : MonoBehaviour {
 
 	[SerializeField] private TroopManager matchTroopManager = null;
-
 	private bool matchIsOver = false;
 
 	void Start ()
@@ -20,7 +19,6 @@ public class GameMatch : MonoBehaviour {
 		}
 	}
 
-	// Update is called once per frame
 	void OnGUI ()
 	{
 		if (matchIsOver)
@@ -31,12 +29,16 @@ public class GameMatch : MonoBehaviour {
 		}
 	}
 
-	public void SetMatchOver()
+	public void SetMatchOver(int totalGameXP)
 	{
 		matchIsOver = true;
 		foreach (Gate g in matchTroopManager.gates)
 		{
 			g.CanSpawn = false;
+			if(g.IsAlive && g.IsPlayer)
+			{
+				g.Stats.GiveXP(totalGameXP);
+			}
 		}
 	}
 }
