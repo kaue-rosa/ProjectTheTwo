@@ -12,6 +12,7 @@ GameObject:
   - 114: {fileID: 11400000}
   - 135: {fileID: 13500000}
   - 212: {fileID: 21200000}
+  - 114: {fileID: 11400004}
   m_Layer: 8
   m_Name: BasicRock
   m_TagString: Untagged
@@ -62,6 +63,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pm: {fileID: 0}
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd1243791b7cc9479e03dda1d70ca5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseDebugKeys: 0
+  playOnStart: 1
+  walkCicleSprites:
+  - {fileID: 21300000, guid: e18eaf580bc014b4589073f85890a5e3, type: 3}
+  - {fileID: 21300002, guid: e18eaf580bc014b4589073f85890a5e3, type: 3}
+  - {fileID: 21300004, guid: e18eaf580bc014b4589073f85890a5e3, type: 3}
+  - {fileID: 21300006, guid: e18eaf580bc014b4589073f85890a5e3, type: 3}
+  - {fileID: 21300008, guid: e18eaf580bc014b4589073f85890a5e3, type: 3}
+  - {fileID: 21300010, guid: e18eaf580bc014b4589073f85890a5e3, type: 3}
+  - {fileID: 21300012, guid: e18eaf580bc014b4589073f85890a5e3, type: 3}
+  attackCicleSprites:
+  - {fileID: 21300014, guid: e18eaf580bc014b4589073f85890a5e3, type: 3}
+  - {fileID: 21300020, guid: e18eaf580bc014b4589073f85890a5e3, type: 3}
+  - {fileID: 21300016, guid: e18eaf580bc014b4589073f85890a5e3, type: 3}
+  hitSprite: {fileID: 21300018, guid: e18eaf580bc014b4589073f85890a5e3, type: 3}
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
