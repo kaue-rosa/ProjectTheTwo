@@ -13,7 +13,7 @@ GameObject:
   - 135: {fileID: 13500000}
   - 212: {fileID: 21200000}
   m_Layer: 8
-  m_Name: BasicElectric
+  m_Name: BasicRock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41,13 +41,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fb39ce9fb7150f44be6bf9ecdba7b42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  element: 5
+  element: 3
   currentHealth: 100
   maxHealth: 100
   rangeOfSight: 1
   movementSpeed: 2
   attackDamage: 50
   attackSpeed: 1
+  deffense: 10
   spawnTime: 2.5
 --- !u!114 &11400002
 MonoBehaviour:
@@ -94,7 +95,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300008, guid: 286ad1242210f8a4aa38c18c328afb09, type: 3}
+  m_Sprite: {fileID: 21300006, guid: 286ad1242210f8a4aa38c18c328afb09, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

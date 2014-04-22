@@ -10,6 +10,9 @@ public class PlayerManager : MonoBehaviour
 	[SerializeField] private List<GameObject> totalTroops = new List<GameObject>();
 	private List<GameObject> selectedTroops = new List<GameObject>();
 
+	[SerializeField] private List<GameObject> totalGates;
+	[SerializeField] private GameObject selectedGate = null;
+
 	public List<GameObject> TotalTroops
 	{
 		get {return totalTroops;}
@@ -18,8 +21,21 @@ public class PlayerManager : MonoBehaviour
 	{
 		get {return selectedTroops;}
 	}
+	public List<GameObject> TotalGates
+	{
+		get {return totalGates;}
+	}
+	public GameObject SelectedGate
+	{
+		get {return selectedGate;}
+		set {selectedGate = value;}
+	}
 
 	[SerializeField]private int maxNumberOfTroops = 3;
+	public int MaxNumberOfTroops
+	{
+		get {return maxNumberOfTroops;}
+	}
 
 	void Awake()
 	{
@@ -34,42 +50,6 @@ public class PlayerManager : MonoBehaviour
 			Destroy(gameObject);
 		}
 	}
-
-	void OnGUI()
-	{
-
-		if(Application.loadedLevel <= 0)
-		{
-			for (int i=0; i<totalTroops.Count; i++)
-			{
-				if(!selectedTroops.Contains(totalTroops[i]))
-				{						
-					if(GUILayout.Button(GetTextureFromSprite(totalTroops[i])) && selectedTroops.Count<maxNumberOfTroops)
-					{
-
-						selectedTroops.Add(totalTroops[i]);
-					}
-				}
-			}
-			GUILayout.BeginArea(new Rect(Screen.width/2,10, Screen.width/2, Screen.height));
-			for(int ii=0; ii<selectedTroops.Count; ii++)
-			{
-
-				GUILayout.Button(GetTextureFromSprite(selectedTroops[ii]));
-			}
-
-			if(selectedTroops.Count == maxNumberOfTroops)
-			{
-				if(GUILayout.Button("Play"))
-				{
-					Application.LoadLevel(1);
-				}
-			}
-
-			GUILayout.EndArea();
-		}
-	}
-
 	public static Texture2D GetTextureFromSprite(GameObject objWithTheSprite)
 	{
 		Texture2D img = objWithTheSprite.GetComponent<SpriteRenderer>().sprite.texture;

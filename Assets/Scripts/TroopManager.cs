@@ -21,7 +21,7 @@ public class TroopManager : MonoBehaviour
 
 			if(_troop.NextPathNodeID >= _troop.TotalPathNodes)
 			{
-				DamageGate(_troop.TroopAttackValue, _troop.TroopTeam);
+				DamageGate(_troop.TroopAttackValue,_troop.TroopElement , _troop.TroopTeam);
 				KillTroop(_troop);
 				continue;
 			}
@@ -34,13 +34,13 @@ public class TroopManager : MonoBehaviour
 		}
 	}
 
-	void DamageGate (int troopAttackValue, Team troopTeam)
+	void DamageGate (int troopAttackValue, GameElement attackElement, Team troopTeam)
 	{
 		//find the gate to damage
 		for (int i = 0; i < gates.Count; i++) 
 		{
 			if(gates[i].GateTeam != troopTeam)
-				gates[i].TakeDamage(troopAttackValue);
+				gates[i].TakeDamage(troopAttackValue, attackElement);
 		}
 	}
 

@@ -66,12 +66,18 @@ public class Gate : MonoBehaviour
 
 	void Awake()
 	{
+		stats = GetComponent<GateStats> ();
+
 		if(IsPlayer)
 		{
 			if(PlayerManager.control.SelectedTroops.Count>0)
 				troopPrefabs = PlayerManager.control.SelectedTroops;
 			else
 				troopPrefabs = PlayerManager.control.TotalTroops;
+
+			GetComponent<SpriteRenderer>().sprite = PlayerManager.control.SelectedGate .GetComponent<SpriteRenderer>().sprite;
+
+			stats.MyElement = PlayerManager.control.SelectedGate.GetComponent<GateStats>().MyElement;
 		}
 	}
 
@@ -81,7 +87,7 @@ public class Gate : MonoBehaviour
 		if (!tm)tm = FindObjectOfType<TroopManager> ();
 		tm.ManageGate (this);
 		nextTroopToSpawnName = troopPrefabs[0].name;
-		stats = GetComponent<GateStats> ();
+		//stats = GetComponent<GateStats> ();
 		if (!stats)Debug.LogError ("@Gate.Start(). No reference to stats");
 		CanSpawn = true;
 		IsAlive = true;
@@ -103,7 +109,7 @@ public class Gate : MonoBehaviour
 	{
 		//make sure we spawn the troop under a game object, for organization porposes.
 		if (!troopsFolder)troopsFolder = new GameObject("Troops " + gateTeam).transform;
-		GameObject _troopGm = (GameObject)Instantiate ((GameObject)Resources.Load (nextTroopToSpawnName), transform.position, transform.rotation);
+		GameObject _troopGm = (GameObject)Instantiate ((GameObject)Resources.Load ("Troops/"+nextTroopToSpawnName), transform.position, transform.rotation);
 		_troopGm.transform.parent = troopsFolder;
 		Troop _troop = _troopGm.GetComponent<Troop> ();
 		_troop.TroopPathManager = this.tm;
@@ -113,11 +119,11 @@ public class Gate : MonoBehaviour
 		timeToSpawn = _troop.gameObject.GetComponent<TroopStats> ().SpawnTime;
 	}
 
-	public void TakeDamage (int damage)
+	public void TakeDamage (int damage, GameElement attakerElement)
 	{
-		int trueDamage = damage;
+		int trueDamage = (int) Mathf.Round(damage * Element.GetMultiplayerForAttackerElement(attakerElement,this.stats.MyElement));
 
-		stats.CurrentHealth -= (int) Mathf.Round(trueDamage - (trueDamage*stats.Deffense));
+		stats.CurrentHealth -= (int) (trueDamage - (trueDamage*stats.Deffense));
 
 		if (stats.CurrentHealth <= 0) {
 			this.Die();

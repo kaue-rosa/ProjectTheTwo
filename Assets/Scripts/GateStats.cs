@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GateStats : MonoBehaviour {
+public class GateStats : MonoBehaviour 
+{
+
+	[SerializeField]private GameElement element = GameElement.NORMAL;
 
 	//HP
 	[SerializeField]private int currentHealth = 100;
@@ -17,6 +20,11 @@ public class GateStats : MonoBehaviour {
 	[SerializeField]private float deffense = 10f;
 
 
+	public GameElement MyElement
+	{
+		get{return element;}
+		set{element = value;}
+	}
 	
 	public int CurrentHealth
 	{

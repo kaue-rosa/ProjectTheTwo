@@ -72,6 +72,10 @@ public class Troop : MonoBehaviour
 	{
 		get{return troopStats.AttackDamage;}
 	}
+	public GameElement TroopElement
+	{
+		get{return troopStats.MyElement;}
+	}
 
 	private float attackTimer = 0;
 	private float lastXPosition = 0;

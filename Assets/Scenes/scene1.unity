@@ -108,6 +108,12 @@ MonoBehaviour:
   - {fileID: 100000, guid: 924795f36b12c264bbe360d3bba1cc3e, type: 2}
   - {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
   - {fileID: 100000, guid: 21f13df3cdfbb884d8e453c880e54046, type: 2}
+  totalGates:
+  - {fileID: 100000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+  - {fileID: 100000, guid: e0f341f8f87a20e4ca5e35fc0d48d1bd, type: 2}
+  - {fileID: 100000, guid: 11551b254e71f64498678512e22a31bf, type: 2}
+  - {fileID: 100000, guid: c56e42fd7fbf9134981a59a5df1690f9, type: 2}
+  - {fileID: 100000, guid: f768c92c2916efb4f9cfac837d5c3c7b, type: 2}
   maxNumberOfTroops: 3
 --- !u!4 &504598408
 Transform:
@@ -120,6 +126,44 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!1 &1343098369
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1343098371}
+  - 114: {fileID: 1343098370}
+  m_Layer: 0
+  m_Name: Menu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1343098370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1343098369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa430ce5c882daa4fb50687892f047c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1343098371
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1343098369}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -.694644928, y: 1.70315552, z: 3.91186523}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1001 &1668745476
 Prefab:
   m_ObjectHideFlags: 0
@@ -127,6 +171,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 11400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
+      propertyPath: totalGates.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
       propertyPath: totalTroops.Array.size
       value: 5
@@ -179,6 +227,26 @@ Prefab:
       propertyPath: totalTroops.Array.data[4]
       value: 
       objectReference: {fileID: 100000, guid: 21f13df3cdfbb884d8e453c880e54046, type: 2}
+    - target: {fileID: 11400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
+      propertyPath: totalGates.Array.data[0]
+      value: 
+      objectReference: {fileID: 100000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+    - target: {fileID: 11400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
+      propertyPath: totalGates.Array.data[1]
+      value: 
+      objectReference: {fileID: 100000, guid: e0f341f8f87a20e4ca5e35fc0d48d1bd, type: 2}
+    - target: {fileID: 11400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
+      propertyPath: totalGates.Array.data[2]
+      value: 
+      objectReference: {fileID: 100000, guid: 11551b254e71f64498678512e22a31bf, type: 2}
+    - target: {fileID: 11400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
+      propertyPath: totalGates.Array.data[3]
+      value: 
+      objectReference: {fileID: 100000, guid: c56e42fd7fbf9134981a59a5df1690f9, type: 2}
+    - target: {fileID: 11400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
+      propertyPath: totalGates.Array.data[4]
+      value: 
+      objectReference: {fileID: 100000, guid: f768c92c2916efb4f9cfac837d5c3c7b, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
   m_RootGameObject: {fileID: 504598406}

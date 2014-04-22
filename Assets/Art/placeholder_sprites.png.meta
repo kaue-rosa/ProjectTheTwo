@@ -95,5 +95,41 @@ TextureImporter:
         height: 20
       alignment: 0
       pivot: {x: .5, y: .5}
+    - name: placeholder_sprites_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 891
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: placeholder_sprites_7
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 891
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: placeholder_sprites_8
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 891
+        width: 60
+        height: 64
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: placeholder_sprites_9
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 891
+        width: 59
+        height: 64
+      alignment: 0
+      pivot: {x: .5, y: .5}
   spritePackingTag: 
   userData: 
