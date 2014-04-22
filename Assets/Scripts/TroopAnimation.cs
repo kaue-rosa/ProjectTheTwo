@@ -33,13 +33,13 @@ public class TroopAnimation : MonoBehaviour {
 	void Update() {
 		if(UseDebugKeys){
 			if(Input.GetKeyDown(KeyCode.S))StopWalking();
-			if(Input.GetKeyDown(KeyCode.A))StartAttacking();
+			if(Input.GetKeyDown(KeyCode.A))StartAttacking(()=>{});
 			if(Input.GetKeyDown(KeyCode.W))StartWalking();
-			if(Input.GetKeyDown(KeyCode.H))Hit();
+			if(Input.GetKeyDown(KeyCode.H))Hit(()=>{});
 		}
 	}
 
-	void StartWalking() {
+	public void StartWalking() {
 		if (walkCicleSprites.Count <= 0 || walking)return;
 		walking = true;
 		stopWalking = false;
@@ -50,7 +50,7 @@ public class TroopAnimation : MonoBehaviour {
 		stopWalking = true;
 	}
 
-	void StartAttacking() {
+	public void StartAttacking(System.Action animationEndCall) {
 		if (attacking)return;
 
 		StopWalking ();
@@ -58,17 +58,17 @@ public class TroopAnimation : MonoBehaviour {
 		attacking = true;
 		stopAttacking = false;
 
-		StartCoroutine (AttackAnim ());
+		StartCoroutine (AttackAnim (animationEndCall));
 	}
 
 	void StopAttacking() {
 		stopAttacking = true;
 	}
 
-	void Hit() {
+	public void Hit(System.Action animationEndCall) {
 		StopWalking ();
 		StopAttacking ();
-		StartCoroutine (HitAnim ());
+		StartCoroutine (HitAnim (animationEndCall));
 	}
 
 
@@ -93,7 +93,7 @@ public class TroopAnimation : MonoBehaviour {
 		}
 	}
 
-	IEnumerator AttackAnim() {
+	IEnumerator AttackAnim(System.Action animationEndCall) {
 		int index = 0;
 		while (true) {
 			if(stopAttacking) {
@@ -106,22 +106,24 @@ public class TroopAnimation : MonoBehaviour {
 
 			if(index >= attackCicleSprites.Count) {
 				yield return new WaitForSeconds(0.05f);
-				spriteRenderer.sprite = walkCicleSprites[0];//put a default
+				if(!stopAttacking)spriteRenderer.sprite = walkCicleSprites[0];//put a default
 				attacking = false;
+				animationEndCall.Invoke();
 				break;
 			}
-
 
 			yield return new WaitForSeconds(0.1f);
 		}
 	}
 
-	IEnumerator HitAnim() {
+	IEnumerator HitAnim(System.Action animationEndCall) {
 		spriteRenderer.sprite = hitSprite;
 		for (int i = 0; i < 15; i++) {
 			spriteRenderer.enabled = !spriteRenderer.enabled;
 			yield return new WaitForSeconds(0.05f);
 		}
+		spriteRenderer.sprite = walkCicleSprites[0];
+		animationEndCall.Invoke ();
 		spriteRenderer.enabled = true;
 	}
 }

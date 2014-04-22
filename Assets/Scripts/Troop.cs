@@ -10,96 +10,77 @@ public enum Team
 
 public class Troop : MonoBehaviour 
 {
-	private Team myTeam;
-	public Team TroopTeam
-	{
-		get
-		{
-			return myTeam;
-		}
-		set
-		{
-			myTeam = value;
-		}
-	}
-
 	[SerializeField] private TroopManager pm = null;
-	public TroopManager TroopPathManager
-	{
-		get
-		{
-			return pm;
-		}
-		set
-		{
-			pm = value;
-		}
-	}
 
+	private Team myTeam;
 	private List<GameObject> myPath = new List<GameObject>();
-	public List<GameObject> MyPath
-	{
-		get 
-		{
-			return myPath;
-		}
-	}
 	private int nextPathNodeID = 0;
-	public int NextPathNodeID
-	{
-		get
-		{
-			return nextPathNodeID;
-		}
-		set 
-		{
-			nextPathNodeID = value;
-		}
-	}
 	private int totalPathNodes = 0;
-	public int TotalPathNodes
-	{
-		get 
-		{
-			return totalPathNodes;
-		}
-	}
-
+	private float attackTimer = 0;
+	private float lastXPosition = 0;
+	private bool hit = false;
 	private Troop combatTarget;
 	private TroopStats troopStats;
+	private TroopAnimation troopAnimation;
+
+	public Team TroopTeam
+	{
+		get{return myTeam;}
+		set{myTeam = value;}
+	}
+
+	public TroopManager TroopPathManager
+	{
+		get{return pm;}
+		set{pm = value;}
+	}
+
+	public List<GameObject> MyPath
+	{
+		get{return myPath;}
+	}
+
+	public int NextPathNodeID
+	{
+		get{return nextPathNodeID;}
+		set{nextPathNodeID = value;}
+	}
+
+	public int TotalPathNodes
+	{
+		get {return totalPathNodes;}
+	}
 
 	public int TroopAttackValue
 	{
 		get{return troopStats.AttackDamage;}
 	}
+
 	public GameElement TroopElement
 	{
 		get{return troopStats.MyElement;}
 	}
 
-	private float attackTimer = 0;
-	private float lastXPosition = 0;
-
-	// Use this for initialization
 	void Start () 
 	{
 		lastXPosition = transform.position.x;
+
 		troopStats = GetComponent<TroopStats>();
+		troopAnimation = GetComponent<TroopAnimation>();
+
 		if(!troopStats)Debug.LogWarning("Stats Script not found in " + name);
+		if(!troopAnimation)Debug.LogWarning("Animation Script not found in " + name);
+
 		if(pm)pm.ManageTroop (this);
+
 		StartCoroutine ("LookForEnemy");
 	}
 
 	void Update()
 	{
 		//face the troop in the correct direction
-		if (transform.position.x < lastXPosition) {
-			transform.localScale = new Vector3(-1,1,1);
-		}
-		else if (transform.position.x > lastXPosition)
-		{
-			transform.localScale = new Vector3(1,1,1);
-		}
+		if (transform.position.x < lastXPosition)transform.localScale = new Vector3(-1,1,1);
+		else if (transform.position.x > lastXPosition)transform.localScale = new Vector3(1,1,1);
 		lastXPosition = transform.position.x;
 
 	}
@@ -123,8 +104,12 @@ public class Troop : MonoBehaviour
 	public Vector3 Move (Transform nextNode) 
 	{
 		Vector3 direction = nextNode.position - transform.position;
-		transform.position += direction.normalized * Time.deltaTime * troopStats.MovementSpeed;
+		if (!hit) {
+			troopAnimation.StartWalking ();
+			transform.position += direction.normalized * Time.deltaTime * troopStats.MovementSpeed;
+		}
 		return direction;
+
 	}
 
 	public IEnumerator LookForEnemy() 
@@ -163,8 +148,14 @@ public class Troop : MonoBehaviour
 	{
 		if(attackTimer <= 0)
 		{
-			attackTimer = troopStats.AttackSpeed;
-			combatTarget.TakeDamage(troopStats.AttackDamage, troopStats.MyElement);
+			if(!hit)
+			{
+				attackTimer = troopStats.AttackSpeed;
+				troopAnimation.StartAttacking(()=>{
+					if(this.combatTarget)
+					this.combatTarget.TakeDamage(this.troopStats.AttackDamage, this.troopStats.MyElement);
+				});
+			}
 		}
 		else 
 		{
@@ -174,25 +165,27 @@ public class Troop : MonoBehaviour
 
 	public void TakeDamage (int damage, GameElement attakerElement)
 	{
-
+		hit = true;
 		Instantiate((GameObject)Resources.Load("Particles/Attack Particle"),transform.position,transform.rotation);
-
 		int trueDamage = (int) Mathf.Round(damage * Element.GetMultiplayerForAttackerElement(attakerElement,this.troopStats.MyElement));
-
-		troopStats.CurrentHealth -= (int)(trueDamage - (trueDamage*troopStats.Deffense)); 
-	
+		troopStats.CurrentHealth -= (int)(trueDamage - (trueDamage*troopStats.Deffense));
+		troopAnimation.Hit (()=>{
+			this.hit = false;
+			if(this.troopStats.CurrentHealth <= 0)Destroy(this.gameObject);
+		});
 	}
 
 	public void Die()
 	{
 		TroopPathManager.StopManagingTroop (this);
 		this.StopCoroutine("LookForEnemy");
-		Destroy (this.gameObject);
+		collider.enabled = false;
 	}
 
 	public void EnterGateEffect ()
 	{
 		//should fade first, or do some effect
 		troopStats.CurrentHealth = 0;
+		Destroy (this.gameObject,0.1f);
 	}
 }

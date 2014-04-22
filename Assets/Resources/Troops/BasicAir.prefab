@@ -12,6 +12,7 @@ GameObject:
   - 114: {fileID: 11400000}
   - 135: {fileID: 13500000}
   - 212: {fileID: 21200000}
+  - 114: {fileID: 11400004}
   m_Layer: 8
   m_Name: BasicAir
   m_TagString: Untagged
@@ -62,6 +63,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pm: {fileID: 0}
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd1243791b7cc9479e03dda1d70ca5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseDebugKeys: 0
+  playOnStart: 1
+  walkCicleSprites:
+  - {fileID: 21300022, guid: e5778d0c80d2aa445b8c364db7acefac, type: 3}
+  - {fileID: 21300024, guid: e5778d0c80d2aa445b8c364db7acefac, type: 3}
+  - {fileID: 21300026, guid: e5778d0c80d2aa445b8c364db7acefac, type: 3}
+  - {fileID: 21300028, guid: e5778d0c80d2aa445b8c364db7acefac, type: 3}
+  - {fileID: 21300030, guid: e5778d0c80d2aa445b8c364db7acefac, type: 3}
+  - {fileID: 21300032, guid: e5778d0c80d2aa445b8c364db7acefac, type: 3}
+  - {fileID: 21300034, guid: e5778d0c80d2aa445b8c364db7acefac, type: 3}
+  attackCicleSprites:
+  - {fileID: 21300036, guid: e5778d0c80d2aa445b8c364db7acefac, type: 3}
+  - {fileID: 21300038, guid: e5778d0c80d2aa445b8c364db7acefac, type: 3}
+  - {fileID: 21300040, guid: e5778d0c80d2aa445b8c364db7acefac, type: 3}
+  hitSprite: {fileID: 21300042, guid: e5778d0c80d2aa445b8c364db7acefac, type: 3}
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -95,7 +122,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300010, guid: 286ad1242210f8a4aa38c18c328afb09, type: 3}
+  m_Sprite: {fileID: 21300022, guid: e5778d0c80d2aa445b8c364db7acefac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
