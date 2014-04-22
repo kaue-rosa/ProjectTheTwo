@@ -31,7 +31,6 @@ public class GameMatch : MonoBehaviour {
 
 		foreach(GameObject troop in PlayerManager.control.SelectedTroops)
 		{
-			Debug.Log("ADD");
 			gateScript.TroopPrefabs.Add(troop);
 		}
 	}
