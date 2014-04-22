@@ -12,6 +12,8 @@ public class Gate : MonoBehaviour
 	[SerializeField] private List<GameObject> troopPrefabs = new List<GameObject>();
 	[SerializeField] private GameObject path = null;
 
+	public SpriteRenderer gateSprite = null;
+
 	private GameElement gateElement = GameElement.NORMAL;
 	private string nextTroopToSpawnName = "";
 	private float currentTimer = 0;
@@ -68,23 +70,6 @@ public class Gate : MonoBehaviour
 	public bool IsVisible
 	{
 		get {return visible;}
-	}
-
-	void Awake()
-	{
-//		stats = GetComponent<GateStats> ();
-//
-//		if(IsPlayer)
-//		{
-//			if(PlayerManager.control.SelectedTroops.Count>0)
-//				troopPrefabs = PlayerManager.control.SelectedTroops;
-//			else
-//				troopPrefabs = PlayerManager.control.TotalTroops;
-//
-//			GetComponent<SpriteRenderer>().sprite = PlayerManager.control.SelectedGate .GetComponent<SpriteRenderer>().sprite;
-//
-//			stats.MyElement = PlayerManager.control.SelectedGate.GetComponent<GateStats>().MyElement;
-//		}
 	}
 
 	void Start()

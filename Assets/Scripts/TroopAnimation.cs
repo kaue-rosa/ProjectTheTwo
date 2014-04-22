@@ -1,16 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 public class TroopAnimation : MonoBehaviour {
-
-	[SerializeField] private bool UseDebugKeys = false;
+	
+	[SerializeField] private SpriteRenderer spriteRenderer = null;
 	[SerializeField] private bool playOnStart = true;
 	[SerializeField] private List<Sprite> walkCicleSprites = new List<Sprite>();
 	[SerializeField] private List<Sprite> attackCicleSprites = new List<Sprite>();
 	[SerializeField] private Sprite hitSprite = null;
-
-	private SpriteRenderer spriteRenderer = null;
 
 	//keys for walking
 	private bool walking = false;
@@ -20,24 +19,29 @@ public class TroopAnimation : MonoBehaviour {
 	private bool attacking = false;
 	private bool stopAttacking = false;
 
-	void Awake() {
-		spriteRenderer = GetComponent<SpriteRenderer> ();
-	}
+	//keys for hit
+	private bool beenHit = false;
+
+	private Dictionary<int, Vector3> troopSpriteLayer = new Dictionary<int, Vector3>(){
+		{100,new Vector3(0,-0.05f,0)},
+		{101,new Vector3(0,-0.2f,0)},
+		{102,new Vector3(0,-0.35f,0)},
+		{103,new Vector3(0,-0.5f,0)},
+		{104,new Vector3(0,-0.65f,0)},
+		{105,new Vector3(0,-0.8f,0)},
+		{106,new Vector3(0,-0.95f,0)},
+	};
 
 	void Start () {
+
+		int i = Mathf.FloorToInt(Random.value * troopSpriteLayer.Count);
+		spriteRenderer.sortingOrder = troopSpriteLayer.ElementAt(i).Key;
+		spriteRenderer.gameObject.transform.localPosition = troopSpriteLayer.ElementAt(i).Value;
+
 		if (playOnStart) {
 			StartWalking();
 		}
 	}	
-
-	void Update() {
-		if(UseDebugKeys){
-			if(Input.GetKeyDown(KeyCode.S))StopWalking();
-			if(Input.GetKeyDown(KeyCode.A))StartAttacking(()=>{});
-			if(Input.GetKeyDown(KeyCode.W))StartWalking();
-			if(Input.GetKeyDown(KeyCode.H))Hit(()=>{});
-		}
-	}
 
 	public void StartWalking() {
 		if (walkCicleSprites.Count <= 0 || walking)return;
@@ -66,6 +70,8 @@ public class TroopAnimation : MonoBehaviour {
 	}
 
 	public void Hit(System.Action animationEndCall) {
+		if (beenHit)return;
+		beenHit = true;
 		StopWalking ();
 		StopAttacking ();
 		StartCoroutine (HitAnim (animationEndCall));
@@ -125,5 +131,6 @@ public class TroopAnimation : MonoBehaviour {
 		spriteRenderer.sprite = walkCicleSprites[0];
 		animationEndCall.Invoke ();
 		spriteRenderer.enabled = true;
+		beenHit = false;
 	}
 }

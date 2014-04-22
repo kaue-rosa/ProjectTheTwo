@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e18eaf580bc014b4589073f85890a5e3
+guid: e5778d0c80d2aa445b8c364db7acefac
 TextureImporter:
   serializedVersion: 2
   mipmaps:
@@ -41,203 +41,500 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: rock_golems_sheet_0
+    - name: rock_golems_sheet 1_0
       rect:
         serializedVersion: 2
-        x: 2
+        x: 8
         y: 960
-        width: 59
-        height: 62
+        width: 43
+        height: 57
       alignment: 7
-      pivot: {x: .5, y: 0}
-    - name: rock_golems_sheet_1
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_1
       rect:
         serializedVersion: 2
-        x: 65
+        x: 72
         y: 960
-        width: 59
-        height: 64
+        width: 41
+        height: 57
       alignment: 7
-      pivot: {x: .5, y: 0}
-    - name: rock_golems_sheet_2
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 136
         y: 960
-        width: 60
-        height: 64
+        width: 41
+        height: 58
       alignment: 7
-      pivot: {x: .5, y: 0}
-    - name: rock_golems_sheet_3
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_3
       rect:
         serializedVersion: 2
-        x: 192
+        x: 201
         y: 960
-        width: 60
-        height: 64
+        width: 40
+        height: 60
       alignment: 7
-      pivot: {x: .5, y: 0}
-    - name: rock_golems_sheet_4
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_4
       rect:
         serializedVersion: 2
-        x: 256
+        x: 265
         y: 960
-        width: 60
-        height: 64
+        width: 40
+        height: 59
       alignment: 7
-      pivot: {x: .5, y: 0}
-    - name: rock_golems_sheet_5
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_5
       rect:
         serializedVersion: 2
-        x: 320
+        x: 329
         y: 960
-        width: 60
-        height: 64
+        width: 40
+        height: 58
       alignment: 7
-      pivot: {x: .5, y: 0}
-    - name: rock_golems_sheet_6
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_6
       rect:
         serializedVersion: 2
-        x: 384
+        x: 393
         y: 960
-        width: 60
-        height: 64
+        width: 40
+        height: 58
       alignment: 7
-      pivot: {x: .5, y: 0}
-    - name: rock_golems_sheet_7
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_7
       rect:
         serializedVersion: 2
-        x: 448
+        x: 452
+        y: 963
+        width: 40
+        height: 51
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: rock_golems_sheet 1_8
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 962
+        width: 47
+        height: 49
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_9
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 964
+        width: 45
+        height: 50
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_10
+      rect:
+        serializedVersion: 2
+        x: 646
         y: 960
-        width: 60
-        height: 64
+        width: 38
+        height: 51
       alignment: 7
-      pivot: {x: .5, y: 0}
-    - name: rock_golems_sheet_9
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_11
       rect:
         serializedVersion: 2
-        x: 576
-        y: 960
-        width: 60
-        height: 64
-      alignment: 7
-      pivot: {x: .5, y: 0}
-    - name: rock_golems_sheet_10
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 960
-        width: 60
-        height: 64
-      alignment: 7
-      pivot: {x: .5, y: 0}
-    - name: rock_golems_sheet_8
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 960
-        width: 60
-        height: 64
-      alignment: 7
-      pivot: {x: .5, y: 0}
-    - name: air_golems_sheet_11
-      rect:
-        serializedVersion: 2
-        x: 2
+        x: 8
         y: 896
-        width: 59
-        height: 62
+        width: 43
+        height: 57
       alignment: 7
-      pivot: {x: .5, y: 0}
-    - name: air_golems_sheet_12
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_12
       rect:
         serializedVersion: 2
-        x: 65
+        x: 72
         y: 896
-        width: 59
-        height: 62
+        width: 41
+        height: 57
       alignment: 7
-      pivot: {x: .5, y: 0}
-    - name: air_golems_sheet_13
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_13
       rect:
         serializedVersion: 2
-        x: 128
+        x: 136
         y: 896
-        width: 60
-        height: 62
+        width: 41
+        height: 58
       alignment: 7
-      pivot: {x: .5, y: 0}
-    - name: air_golems_sheet_14
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_14
       rect:
         serializedVersion: 2
-        x: 192
+        x: 201
         y: 896
-        width: 60
-        height: 62
+        width: 40
+        height: 60
       alignment: 7
-      pivot: {x: .5, y: 0}
-    - name: air_golems_sheet_15
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_15
       rect:
         serializedVersion: 2
-        x: 256
+        x: 265
         y: 896
-        width: 60
-        height: 62
+        width: 40
+        height: 59
       alignment: 7
-      pivot: {x: .5, y: 0}
-    - name: air_golems_sheet_16
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_16
       rect:
         serializedVersion: 2
-        x: 320
+        x: 329
         y: 896
-        width: 60
-        height: 62
+        width: 40
+        height: 58
       alignment: 7
-      pivot: {x: .5, y: 0}
-    - name: air_golems_sheet_17
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_17
       rect:
         serializedVersion: 2
-        x: 384
+        x: 393
         y: 896
-        width: 60
-        height: 62
+        width: 40
+        height: 58
       alignment: 7
-      pivot: {x: .5, y: 0}
-    - name: air_golems_sheet_18
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_18
       rect:
         serializedVersion: 2
-        x: 448
-        y: 896
-        width: 60
-        height: 62
+        x: 452
+        y: 899
+        width: 40
+        height: 51
       alignment: 7
-      pivot: {x: .5, y: 0}
-    - name: air_golems_sheet_19
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_19
       rect:
         serializedVersion: 2
-        x: 512
-        y: 896
-        width: 60
-        height: 62
+        x: 519
+        y: 898
+        width: 47
+        height: 49
       alignment: 7
-      pivot: {x: .5, y: 0}
-    - name: air_golems_sheet_20
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_20
       rect:
         serializedVersion: 2
-        x: 576
-        y: 896
-        width: 60
-        height: 62
+        x: 583
+        y: 900
+        width: 45
+        height: 50
       alignment: 7
-      pivot: {x: .5, y: 0}
-    - name: air_golems_sheet_21
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_21
       rect:
         serializedVersion: 2
-        x: 640
+        x: 646
         y: 896
-        width: 60
-        height: 62
+        width: 38
+        height: 51
       alignment: 7
-      pivot: {x: .5, y: 0}
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_22
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 832
+        width: 43
+        height: 57
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_23
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 832
+        width: 41
+        height: 57
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_24
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 832
+        width: 41
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_25
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 832
+        width: 40
+        height: 60
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_26
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 832
+        width: 40
+        height: 59
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_27
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 832
+        width: 40
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_28
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 832
+        width: 40
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_29
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 835
+        width: 40
+        height: 51
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_30
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 834
+        width: 47
+        height: 49
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_31
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 836
+        width: 45
+        height: 50
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_32
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 832
+        width: 38
+        height: 51
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_33
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 768
+        width: 43
+        height: 57
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_34
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 768
+        width: 41
+        height: 57
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_35
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 768
+        width: 41
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_36
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 768
+        width: 40
+        height: 60
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_37
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 768
+        width: 40
+        height: 59
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_38
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 768
+        width: 40
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_39
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 768
+        width: 40
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_40
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 771
+        width: 40
+        height: 51
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_41
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 770
+        width: 47
+        height: 49
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_42
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 772
+        width: 45
+        height: 50
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_43
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 768
+        width: 38
+        height: 51
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_44
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 704
+        width: 43
+        height: 57
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_45
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 704
+        width: 41
+        height: 57
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_46
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 704
+        width: 41
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_47
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 704
+        width: 40
+        height: 60
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_48
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 704
+        width: 40
+        height: 59
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_49
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 704
+        width: 40
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_50
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 704
+        width: 40
+        height: 58
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_51
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 707
+        width: 40
+        height: 51
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_52
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 706
+        width: 47
+        height: 49
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_53
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 708
+        width: 45
+        height: 50
+      alignment: 7
+      pivot: {x: 0, y: 0}
+    - name: rock_golems_sheet 1_54
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 704
+        width: 38
+        height: 51
+      alignment: 7
+      pivot: {x: 0, y: 0}
   spritePackingTag: 
   userData: 

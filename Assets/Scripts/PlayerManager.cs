@@ -52,8 +52,17 @@ public class PlayerManager : MonoBehaviour
 	}
 	public static Texture2D GetTextureFromSprite(GameObject objWithTheSprite)
 	{
-		Texture2D img = objWithTheSprite.GetComponent<SpriteRenderer>().sprite.texture;
-		Rect rect = objWithTheSprite.GetComponent<SpriteRenderer>().sprite.rect;
+		SpriteRenderer sr = objWithTheSprite.GetComponent<SpriteRenderer> ();
+		if(sr == null) 
+		{
+			foreach (Transform child in objWithTheSprite.transform)
+			{
+				sr = child.GetComponent<SpriteRenderer> ();
+				if(sr!=null) break;
+			}
+		}
+		Texture2D img = sr.sprite.texture;
+		Rect rect = sr.sprite.rect;
 		
 		Color[] pixels = img.GetPixels((int)rect.x, (int)rect.y, (int)rect.width, (int)rect.height);
 		
