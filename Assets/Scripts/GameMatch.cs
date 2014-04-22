@@ -6,8 +6,39 @@ public class GameMatch : MonoBehaviour {
 	[SerializeField] private TroopManager matchTroopManager = null;
 	private bool matchIsOver = false;
 
+	void Awake()
+	{
+
+
+		if(PlayerManager.control.SelectedTroops.Count == 0)
+		{
+			foreach(GameObject troop in PlayerManager.control.TotalTroops)
+			{
+				PlayerManager.control.SelectedTroops.Add(troop);
+			}
+		}
+
+		Transform playerGatePosition = GameObject.Find("PlayerGate").transform;
+
+		GameObject path = GameObject.Find("Path1");
+		
+		GameObject playerGate = (GameObject)Instantiate(Resources.Load("Gates/"+PlayerManager.control.SelectedGate.name), playerGatePosition.position, Quaternion.identity);
+		Gate gateScript = playerGate.GetComponent<Gate>();
+
+		gateScript.IsPlayer = true;
+		gateScript.GateTeam = Team.TeamA;
+		gateScript.Path = path;
+
+		foreach(GameObject troop in PlayerManager.control.SelectedTroops)
+		{
+			Debug.Log("ADD");
+			gateScript.TroopPrefabs.Add(troop);
+		}
+	}
+
 	void Start ()
 	{
+
 		matchIsOver = false;
 	}
 

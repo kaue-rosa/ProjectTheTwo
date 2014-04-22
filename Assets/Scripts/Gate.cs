@@ -22,17 +22,23 @@ public class Gate : MonoBehaviour
 	public bool IsPlayer
 	{
 		get {return isPlayer;}
+		set {isPlayer = value;}
+	}
+	public Team GateTeam
+	{
+		get {return gateTeam;}
+		set {gateTeam = value;}
+	}
+	public GameObject Path
+	{
+		get {return path;}
+		set {path = value;}
 	}
 
 	public string NextTroopToSpawnName
 	{
 		get{return nextTroopToSpawnName;}
 		set{nextTroopToSpawnName = value;}
-	}
-
-	public Team GateTeam
-	{
-		get{return gateTeam;}
 	}
 
 	public bool CanSpawn
@@ -66,19 +72,19 @@ public class Gate : MonoBehaviour
 
 	void Awake()
 	{
-		stats = GetComponent<GateStats> ();
-
-		if(IsPlayer)
-		{
-			if(PlayerManager.control.SelectedTroops.Count>0)
-				troopPrefabs = PlayerManager.control.SelectedTroops;
-			else
-				troopPrefabs = PlayerManager.control.TotalTroops;
-
-			GetComponent<SpriteRenderer>().sprite = PlayerManager.control.SelectedGate .GetComponent<SpriteRenderer>().sprite;
-
-			stats.MyElement = PlayerManager.control.SelectedGate.GetComponent<GateStats>().MyElement;
-		}
+//		stats = GetComponent<GateStats> ();
+//
+//		if(IsPlayer)
+//		{
+//			if(PlayerManager.control.SelectedTroops.Count>0)
+//				troopPrefabs = PlayerManager.control.SelectedTroops;
+//			else
+//				troopPrefabs = PlayerManager.control.TotalTroops;
+//
+//			GetComponent<SpriteRenderer>().sprite = PlayerManager.control.SelectedGate .GetComponent<SpriteRenderer>().sprite;
+//
+//			stats.MyElement = PlayerManager.control.SelectedGate.GetComponent<GateStats>().MyElement;
+//		}
 	}
 
 	void Start()
@@ -87,7 +93,7 @@ public class Gate : MonoBehaviour
 		if (!tm)tm = FindObjectOfType<TroopManager> ();
 		tm.ManageGate (this);
 		nextTroopToSpawnName = troopPrefabs[0].name;
-		//stats = GetComponent<GateStats> ();
+		stats = GetComponent<GateStats> ();
 		if (!stats)Debug.LogError ("@Gate.Start(). No reference to stats");
 		CanSpawn = true;
 		IsAlive = true;

@@ -73,7 +73,14 @@ public class PreMatchMenu : MonoBehaviour
 			}
 		}
 
-		GUILayout.EndArea();
-	}
+		
 
+
+		GUILayout.EndArea();
+
+		if(GUI.Button(new Rect(10,240, 100, 30),"Store"))
+		{
+			Application.LoadLevel("Store");
+		}
+	}
 }

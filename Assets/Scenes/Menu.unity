@@ -104,16 +104,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalTroops:
   - {fileID: 100000, guid: 20b2206bd325e224dbdbb2a63f1b9184, type: 2}
-  - {fileID: 100000, guid: 1d4262f81e59008478d0037566649fb2, type: 2}
-  - {fileID: 100000, guid: 924795f36b12c264bbe360d3bba1cc3e, type: 2}
-  - {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
-  - {fileID: 100000, guid: 21f13df3cdfbb884d8e453c880e54046, type: 2}
   totalGates:
   - {fileID: 100000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
-  - {fileID: 100000, guid: e0f341f8f87a20e4ca5e35fc0d48d1bd, type: 2}
-  - {fileID: 100000, guid: 11551b254e71f64498678512e22a31bf, type: 2}
-  - {fileID: 100000, guid: c56e42fd7fbf9134981a59a5df1690f9, type: 2}
-  - {fileID: 100000, guid: f768c92c2916efb4f9cfac837d5c3c7b, type: 2}
+  selectedGate: {fileID: 0}
   maxNumberOfTroops: 3
 --- !u!4 &504598408
 Transform:
@@ -173,11 +166,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 11400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
       propertyPath: totalGates.Array.size
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
       propertyPath: totalTroops.Array.size
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
       propertyPath: m_LocalPosition.x
