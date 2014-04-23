@@ -16,6 +16,7 @@ public class PlayerManager : MonoBehaviour
 	public List<GameObject> TotalTroops
 	{
 		get {return totalTroops;}
+		set {totalTroops = value;}
 	}
 	public List<GameObject> SelectedTroops
 	{
@@ -24,6 +25,7 @@ public class PlayerManager : MonoBehaviour
 	public List<GameObject> TotalGates
 	{
 		get {return totalGates;}
+		set {totalGates = value;}
 	}
 	public GameObject SelectedGate
 	{

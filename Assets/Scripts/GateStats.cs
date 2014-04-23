@@ -41,6 +41,7 @@ public class GateStats : MonoBehaviour
 	public float Deffense
 	{
 		get{ return deffense*.01f; }
+		set {deffense = value;}
 	}
 	
 	public int Xp
@@ -52,6 +53,7 @@ public class GateStats : MonoBehaviour
 	public int Level
 	{
 		get{return (int) Mathf.Floor(Xp*0.01f);}
+		set {level = value;}
 	}
 
 	public int DefeatGivenXp
@@ -62,6 +64,10 @@ public class GateStats : MonoBehaviour
 	void Start()
 	{
 		currentHealth = maxHealth;
+	}
+	void Update()
+	{
+		currentHealth = (currentHealth<0) ? 0:currentHealth;
 	}
 
 	public void GiveXP (int xpToGive)

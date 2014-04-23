@@ -29,6 +29,7 @@ public class GameMatch : MonoBehaviour {
 		gateScript.GateTeam = Team.TeamA;
 		gateScript.Path = path;
 
+		gateScript.TroopPrefabs.Clear();
 		foreach(GameObject troop in PlayerManager.control.SelectedTroops)
 		{
 			gateScript.TroopPrefabs.Add(troop);

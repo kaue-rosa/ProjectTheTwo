@@ -3,24 +3,23 @@ using System.Collections;
 
 public class PreMatchMenu : MonoBehaviour
 {
-	PlayerManager playerManager;
 
 	void Start()
 	{
-		playerManager = GameObject.FindObjectOfType<PlayerManager>();
+		DataManager.Control.LoadData();
 	}
 
 	void OnGUI()
 	{
 		//Show troop choices
-		for (int t=0; t<playerManager.TotalTroops.Count; t++)
+		for (int t=0; t<PlayerManager.control.TotalTroops.Count; t++)
 		{
-			if(!playerManager.SelectedTroops.Contains(playerManager.TotalTroops[t]))
+			if(!PlayerManager.control.SelectedTroops.Contains(PlayerManager.control.TotalTroops[t]))
 			{						
-				if(GUI.Button(new Rect (10, 40*t, 100, 30), PlayerManager.GetTextureFromSprite(playerManager.TotalTroops[t])) && playerManager.SelectedTroops.Count<playerManager.MaxNumberOfTroops)
+				if(GUI.Button(new Rect (10, 40*t, 100, 30), PlayerManager.GetTextureFromSprite(PlayerManager.control.TotalTroops[t])) && PlayerManager.control.SelectedTroops.Count<PlayerManager.control.MaxNumberOfTroops)
 				{
 
-					playerManager.SelectedTroops.Add(playerManager.TotalTroops[t]);
+					PlayerManager.control.SelectedTroops.Add(PlayerManager.control.TotalTroops[t]);
 				}
 			}
 		}
@@ -28,14 +27,14 @@ public class PreMatchMenu : MonoBehaviour
 		//Show gate choices
 		GUILayout.BeginArea(new Rect(Screen.width-150, 10, 250, Screen.height));
 
-		for (int g=0; g<playerManager.TotalGates.Count; g++)
+		for (int g=0; g<PlayerManager.control.TotalGates.Count; g++)
 		{
-			if(playerManager.SelectedGate == playerManager.TotalGates[g])
+			if(PlayerManager.control.SelectedGate == PlayerManager.control.TotalGates[g])
 				continue;
 
-			if(GUI.Button(new Rect (10, 40*g, 100, 30),PlayerManager.GetTextureFromSprite(playerManager.TotalGates[g])) && !playerManager.SelectedGate)
+			if(GUI.Button(new Rect (10, 40*g, 100, 30),PlayerManager.GetTextureFromSprite(PlayerManager.control.TotalGates[g])) && !PlayerManager.control.SelectedGate)
 			{
-				playerManager.SelectedGate = playerManager.TotalGates[g];
+				PlayerManager.control.SelectedGate = PlayerManager.control.TotalGates[g];
 			}
 		}
 
@@ -45,27 +44,27 @@ public class PreMatchMenu : MonoBehaviour
 
 		GUILayout.BeginArea(new Rect((Screen.width/2) - 100,10, Screen.width, Screen.height));
 
-		if(playerManager.SelectedGate)
+		if(PlayerManager.control.SelectedGate)
 		{
-			if(GUI.Button(new Rect(10, 0, 100, 30), PlayerManager.GetTextureFromSprite(playerManager.SelectedGate)))
+			if(GUI.Button(new Rect(10, 0, 100, 30), PlayerManager.GetTextureFromSprite(PlayerManager.control.SelectedGate)))
 			{
-				playerManager.SelectedGate = null;
+				PlayerManager.control.SelectedGate = null;
 			}
 		}
 
 
-		for(int ii=0; ii<playerManager.SelectedTroops.Count; ii++)
+		for(int ii=0; ii<PlayerManager.control.SelectedTroops.Count; ii++)
 		{
 
-			if(GUI.Button(new Rect(10,30*(ii+1), 100, 30), PlayerManager.GetTextureFromSprite(playerManager.SelectedTroops[ii])))
+			if(GUI.Button(new Rect(10,30*(ii+1), 100, 30), PlayerManager.GetTextureFromSprite(PlayerManager.control.SelectedTroops[ii])))
 			{
-				playerManager.SelectedTroops.RemoveAt(ii);
+				PlayerManager.control.SelectedTroops.RemoveAt(ii);
 			}
 		}
 
 
 
-		if(playerManager.SelectedTroops.Count == playerManager.MaxNumberOfTroops && playerManager.SelectedGate)
+		if(PlayerManager.control.SelectedTroops.Count == PlayerManager.control.MaxNumberOfTroops && PlayerManager.control.SelectedGate)
 		{
 			if(GUI.Button(new Rect(10,180, 100, 30),"Play"))
 			{

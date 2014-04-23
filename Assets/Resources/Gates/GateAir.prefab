@@ -93,12 +93,7 @@ MonoBehaviour:
   gateTeam: 1
   tm: {fileID: 0}
   troopsFolder: {fileID: 0}
-  troopPrefabs:
-  - {fileID: 100000, guid: 924795f36b12c264bbe360d3bba1cc3e, type: 2}
-  - {fileID: 100000, guid: 21f13df3cdfbb884d8e453c880e54046, type: 2}
-  - {fileID: 100000, guid: 1d4262f81e59008478d0037566649fb2, type: 2}
-  - {fileID: 100000, guid: 20b2206bd325e224dbdbb2a63f1b9184, type: 2}
-  - {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+  troopPrefabs: []
   path: {fileID: 0}
   gateSprite: {fileID: 21200000}
 --- !u!114 &11400002
@@ -116,9 +111,9 @@ MonoBehaviour:
   currentHealth: 500
   maxHealth: 500
   xp: 100
-  level: 2
+  level: 1
   defeatGivenXp: 0
-  deffense: 10
+  deffense: .000999999931
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

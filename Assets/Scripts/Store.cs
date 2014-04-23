@@ -27,9 +27,9 @@ public class Store : MonoBehaviour
 		set {gates = value;}
 	}
 
-
 	void Start () 
 	{
+
 		foreach(GameObject troop in listOfTroops)
 		{
 			troops.Add(troop);
@@ -42,6 +42,11 @@ public class Store : MonoBehaviour
 			gatesAvailable.Add(true);
 			listOfGatesSprite.Add(PlayerManager.GetTextureFromSprite(gate));
 		}
+	}
+
+	void OnDisable()
+	{
+		DataManager.Control.SaveData();
 	}
 
 	void OnGUI()

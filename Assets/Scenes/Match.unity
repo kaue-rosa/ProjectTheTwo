@@ -383,7 +383,7 @@ MonoBehaviour:
   xp: 100
   level: 0
   defeatGivenXp: 500
-  deffense: 10
+  deffense: .000999999931
 --- !u!114 &312849867
 MonoBehaviour:
   m_ObjectHideFlags: 0

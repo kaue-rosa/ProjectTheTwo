@@ -21,189 +21,182 @@ User locale: en-CA
 System locale: en-CA
 
 Running processes:
-TSleepSrv.exe (11564)
+TSleepSrv.exe (728)
     path: C:\Program Files (x86)\TOSHIBA\System Setting\TSleepSrv.exe
     company:  TOSHIBA Corporation
     product:  TSleepSrv.exe
     filedesc: Sleep and Charge Service
     filever:  1.0.0.0
     prodver:  1.0.0.0
-TODDMain.exe (11460)
+TODDMain.exe (9552)
     path: C:\Program Files (x86)\TOSHIBA\System Setting\TODDMain.exe
     company:  
     product:  TOSHIBA System Settings
     filedesc: TOSHIBA System Settings Service
     filever:  1.0.0.8
     prodver:  8.9.22.0
-TRCMan.exe (5256)
+TRCMan.exe (7124)
     path: C:\Program Files (x86)\TOSHIBA\TRCMan\TRCMan.exe
     company:  TOSHIBA Corporation
     product:  TOSHIBA Remote Control Manager
     filedesc: TRCMan.exe
     filever:  2.3.0.17
     prodver:  2.3.0.14
-TiltWheelMouse.exe (12044)
+TiltWheelMouse.exe (11388)
     path: C:\Windows\System32\TiltWheelMouse.exe
     company:  Pixart Imaging Inc
     product:  pximouse
     filedesc: pximouse
     filever:  1.0.0.2
     prodver:  1.0.0.2
-chrome.exe (11572)
+chrome.exe (5500)
     path: C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
     company:  Google Inc.
     product:  Google Chrome
     filedesc: Google Chrome
     filever:  34.0.1847.116
     prodver:  34.0.1847.116
-chrome.exe (9152)
-    path: C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
-    company:  Google Inc.
-    product:  Google Chrome
-    filedesc: Google Chrome
-    filever:  34.0.1847.116
-    prodver:  34.0.1847.116
-KeNotify.exe (76)
+KeNotify.exe (6280)
     path: C:\Program Files (x86)\TOSHIBA\Utilities\KeNotify.exe
     company:  TOSHIBA CORPORATION
     product:  KeNotify Application
     filedesc: KeNotify MFC Application
     filever:  2.0.50.8
     prodver:  2.0.50.8
-iTunesHelper.exe (9096)
+chrome.exe (4136)
+    path: C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+    company:  Google Inc.
+    product:  Google Chrome
+    filedesc: Google Chrome
+    filever:  34.0.1847.116
+    prodver:  34.0.1847.116
+iTunesHelper.exe (13264)
     path: C:\Program Files (x86)\iTunes\iTunesHelper.exe
     company:  Apple Inc.
     product:  iTunes
     filedesc: iTunesHelper
     filever:  11.0.0.163
     prodver:  11.0.0.163
-chrome.exe (8980)
-    path: C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
-    company:  Google Inc.
-    product:  Google Chrome
-    filedesc: Google Chrome
-    filever:  34.0.1847.116
-    prodver:  34.0.1847.116
-soffice.exe (10900)
-    path: C:\Program Files (x86)\OpenOffice.org 3\program\soffice.exe
-    company:  OpenOffice.org
-    product:  
-    filedesc: OpenOffice.org 3.3
-    filever:  3.3.9556.500
-    prodver:  3.3.9556.500
-Updater.exe (8884)
+Updater.exe (8020)
     path: C:\Program Files (x86)\Ask.com\Updater\Updater.exe
     company:  Ask
     product:  Updater
     filedesc: Ask Updater
     filever:  1.2.3.30498
     prodver:  1.2.3.30498
-avgnt.exe (8472)
+avgnt.exe (5208)
     path: C:\Program Files (x86)\Avira\AntiVir Desktop\avgnt.exe
     company:  Avira Operations GmbH & Co. KG
     product:  Avira Product Family
     filedesc: Antivirus System Tray Tool (Desktop)
     filever:  14.0.3.332
     prodver:  14.0.3.332
-jusched.exe (7608)
+soffice.exe (9516)
+    path: C:\Program Files (x86)\OpenOffice.org 3\program\soffice.exe
+    company:  OpenOffice.org
+    product:  
+    filedesc: OpenOffice.org 3.3
+    filever:  3.3.9556.500
+    prodver:  3.3.9556.500
+jusched.exe (7436)
     path: C:\Program Files (x86)\Common Files\Java\Java Update\jusched.exe
     company:  Oracle Corporation
     product:  Java(TM) Platform SE Auto Updater
     filedesc: Java(TM) Update Scheduler
     filever:  2.1.9.8
     prodver:  2.1.9.8
-soffice.bin (10372)
-    path: C:\Program Files (x86)\OpenOffice.org 3\program\soffice.bin
-    company:  OpenOffice.org
-    product:  
-    filedesc: OpenOffice.org 3.3
-    filever:  3.3.9556.500
-    prodver:  3.3.9556.500
-vprot.exe (8952)
+chrome.exe (11200)
+    path: C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+    company:  Google Inc.
+    product:  Google Chrome
+    filedesc: Google Chrome
+    filever:  34.0.1847.116
+    prodver:  34.0.1847.116
+vprot.exe (11084)
     path: C:\Program Files (x86)\AVG SafeGuard toolbar\vprot.exe
     company:  
     product:  VProtect Application
     filedesc: VProtect Application (Official)
     filever:  18.0.5.292
     prodver:  18.0.5.292
-chrome.exe (3012)
+soffice.bin (3792)
+    path: C:\Program Files (x86)\OpenOffice.org 3\program\soffice.bin
+    company:  OpenOffice.org
+    product:  
+    filedesc: OpenOffice.org 3.3
+    filever:  3.3.9556.500
+    prodver:  3.3.9556.500
+chrome.exe (10556)
     path: C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
     company:  Google Inc.
     product:  Google Chrome
     filedesc: Google Chrome
     filever:  34.0.1847.116
     prodver:  34.0.1847.116
-chrome.exe (10244)
+AAM Updates Notifier.exe (5388)
+    path: C:\Program Files (x86)\Common Files\Adobe\OOBE\PDApp\UWA\AAM Updates Notifier.exe
+    company:  Adobe Systems Incorporated
+    product:  AAM Updates Notifier Application
+    filedesc: AAM Updates Notifier Application
+    filever:  1.0.175.0
+    prodver:  1.0.175.0
+chrome.exe (10628)
     path: C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
     company:  Google Inc.
     product:  Google Chrome
     filedesc: Google Chrome
     filever:  34.0.1847.116
     prodver:  34.0.1847.116
-googletalkplugin.exe (9252)
+googletalkplugin.exe (9708)
     path: C:\Users\Owner\AppData\Local\Google\Google Talk Plugin\googletalkplugin.exe
     company:  Google
     product:  Google Talk Plugin
     filedesc: Hangouts Plugin
     filever:  5.0.0.0
     prodver:  5.0.0.0
-sh.exe (7884)
-    path: C:\Program Files (x86)\Git\bin\sh.exe
-    company:  
-    product:  
-    filedesc: 
-    filever:  0.0.0.0
-    prodver:  0.0.0.0
-MonoDevelop.exe (5416)
+chrome.exe (7852)
+    path: C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+    company:  Google Inc.
+    product:  Google Chrome
+    filedesc: Google Chrome
+    filever:  34.0.1847.116
+    prodver:  34.0.1847.116
+MonoDevelop.exe (8160)
     path: C:\Program Files (x86)\Unity\MonoDevelop\bin\MonoDevelop.exe
     company:  
     product:  MonoDevelop
     filedesc: MonoDevelop
     filever:  2.6.0.0
     prodver:  2.6.0.0
-chrome.exe (380)
+Skype.exe (2812)
+    path: C:\Program Files (x86)\Skype\Phone\Skype.exe
+    company:  Skype Technologies S.A.
+    product:  Skype
+    filedesc: Skype 
+    filever:  6.3.0.107
+    prodver:  6.3.0.0
+chrome.exe (2948)
     path: C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
     company:  Google Inc.
     product:  Google Chrome
     filedesc: Google Chrome
     filever:  34.0.1847.116
     prodver:  34.0.1847.116
-chrome.exe (12128)
+chrome.exe (2920)
     path: C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
     company:  Google Inc.
     product:  Google Chrome
     filedesc: Google Chrome
     filever:  34.0.1847.116
     prodver:  34.0.1847.116
-chrome.exe (7508)
+chrome.exe (10488)
     path: C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
     company:  Google Inc.
     product:  Google Chrome
     filedesc: Google Chrome
     filever:  34.0.1847.116
     prodver:  34.0.1847.116
-chrome.exe (8100)
-    path: C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
-    company:  Google Inc.
-    product:  Google Chrome
-    filedesc: Google Chrome
-    filever:  34.0.1847.116
-    prodver:  34.0.1847.116
-chrome.exe (8004)
-    path: C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
-    company:  Google Inc.
-    product:  Google Chrome
-    filedesc: Google Chrome
-    filever:  34.0.1847.116
-    prodver:  34.0.1847.116
-chrome.exe (8548)
-    path: C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
-    company:  Google Inc.
-    product:  Google Chrome
-    filedesc: Google Chrome
-    filever:  34.0.1847.116
-    prodver:  34.0.1847.116
-UnityBugReporter.exe (8920)
+UnityBugReporter.exe (10816)
     path: C:\Program Files (x86)\Unity\Editor\UnityBugReporter.exe
     company:  Unity Technologies ApS
     product:  Unity Bug Reporter
