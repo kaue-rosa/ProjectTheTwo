@@ -6,10 +6,10 @@ using System.Linq;
 public class TroopAnimation : MonoBehaviour {
 	
 	[SerializeField] private SpriteRenderer spriteRenderer = null;
-	[SerializeField] private bool playOnStart = true;
 	[SerializeField] private List<Sprite> walkCicleSprites = new List<Sprite>();
 	[SerializeField] private List<Sprite> attackCicleSprites = new List<Sprite>();
 	[SerializeField] private Sprite hitSprite = null;
+	[SerializeField] private List<Sprite> celebrationCicleSprites = new List<Sprite>();
 
 	//keys for walking
 	private bool walking = false;
@@ -21,6 +21,10 @@ public class TroopAnimation : MonoBehaviour {
 
 	//keys for hit
 	private bool beenHit = false;
+
+	//keys for celebration
+	private bool celebrating = false;
+	private bool stopCelebrating = false;
 
 	private Dictionary<int, Vector3> troopSpriteLayer = new Dictionary<int, Vector3>(){
 		{100,new Vector3(0,-0.05f,0)},
@@ -37,10 +41,6 @@ public class TroopAnimation : MonoBehaviour {
 		int i = Mathf.FloorToInt(Random.value * troopSpriteLayer.Count);
 		spriteRenderer.sortingOrder = troopSpriteLayer.ElementAt(i).Key;
 		spriteRenderer.gameObject.transform.localPosition = troopSpriteLayer.ElementAt(i).Value;
-
-		if (playOnStart) {
-			StartWalking();
-		}
 	}	
 
 	public void StartWalking() {
@@ -77,6 +77,19 @@ public class TroopAnimation : MonoBehaviour {
 		StartCoroutine (HitAnim (animationEndCall));
 	}
 
+	public void StartCelebrating() {
+		if (celebrationCicleSprites.Count <= 0 || celebrating)return;
+		celebrating = true;
+		stopCelebrating = false;
+		StopWalking ();
+		StopAttacking ();
+		StartCoroutine (CelebrateAnim ());
+	}
+	
+	void StopCelebrating() {
+		stopCelebrating = true;
+	}
+
 
 	IEnumerator WalkAnim() {
 		int index = 0;
@@ -93,7 +106,6 @@ public class TroopAnimation : MonoBehaviour {
 			if(index >= walkCicleSprites.Count) {
 				index = 0;
 			}
-
 
 			yield return new WaitForSeconds(0.1f);
 		}
@@ -132,5 +144,26 @@ public class TroopAnimation : MonoBehaviour {
 		animationEndCall.Invoke ();
 		spriteRenderer.enabled = true;
 		beenHit = false;
+	}
+
+	IEnumerator CelebrateAnim() {
+		int index = 0;
+		yield return new WaitForSeconds(Random.value);
+		while (true) {
+			
+			if(stopCelebrating) {
+				celebrating = false;
+				break;
+			}
+			
+			spriteRenderer.sprite = celebrationCicleSprites[index];
+			index++;
+			
+			if(index >= celebrationCicleSprites.Count) {
+				index = 0;
+			}
+			
+			yield return new WaitForSeconds(0.2f);
+		}
 	}
 }

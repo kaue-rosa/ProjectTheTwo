@@ -39,8 +39,6 @@ public class DataManager
 			allTroops.Add(obj);
 			allTroopsStats.Add(obj.GetComponent<TroopStats>());
 		}
-
-		Debug.Log(allGates.Count);
 	}
 
 	public void SaveData()
@@ -93,8 +91,6 @@ public class DataManager
 
 	public void LoadData()
 	{
-		Debug.Log("Loading");
-
 		if(File.Exists(Application.persistentDataPath+"/GameInfo.dat"))
 		{
 			BinaryFormatter bf = new BinaryFormatter();

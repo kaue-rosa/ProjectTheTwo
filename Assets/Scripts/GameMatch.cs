@@ -69,6 +69,7 @@ public class GameMatch : MonoBehaviour {
 			if(g.IsAlive && g.IsPlayer)
 			{
 				g.Stats.GiveXP(totalGameXP);
+				g.CelebrateVictory();
 			}
 		}
 	}

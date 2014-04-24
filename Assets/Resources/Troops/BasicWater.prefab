@@ -84,6 +84,9 @@ MonoBehaviour:
   - {fileID: 21300060, guid: e5778d0c80d2aa445b8c364db7acefac, type: 3}
   - {fileID: 21300062, guid: e5778d0c80d2aa445b8c364db7acefac, type: 3}
   hitSprite: {fileID: 21300064, guid: e5778d0c80d2aa445b8c364db7acefac, type: 3}
+  celebrationCicleSprites:
+  - {fileID: 21300118, guid: e5778d0c80d2aa445b8c364db7acefac, type: 3}
+  - {fileID: 21300120, guid: e5778d0c80d2aa445b8c364db7acefac, type: 3}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

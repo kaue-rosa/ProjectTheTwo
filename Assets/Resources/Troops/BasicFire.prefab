@@ -116,6 +116,9 @@ MonoBehaviour:
   - {fileID: 21300082, guid: e5778d0c80d2aa445b8c364db7acefac, type: 3}
   - {fileID: 21300084, guid: e5778d0c80d2aa445b8c364db7acefac, type: 3}
   hitSprite: {fileID: 21300086, guid: e5778d0c80d2aa445b8c364db7acefac, type: 3}
+  celebrationCicleSprites:
+  - {fileID: 21300122, guid: e5778d0c80d2aa445b8c364db7acefac, type: 3}
+  - {fileID: 21300124, guid: e5778d0c80d2aa445b8c364db7acefac, type: 3}
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

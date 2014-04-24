@@ -14,6 +14,7 @@ public class Gate : MonoBehaviour
 
 	public SpriteRenderer gateSprite = null;
 
+	private List<Troop> gateTroops = new List<Troop>();
 	private GameElement gateElement = GameElement.NORMAL;
 	private string nextTroopToSpawnName = "";
 	private float currentTimer = 0;
@@ -72,6 +73,11 @@ public class Gate : MonoBehaviour
 		get {return visible;}
 	}
 
+	public bool CanDamageGate
+	{
+		get{return this.Stats.CurrentHealth > 0;}
+	}
+
 	void Start()
 	{
 		//only if we didn't assign, try to do it automatically
@@ -105,7 +111,9 @@ public class Gate : MonoBehaviour
 		Troop _troop = _troopGm.GetComponent<Troop> ();
 		_troop.TroopPathManager = this.tm;
 		_troop.TroopTeam = gateTeam;
+		_troop.TroopGate = this;
 		_troop.AssignPath (path);
+		gateTroops.Add (_troop);
 		currentTimer = 0;
 		timeToSpawn = _troop.gameObject.GetComponent<TroopStats> ().SpawnTime;
 	}
@@ -118,6 +126,19 @@ public class Gate : MonoBehaviour
 
 		if (stats.CurrentHealth <= 0) {
 			this.Die();
+		}
+	}
+
+	public void TroopRemoved (Troop troop)
+	{
+		gateTroops.Remove (troop);
+	}
+
+	public void CelebrateVictory ()
+	{
+		foreach(Troop t in gateTroops)
+		{
+			t.Celebrate();
 		}
 	}
 

@@ -12,6 +12,7 @@ public class Troop : MonoBehaviour
 {
 	[SerializeField] private TroopManager pm = null;
 
+
 	private Team myTeam;
 	private List<GameObject> myPath = new List<GameObject>();
 	private int nextPathNodeID = 0;
@@ -22,6 +23,7 @@ public class Troop : MonoBehaviour
 	private Troop combatTarget;
 	private TroopStats troopStats;
 	private TroopAnimation troopAnimation;
+	private Gate troopGate;
 
 	public Team TroopTeam
 	{
@@ -59,6 +61,11 @@ public class Troop : MonoBehaviour
 	public GameElement TroopElement
 	{
 		get{return troopStats.MyElement;}
+	}
+
+	public Gate TroopGate {
+		get{return troopGate;}
+		set{troopGate = value;}
 	}
 
 	void Start () 
@@ -171,7 +178,10 @@ public class Troop : MonoBehaviour
 		troopStats.CurrentHealth -= (int)(trueDamage - (trueDamage*troopStats.Deffense));
 		troopAnimation.Hit (()=>{
 			this.hit = false;
-			if(this.troopStats.CurrentHealth <= 0)Destroy(this.gameObject);
+			if(this.troopStats.CurrentHealth <= 0){
+				Destroy(this.gameObject);
+				troopGate.TroopRemoved (this);
+			}
 		});
 	}
 
@@ -180,6 +190,12 @@ public class Troop : MonoBehaviour
 		TroopPathManager.StopManagingTroop (this);
 		this.StopCoroutine("LookForEnemy");
 		collider.enabled = false;
+	}
+
+	public void Celebrate()
+	{
+		if(this.troopStats.CurrentHealth > 0)
+		this.troopAnimation.StartCelebrating ();
 	}
 
 	public void EnterGateEffect ()
