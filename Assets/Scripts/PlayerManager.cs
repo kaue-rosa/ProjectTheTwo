@@ -7,37 +7,42 @@ public class PlayerManager : MonoBehaviour
 {
 	public static PlayerManager control;
 
-	[SerializeField] private List<GameObject> totalTroops = new List<GameObject>();
-	private List<GameObject> selectedTroops = new List<GameObject>();
+	[SerializeField] private List<int> totalOwnedTroopsIds = new List<int>();
+					 private List<int> selectedTroopsIds = new List<int>();
 
-	[SerializeField] private List<GateStats> totalGates;
-	[SerializeField] private GateStats selectedGate = null;
-
-	public List<GameObject> TotalTroops
-	{
-		get {return totalTroops;}
-		set {totalTroops = value;}
-	}
-	public List<GameObject> SelectedTroops
-	{
-		get {return selectedTroops;}
-	}
-	public List<GateStats> TotalGates
-	{
-		get {return totalGates;}
-		set {totalGates = value;}
-	}
-	public GateStats SelectedGate
-	{
-		get {return selectedGate;}
-		set {selectedGate = value;}
-	}
+	[SerializeField] private List<int> totalOwnedGatesIds = new List<int>();
+	[SerializeField] private int selectedGateId = -1;
 
 	[SerializeField]private int maxNumberOfTroops = 3;
+
+	public List<int> TotalOwnedTroopsIds
+	{
+		get {return totalOwnedTroopsIds;}
+		set {totalOwnedTroopsIds = value;}
+	}
+
+	public List<int> SelectedTroopsIds
+	{
+		get {return selectedTroopsIds;}
+	}
+
+	public List<int> TotalOwnedGatesIds
+	{
+		get {return totalOwnedGatesIds;}
+		set {totalOwnedGatesIds = value;}
+	}
+
+	public int SelectedGateId
+	{
+		get {return selectedGateId;}
+		set {selectedGateId = value;}
+	}
+
 	public int MaxNumberOfTroops
 	{
 		get {return maxNumberOfTroops;}
 	}
+
 	void Awake()
 	{
 		DontDestroyOnLoad(gameObject);
@@ -52,6 +57,8 @@ public class PlayerManager : MonoBehaviour
 		}
 
 	}
+
+	//TODO: Remove if not in use!
 	public static Texture2D GetTextureFromSprite(Sprite sprite)
 	{
 		Texture2D img = sprite.texture;

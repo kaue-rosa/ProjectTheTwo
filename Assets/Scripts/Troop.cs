@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -58,7 +58,7 @@ public class Troop : MonoBehaviour
 
 	public GameElement TroopElement
 	{
-		get{return troopStats.MyElement;}
+		get{return troopStats.TroopElement;}
 	}
 
 	void Start () 
@@ -153,7 +153,7 @@ public class Troop : MonoBehaviour
 				attackTimer = troopStats.AttackSpeed;
 				troopAnimation.StartAttacking(()=>{
 					if(this.combatTarget)
-					this.combatTarget.TakeDamage(this.troopStats.AttackDamage, this.troopStats.MyElement);
+					this.combatTarget.TakeDamage(this.troopStats.AttackDamage, this.troopStats.TroopElement);
 				});
 			}
 		}
@@ -167,7 +167,7 @@ public class Troop : MonoBehaviour
 	{
 		hit = true;
 		Instantiate((GameObject)Resources.Load("Particles/Attack Particle"),transform.position,transform.rotation);
-		int trueDamage = (int) Mathf.Round(damage * Element.GetMultiplayerForAttackerElement(attakerElement,this.troopStats.MyElement));
+		int trueDamage = (int) Mathf.Round(damage * Element.GetMultiplayerForAttackerElement(attakerElement,this.troopStats.TroopElement));
 		troopStats.CurrentHealth -= (int)(trueDamage - (trueDamage*troopStats.Deffense));
 		troopAnimation.Hit (()=>{
 			this.hit = false;

@@ -63,12 +63,12 @@ public class Store : MonoBehaviour
 		for(int t = 0; t<troops.Count; t++ )
 		{
 			//GUILayout.Button(listOfTroopsSprite[t]);
-			if(troopsAvailable[t] && !PlayerManager.control.TotalTroops.Contains(troops[t]))
+			if(troopsAvailable[t] && !PlayerManager.control.TotalOwnedTroopsIds.Contains(troops[t].GetComponent<TroopStats>().TroopID))
 			{
 				if(GUI.Button(new Rect (10, 40*t, 100, 30),"bla"))
 				{
 					//if(!PlayerManager.control.TotalTroops.Contains(troops[t]))
-						PlayerManager.control.TotalTroops.Add(troops[t]);
+					PlayerManager.control.TotalOwnedTroopsIds.Add(troops[t].GetComponent<TroopStats>().TroopID);
 				}
 			}
 		}
@@ -79,11 +79,11 @@ public class Store : MonoBehaviour
 		for(int g = 0; g<gates.Count; g++ )
 		{
 			//GUILayout.Button(listOfTroopsSprite[t]);
-			if(gatesAvailable[g] && !PlayerManager.control.TotalGates.Contains(gates[g]))
+			if(gatesAvailable[g] && !PlayerManager.control.TotalOwnedGatesIds.Contains(gates[g].GetComponent<GateStats>().ID))
 			{
 				if(GUI.Button(new Rect (10, 40*g, 100, 30), "bla"))
 				{
-					PlayerManager.control.TotalGates.Add(gates[g]);
+					PlayerManager.control.TotalOwnedGatesIds.Add(gates[g].GetComponent<GateStats>().ID);
 				}
 			}
 		}

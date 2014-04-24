@@ -4,12 +4,12 @@ using System.Collections.Generic;
 
 public enum GameElement
 {
-	NORMAL,
-	WATER, 
-	FIRE, 
-	ROCK,
 	AIR,
 	ELECTRIC,
+	FIRE, 
+	NORMAL,
+	ROCK,
+	WATER,
 }
 
 public class Element : MonoBehaviour

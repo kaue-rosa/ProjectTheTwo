@@ -95,7 +95,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fb39ce9fb7150f44be6bf9ecdba7b42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  element: 1
+  troopID: 500
+  element: 5
   currentHealth: 100
   maxHealth: 100
   rangeOfSight: .5

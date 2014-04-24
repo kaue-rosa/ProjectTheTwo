@@ -102,11 +102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb577eb5e12a3464e9f60bd17486a51b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalTroops:
-  - {fileID: 100000, guid: 20b2206bd325e224dbdbb2a63f1b9184, type: 2}
-  totalGates:
-  - {fileID: 11400002, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
-  selectedGate: {fileID: 0}
+  totalOwnedTroopsIds: 
+  totalOwnedGatesIds: 
+  selectedGateId: -1
   maxNumberOfTroops: 3
 --- !u!4 &504598408
 Transform:

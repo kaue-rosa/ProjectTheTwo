@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class saveloadtest : MonoBehaviour 
@@ -6,8 +6,8 @@ public class saveloadtest : MonoBehaviour
 
 	void OnGUI()
 	{
-		if(PlayerManager.control.TotalGates.Count>0)
-			GUILayout.Label(PlayerManager.control.TotalGates[0].CurrentHealth.ToString());
+		if (DataManager.Control.AllOwnedGatesData.Count > 0)
+			GUILayout.Label (DataManager.Control.AllOwnedGatesData[0].currentHealth.ToString());//PlayerManager.control.TotalOwnedGatesIds[0].CurrentHealth.ToString());
 
 		if(GUILayout.Button("Save"))
 		{
@@ -21,16 +21,18 @@ public class saveloadtest : MonoBehaviour
 
 		if(GUILayout.Button("+life"))
 		{
-			if(PlayerManager.control.TotalGates.Count>0)
+			if(PlayerManager.control.TotalOwnedGatesIds.Count>0)
 			{
-				PlayerManager.control.TotalGates[0].GetComponent<GateStats>().CurrentHealth++;
+				if (DataManager.Control.AllOwnedGatesData.Count > 0)
+					DataManager.Control.AllOwnedGatesData[0].currentHealth++;
 			}
 		}
 		if(GUILayout.Button("-Life"))
 		{
-			if(PlayerManager.control.TotalGates.Count>0)
+			if(PlayerManager.control.TotalOwnedGatesIds.Count>0)
 			{
-				PlayerManager.control.TotalGates[0].GetComponent<GateStats>().CurrentHealth--;
+				if (DataManager.Control.AllOwnedGatesData.Count > 0)
+					DataManager.Control.AllOwnedGatesData[0].currentHealth--;
 			}
 			
 		}

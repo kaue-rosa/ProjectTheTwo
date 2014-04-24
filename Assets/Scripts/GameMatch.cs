@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class GameMatch : MonoBehaviour {
@@ -10,13 +10,11 @@ public class GameMatch : MonoBehaviour {
 
 	void Awake()
 	{
-
-
-		if(PlayerManager.control.SelectedTroops.Count == 0)
+		if(PlayerManager.control.SelectedTroopsIds.Count == 0)
 		{
-			foreach(GameObject troop in PlayerManager.control.TotalTroops)
+			foreach(int troop in PlayerManager.control.TotalOwnedTroopsIds)
 			{
-				PlayerManager.control.SelectedTroops.Add(troop);
+				PlayerManager.control.SelectedTroopsIds.Add(troop);
 			}
 		}
 
@@ -26,24 +24,21 @@ public class GameMatch : MonoBehaviour {
 
 		Gate gateScript = playerGate.GetComponent<Gate>();
 
+		gateScript.gateSprite.sprite = DataManager.Control.GetSpriteFromGateId (PlayerManager.control.SelectedGateId);
+
+		gateScript.Stats.ID = PlayerManager.control.SelectedGateId;
 		gateScript.IsPlayer = true;
 		gateScript.GateTeam = Team.TeamA;
 		gateScript.Path = path;
 
-		Debug.Log(gateScript.Stats);
+		//print (PlayerManager.control.SelectedGateId);
 
-		GateStats savedStats = DataManager.Control.GetGateByElement(gateScript.Stats.MyElement);
-
-		gateScript.Stats.CurrentHealth = savedStats.CurrentHealth;
-		gateScript.Stats.MaxHealth = savedStats.MaxHealth;
-		gateScript.Stats.Xp = savedStats.Xp;
-		gateScript.Stats.Level = savedStats.Level;
-		gateScript.Stats.Deffense = savedStats.Deffense;
+		DataManager.Control.AssignGateDataToGateStats (gateScript.Stats);
 
 		gateScript.TroopPrefabs.Clear();
-		foreach(GameObject troop in PlayerManager.control.SelectedTroops)
+		foreach(int troopID in PlayerManager.control.SelectedTroopsIds)
 		{
-			gateScript.TroopPrefabs.Add(troop);
+			gateScript.TroopPrefabs.Add(DataManager.Control.GetTroopPrefabByID(troopID));
 		}
 	}
 

@@ -174,19 +174,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb577eb5e12a3464e9f60bd17486a51b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalTroops:
-  - {fileID: 100000, guid: 20b2206bd325e224dbdbb2a63f1b9184, type: 2}
-  - {fileID: 100000, guid: 1d4262f81e59008478d0037566649fb2, type: 2}
-  - {fileID: 100000, guid: 924795f36b12c264bbe360d3bba1cc3e, type: 2}
-  - {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
-  - {fileID: 100000, guid: 21f13df3cdfbb884d8e453c880e54046, type: 2}
-  totalGates:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  selectedGate: {fileID: 0}
+  totalOwnedTroopsIds: 
+  totalOwnedGatesIds: 
+  selectedGateId: -1
   maxNumberOfTroops: 3
 --- !u!4 &79317972
 Transform:
@@ -195,7 +185,7 @@ Transform:
   m_PrefabInternal: {fileID: 1606260259}
   m_GameObject: {fileID: 79317970}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .314994037, y: -.183646858, z: 3.7765398}
+  m_LocalPosition: {x: .314994037, y: -32.948082, z: 3.7765398}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -429,7 +419,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb5623a0b4318864b9f140a9d76334b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  element: 4
+  id: 0
+  element: 0
   currentHealth: 50
   maxHealth: 50
   xp: 600
@@ -856,7 +847,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -.183646858
+      value: -32.948082
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1171,7 +1162,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb5623a0b4318864b9f140a9d76334b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  element: 4
+  id: 0
+  element: 0
   currentHealth: 500
   maxHealth: 500
   xp: 600

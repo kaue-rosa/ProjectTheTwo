@@ -111,7 +111,7 @@ public class Gate : MonoBehaviour
 
 	public void TakeDamage (int damage, GameElement attakerElement)
 	{
-		int trueDamage = (int) Mathf.Round(damage * Element.GetMultiplayerForAttackerElement(attakerElement,this.stats.MyElement));
+		int trueDamage = (int) Mathf.Round(damage * Element.GetMultiplayerForAttackerElement(attakerElement,this.stats.GateElement));
 
 		stats.CurrentHealth -= (int) (trueDamage - (trueDamage*stats.Deffense));
 
