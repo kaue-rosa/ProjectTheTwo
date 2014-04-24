@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PreMatchMenu : MonoBehaviour
 {
+
+	[SerializeField] public static List<Texture2D> elementIcons = new List<Texture2D>();
 
 	void Start()
 	{
@@ -16,7 +19,7 @@ public class PreMatchMenu : MonoBehaviour
 		{
 			if(!PlayerManager.control.SelectedTroops.Contains(PlayerManager.control.TotalTroops[t]))
 			{						
-				if(GUI.Button(new Rect (10, 40*t, 100, 30), PlayerManager.GetTextureFromSprite(PlayerManager.control.TotalTroops[t])) && PlayerManager.control.SelectedTroops.Count<PlayerManager.control.MaxNumberOfTroops)
+				if(GUI.Button(new Rect (10, 40*t, 100, 30), "rss") && PlayerManager.control.SelectedTroops.Count<PlayerManager.control.MaxNumberOfTroops)
 				{
 
 					PlayerManager.control.SelectedTroops.Add(PlayerManager.control.TotalTroops[t]);
@@ -32,7 +35,7 @@ public class PreMatchMenu : MonoBehaviour
 			if(PlayerManager.control.SelectedGate == PlayerManager.control.TotalGates[g])
 				continue;
 
-			if(GUI.Button(new Rect (10, 40*g, 100, 30),PlayerManager.GetTextureFromSprite(PlayerManager.control.TotalGates[g])) && !PlayerManager.control.SelectedGate)
+			if(GUI.Button(new Rect (10, 40*g, 100, 30), "baaa") && !PlayerManager.control.SelectedGate)
 			{
 				PlayerManager.control.SelectedGate = PlayerManager.control.TotalGates[g];
 			}
@@ -46,7 +49,7 @@ public class PreMatchMenu : MonoBehaviour
 
 		if(PlayerManager.control.SelectedGate)
 		{
-			if(GUI.Button(new Rect(10, 0, 100, 30), PlayerManager.GetTextureFromSprite(PlayerManager.control.SelectedGate)))
+			if(GUI.Button(new Rect(10, 0, 100, 30), "ba"))
 			{
 				PlayerManager.control.SelectedGate = null;
 			}
@@ -56,7 +59,7 @@ public class PreMatchMenu : MonoBehaviour
 		for(int ii=0; ii<PlayerManager.control.SelectedTroops.Count; ii++)
 		{
 
-			if(GUI.Button(new Rect(10,30*(ii+1), 100, 30), PlayerManager.GetTextureFromSprite(PlayerManager.control.SelectedTroops[ii])))
+			if(GUI.Button(new Rect(10,30*(ii+1), 100, 30), "hu"))
 			{
 				PlayerManager.control.SelectedTroops.RemoveAt(ii);
 			}

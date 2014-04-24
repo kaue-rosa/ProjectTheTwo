@@ -10,8 +10,8 @@ public class PlayerManager : MonoBehaviour
 	[SerializeField] private List<GameObject> totalTroops = new List<GameObject>();
 	private List<GameObject> selectedTroops = new List<GameObject>();
 
-	[SerializeField] private List<GameObject> totalGates;
-	[SerializeField] private GameObject selectedGate = null;
+	[SerializeField] private List<GateStats> totalGates;
+	[SerializeField] private GateStats selectedGate = null;
 
 	public List<GameObject> TotalTroops
 	{
@@ -22,12 +22,12 @@ public class PlayerManager : MonoBehaviour
 	{
 		get {return selectedTroops;}
 	}
-	public List<GameObject> TotalGates
+	public List<GateStats> TotalGates
 	{
 		get {return totalGates;}
 		set {totalGates = value;}
 	}
-	public GameObject SelectedGate
+	public GateStats SelectedGate
 	{
 		get {return selectedGate;}
 		set {selectedGate = value;}
@@ -38,7 +38,6 @@ public class PlayerManager : MonoBehaviour
 	{
 		get {return maxNumberOfTroops;}
 	}
-
 	void Awake()
 	{
 		DontDestroyOnLoad(gameObject);
@@ -51,20 +50,12 @@ public class PlayerManager : MonoBehaviour
 		{
 			Destroy(gameObject);
 		}
+
 	}
-	public static Texture2D GetTextureFromSprite(GameObject objWithTheSprite)
+	public static Texture2D GetTextureFromSprite(Sprite sprite)
 	{
-		SpriteRenderer sr = objWithTheSprite.GetComponent<SpriteRenderer> ();
-		if(sr == null) 
-		{
-			foreach (Transform child in objWithTheSprite.transform)
-			{
-				sr = child.GetComponent<SpriteRenderer> ();
-				if(sr!=null) break;
-			}
-		}
-		Texture2D img = sr.sprite.texture;
-		Rect rect = sr.sprite.rect;
+		Texture2D img = sprite.texture;
+		Rect rect = sprite.rect;
 		
 		Color[] pixels = img.GetPixels((int)rect.x, (int)rect.y, (int)rect.width, (int)rect.height);
 		

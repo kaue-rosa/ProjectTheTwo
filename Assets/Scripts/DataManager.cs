@@ -39,8 +39,6 @@ public class DataManager
 			allTroops.Add(obj);
 			allTroopsStats.Add(obj.GetComponent<TroopStats>());
 		}
-
-		Debug.Log(allGates.Count);
 	}
 
 	public void SaveData()
@@ -51,39 +49,26 @@ public class DataManager
 		FileStream file = File.Create(Application.persistentDataPath+"/GameInfo.dat");
 
 		GameData data = new GameData();
-		foreach(GameObject gate in PlayerManager.control.TotalGates)
+		foreach(GateStats gate in PlayerManager.control.TotalGates)
 		{	
 			GatesData dataG = new GatesData();
-			GateStats stats = gate.GetComponent<GateStats>();
 
-			dataG.element = stats.MyElement;
-			dataG.currentHealth = stats.CurrentHealth;
-			dataG.maxHealth = stats.MaxHealth;
-			dataG.xp = stats.Xp;
-			dataG.level = stats.Level;
-			dataG.deffense = stats.Deffense;
+			dataG.element = gate.MyElement;
+			dataG.currentHealth = gate.CurrentHealth;
+			dataG.maxHealth = gate.MaxHealth;
+			dataG.xp = gate.Xp;
+			dataG.level = gate.Level;
+			dataG.deffense = gate.Deffense;
 
 			if(!data.gatesOwned.Contains(dataG))
 				data.gatesOwned.Add(dataG);
 
 		}
+
 		foreach(GameObject troop in PlayerManager.control.TotalTroops)
 		{
-			TroopsData dataT = new TroopsData();
-			TroopStats stats = troop.GetComponent<TroopStats>();
-
-			dataT.element = stats.MyElement;
-			dataT.currentHealth = stats.CurrentHealth;
-			dataT.maxHealth = stats.MaxHealth;
-			dataT.rangeOfSight = stats.RangeOfSight;
-			dataT.movementSpeed = stats.MovementSpeed;
-			dataT.attackDamage = stats.AttackDamage;
-			dataT.attackSpeed = stats.AttackSpeed;
-			dataT.deffense = stats.Deffense;
-			dataT.spawnTime = stats.SpawnTime;
-
-			if(!data.troopsOwned.Contains(dataT))
-				data.troopsOwned.Add(dataT);			
+			if(!data.troopsOwned.Contains(troop.name))
+				data.troopsOwned.Add(troop.name);			
 		}
 
 		bf.Serialize(file, data);
@@ -119,15 +104,15 @@ public class DataManager
 						allGatesStats[g].Level = gate.level;
 						allGatesStats[g].Deffense = gate.deffense;
 
-						PlayerManager.control.TotalGates.Add(allGates[g]);
+						PlayerManager.control.TotalGates.Add(allGatesStats[g]);
 					}
 				}
 			}
-			foreach(TroopsData troop in data.troopsOwned)
+			foreach(string troop in data.troopsOwned)
 			{
 				for(int t = 0; t<allTroopsStats.Count; t++)
 				{
-					if(allTroopsStats[t].MyElement == troop.element)
+					if(allTroopsStats[t].name == troop)
 					{						
 						PlayerManager.control.TotalTroops.Add(allTroops[t]);
 					}
@@ -135,7 +120,35 @@ public class DataManager
 			}
 		}
 	}
+
+	public void SetGateStats (GateStats stats)
+	{
+		foreach(GateStats gate in PlayerManager.control.TotalGates)
+		{
+			if(gate.MyElement == stats.MyElement)
+			{
+				gate.MaxHealth = stats.MaxHealth;
+				gate.CurrentHealth = stats.CurrentHealth;
+				gate.Xp = stats.Xp;
+				gate.Level = stats.Level;
+				gate.Deffense = stats.Deffense;
+			}
+		}
+	}
 	
+	public GateStats GetGateByElement (GameElement element)
+	{
+		foreach(GateStats gate in allGatesStats)
+		{
+			if(gate.MyElement == element)
+			{
+				return gate;
+			}
+		}
+
+		return null;
+
+	}
 }
 [Serializable]
 class GatesData
@@ -154,27 +167,8 @@ class GatesData
 
 }
 [Serializable]
-class TroopsData
-{
-	//HP
-	public GameElement element;
-	
-	public int currentHealth;
-	public int maxHealth;
-	
-	//Battle
-	public float rangeOfSight;
-	public float movementSpeed;
-	public int attackDamage;
-	public float attackSpeed;
-	public float deffense;
-	
-	public float spawnTime;
-}
-
-[Serializable]
 class GameData
 {
 	public List<GatesData> gatesOwned = new List<GatesData>();
-	public List<TroopsData> troopsOwned = new List<TroopsData>();
+	public List<string> troopsOwned = new List<string>();
 }

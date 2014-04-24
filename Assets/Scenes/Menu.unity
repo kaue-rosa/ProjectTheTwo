@@ -105,7 +105,7 @@ MonoBehaviour:
   totalTroops:
   - {fileID: 100000, guid: 20b2206bd325e224dbdbb2a63f1b9184, type: 2}
   totalGates:
-  - {fileID: 100000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+  - {fileID: 11400002, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
   selectedGate: {fileID: 0}
   maxNumberOfTroops: 3
 --- !u!4 &504598408
@@ -223,7 +223,8 @@ Prefab:
     - target: {fileID: 11400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
       propertyPath: totalGates.Array.data[0]
       value: 
-      objectReference: {fileID: 100000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      objectReference: {fileID: 11400002, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598,
+        type: 2}
     - target: {fileID: 11400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
       propertyPath: totalGates.Array.data[1]
       value: 

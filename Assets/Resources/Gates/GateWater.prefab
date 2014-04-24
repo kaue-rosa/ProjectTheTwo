@@ -95,6 +95,7 @@ MonoBehaviour:
   troopsFolder: {fileID: 0}
   troopPrefabs: []
   path: {fileID: 0}
+  stats: {fileID: 11400002}
   gateSprite: {fileID: 21200000}
 --- !u!114 &11400002
 MonoBehaviour:

@@ -95,7 +95,7 @@ public class TroopAnimation : MonoBehaviour {
 			}
 
 
-			yield return new WaitForSeconds(0.1f);
+			yield return new WaitForSeconds(0.1f*Time.timeScale);
 		}
 	}
 
@@ -111,14 +111,14 @@ public class TroopAnimation : MonoBehaviour {
 			index++;
 
 			if(index >= attackCicleSprites.Count) {
-				yield return new WaitForSeconds(0.05f);
+				yield return new WaitForSeconds(0.05f*Time.timeScale);
 				if(!stopAttacking)spriteRenderer.sprite = walkCicleSprites[0];//put a default
 				attacking = false;
 				animationEndCall.Invoke();
 				break;
 			}
 
-			yield return new WaitForSeconds(0.1f);
+			yield return new WaitForSeconds(0.1f*Time.timeScale);
 		}
 	}
 
@@ -126,7 +126,7 @@ public class TroopAnimation : MonoBehaviour {
 		spriteRenderer.sprite = hitSprite;
 		for (int i = 0; i < 15; i++) {
 			spriteRenderer.enabled = !spriteRenderer.enabled;
-			yield return new WaitForSeconds(0.05f);
+			yield return new WaitForSeconds(0.05f*Time.timeScale);
 		}
 		spriteRenderer.sprite = walkCicleSprites[0];
 		animationEndCall.Invoke ();

@@ -74,94 +74,45 @@ NavMeshSettings:
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
   m_NavMesh: {fileID: 0}
---- !u!1 &504598406
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
-  m_PrefabInternal: {fileID: 1668745476}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 504598408}
-  - 114: {fileID: 504598407}
-  m_Layer: 0
-  m_Name: PlayerManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &504598407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: 4e5925043ec1c9b47829ebbd07d6334a,
-    type: 2}
-  m_PrefabInternal: {fileID: 1668745476}
-  m_GameObject: {fileID: 504598406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb577eb5e12a3464e9f60bd17486a51b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  totalTroops:
-  - {fileID: 100000, guid: 20b2206bd325e224dbdbb2a63f1b9184, type: 2}
-  totalGates:
-  - {fileID: 100000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
-  selectedGate: {fileID: 0}
-  maxNumberOfTroops: 3
---- !u!4 &504598408
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
-  m_PrefabInternal: {fileID: 1668745476}
-  m_GameObject: {fileID: 504598406}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .314994037, y: -.183646858, z: 3.7765398}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
---- !u!1 &1330876759
+--- !u!1 &519508020
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 1330876761}
-  - 114: {fileID: 1330876760}
+  - 4: {fileID: 519508022}
+  - 114: {fileID: 519508021}
   m_Layer: 0
-  m_Name: Store
+  m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1330876760
+--- !u!114 &519508021
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1330876759}
+  m_GameObject: {fileID: 519508020}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b852beb8e2fc5e1448a730f6a7c5e52f, type: 3}
+  m_Script: {fileID: 11500000, guid: ccd35c4b68733a54dab52b3298021238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  listOfTroops: []
-  listOfGates: []
-  troops: []
-  gates: []
---- !u!4 &1330876761
+--- !u!4 &519508022
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1330876759}
+  m_GameObject: {fileID: 519508020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.00560771395, y: 1.34182167, z: 3.98342562}
+  m_LocalPosition: {x: -1.4487915, y: 4.52731323, z: 5.49462891}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!1001 &1668745476
+--- !u!1001 &1384575166
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -170,11 +121,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 11400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
       propertyPath: totalGates.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
-      propertyPath: totalTroops.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
       propertyPath: m_LocalPosition.x
@@ -205,47 +152,140 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
-      propertyPath: totalTroops.Array.data[0]
-      value: 
-      objectReference: {fileID: 100000, guid: 20b2206bd325e224dbdbb2a63f1b9184, type: 2}
-    - target: {fileID: 11400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
-      propertyPath: totalTroops.Array.data[1]
-      value: 
-      objectReference: {fileID: 100000, guid: 1d4262f81e59008478d0037566649fb2, type: 2}
-    - target: {fileID: 11400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
-      propertyPath: totalTroops.Array.data[2]
-      value: 
-      objectReference: {fileID: 100000, guid: 924795f36b12c264bbe360d3bba1cc3e, type: 2}
-    - target: {fileID: 11400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
-      propertyPath: totalTroops.Array.data[3]
-      value: 
-      objectReference: {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
-    - target: {fileID: 11400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
-      propertyPath: totalTroops.Array.data[4]
-      value: 
-      objectReference: {fileID: 100000, guid: 21f13df3cdfbb884d8e453c880e54046, type: 2}
-    - target: {fileID: 11400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
       propertyPath: totalGates.Array.data[0]
       value: 
-      objectReference: {fileID: 100000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
-    - target: {fileID: 11400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
-      propertyPath: totalGates.Array.data[1]
-      value: 
-      objectReference: {fileID: 100000, guid: e0f341f8f87a20e4ca5e35fc0d48d1bd, type: 2}
-    - target: {fileID: 11400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
-      propertyPath: totalGates.Array.data[2]
-      value: 
-      objectReference: {fileID: 100000, guid: 11551b254e71f64498678512e22a31bf, type: 2}
-    - target: {fileID: 11400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
-      propertyPath: totalGates.Array.data[3]
-      value: 
-      objectReference: {fileID: 100000, guid: c56e42fd7fbf9134981a59a5df1690f9, type: 2}
-    - target: {fileID: 11400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
-      propertyPath: totalGates.Array.data[4]
-      value: 
-      objectReference: {fileID: 100000, guid: f768c92c2916efb4f9cfac837d5c3c7b, type: 2}
+      objectReference: {fileID: 11400002, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
-  m_RootGameObject: {fileID: 504598406}
+  m_RootGameObject: {fileID: 1865573005}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+--- !u!1 &1865573005
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
+  m_PrefabInternal: {fileID: 1384575166}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1865573007}
+  - 114: {fileID: 1865573006}
+  m_Layer: 0
+  m_Name: PlayerManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1865573006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 4e5925043ec1c9b47829ebbd07d6334a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1384575166}
+  m_GameObject: {fileID: 1865573005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb577eb5e12a3464e9f60bd17486a51b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalTroops:
+  - {fileID: 100000, guid: 20b2206bd325e224dbdbb2a63f1b9184, type: 2}
+  - {fileID: 100000, guid: 1d4262f81e59008478d0037566649fb2, type: 2}
+  - {fileID: 100000, guid: 924795f36b12c264bbe360d3bba1cc3e, type: 2}
+  - {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
+  - {fileID: 100000, guid: 21f13df3cdfbb884d8e453c880e54046, type: 2}
+  totalGates: []
+  selectedGate: {fileID: 0}
+  maxNumberOfTroops: 3
+--- !u!4 &1865573007
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
+  m_PrefabInternal: {fileID: 1384575166}
+  m_GameObject: {fileID: 1865573005}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: .314994037, y: -.183646858, z: 3.7765398}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!1 &1991959973
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1991959978}
+  - 20: {fileID: 1991959977}
+  - 92: {fileID: 1991959976}
+  - 124: {fileID: 1991959975}
+  - 81: {fileID: 1991959974}
+  m_Layer: 0
+  m_Name: Main Camera
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!81 &1991959974
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1991959973}
+  m_Enabled: 1
+--- !u!124 &1991959975
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1991959973}
+  m_Enabled: 1
+--- !u!92 &1991959976
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1991959973}
+  m_Enabled: 1
+--- !u!20 &1991959977
+Camera:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1991959973}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: .300000012
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_HDR: 0
+  m_OcclusionCulling: 1
+--- !u!4 &1991959978
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1991959973}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}

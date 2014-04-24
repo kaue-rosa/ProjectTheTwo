@@ -11,7 +11,7 @@ public class Store : MonoBehaviour
 	private List<Texture2D> listOfGatesSprite = new List<Texture2D>();
 
 	[SerializeField]private List <GameObject> troops = new List<GameObject>();
-	[SerializeField]private List<GameObject> gates = new List<GameObject>();
+	[SerializeField]private List<GateStats> gates = new List<GateStats>();
 
 	private List <bool> troopsAvailable = new List<bool>();
 	private List<bool> gatesAvailable  = new List<bool>();
@@ -21,7 +21,7 @@ public class Store : MonoBehaviour
 		get {return troops;}
 		set {troops = value;}
 	}
-	public List<GameObject> Gates
+	public List<GateStats> Gates
 	{
 		get {return gates;}
 		set {gates = value;}
@@ -30,17 +30,24 @@ public class Store : MonoBehaviour
 	void Start () 
 	{
 
+		foreach(GameObject obj in Resources.LoadAll("Gates/"))
+		{
+			listOfGates.Add(obj);
+		}
+		foreach(GameObject obj in Resources.LoadAll("Troops/"))
+		{
+			listOfTroops.Add(obj);
+		}
+
 		foreach(GameObject troop in listOfTroops)
 		{
 			troops.Add(troop);
 			troopsAvailable.Add(true);
-			listOfTroopsSprite.Add(PlayerManager.GetTextureFromSprite(troop));
 		}
 		foreach(GameObject gate in listOfGates)
 		{
-			gates.Add(gate);
+			gates.Add(gate.GetComponent<GateStats>());
 			gatesAvailable.Add(true);
-			listOfGatesSprite.Add(PlayerManager.GetTextureFromSprite(gate));
 		}
 	}
 
@@ -58,7 +65,7 @@ public class Store : MonoBehaviour
 			//GUILayout.Button(listOfTroopsSprite[t]);
 			if(troopsAvailable[t] && !PlayerManager.control.TotalTroops.Contains(troops[t]))
 			{
-				if(GUI.Button(new Rect (10, 40*t, 100, 30),listOfTroopsSprite[t]))
+				if(GUI.Button(new Rect (10, 40*t, 100, 30),"bla"))
 				{
 					//if(!PlayerManager.control.TotalTroops.Contains(troops[t]))
 						PlayerManager.control.TotalTroops.Add(troops[t]);
@@ -74,7 +81,7 @@ public class Store : MonoBehaviour
 			//GUILayout.Button(listOfTroopsSprite[t]);
 			if(gatesAvailable[g] && !PlayerManager.control.TotalGates.Contains(gates[g]))
 			{
-				if(GUI.Button(new Rect (10, 40*g, 100, 30), listOfGatesSprite[g]))
+				if(GUI.Button(new Rect (10, 40*g, 100, 30), "bla"))
 				{
 					PlayerManager.control.TotalGates.Add(gates[g]);
 				}

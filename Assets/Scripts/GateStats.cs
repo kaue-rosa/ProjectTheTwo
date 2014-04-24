@@ -63,9 +63,9 @@ public class GateStats : MonoBehaviour
 
 	void Start()
 	{
-		currentHealth = maxHealth;
+		//currentHealth = maxHealth;
 	}
-	void Update()
+	void FixedUpdate()
 	{
 		currentHealth = (currentHealth<0) ? 0:currentHealth;
 	}

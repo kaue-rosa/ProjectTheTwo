@@ -61,7 +61,7 @@ public class UIManager : MonoBehaviour
 			{
 				for(int ii = 0; ii<gates[i].TroopPrefabs.Count; ii++)
 				{
-					if(GUILayout.Button(PlayerManager.GetTextureFromSprite(gates[i].TroopPrefabs[ii])))
+					if(GUILayout.Button("he"))
 						gates[i].NextTroopToSpawnName = gates[i].TroopPrefabs[ii].name;
 				}
 			}
