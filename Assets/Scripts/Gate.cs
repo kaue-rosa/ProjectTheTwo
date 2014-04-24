@@ -11,6 +11,7 @@ public class Gate : MonoBehaviour
 	[SerializeField] private Transform troopsFolder = null;
 	[SerializeField] private List<GameObject> troopPrefabs = new List<GameObject>();
 	[SerializeField] private GameObject path = null;
+	[SerializeField] private GateStats stats = null;
 
 	public SpriteRenderer gateSprite = null;
 
@@ -19,7 +20,6 @@ public class Gate : MonoBehaviour
 	private string nextTroopToSpawnName = "";
 	private float currentTimer = 0;
 	private float timeToSpawn = 0;
-	private GateStats stats = null;
 	private bool visible = false;
 
 	public bool IsPlayer
@@ -84,7 +84,6 @@ public class Gate : MonoBehaviour
 		if (!tm)tm = FindObjectOfType<TroopManager> ();
 		tm.ManageGate (this);
 		nextTroopToSpawnName = troopPrefabs[0].name;
-		stats = GetComponent<GateStats> ();
 		if (!stats)Debug.LogError ("@Gate.Start(). No reference to stats");
 		CanSpawn = true;
 		IsAlive = true;
@@ -120,7 +119,7 @@ public class Gate : MonoBehaviour
 
 	public void TakeDamage (int damage, GameElement attakerElement)
 	{
-		int trueDamage = (int) Mathf.Round(damage * Element.GetMultiplayerForAttackerElement(attakerElement,this.stats.MyElement));
+		int trueDamage = (int) Mathf.Round(damage * Element.GetMultiplayerForAttackerElement(attakerElement,this.stats.GateElement));
 
 		stats.CurrentHealth -= (int) (trueDamage - (trueDamage*stats.Deffense));
 

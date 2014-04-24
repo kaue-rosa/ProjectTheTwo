@@ -3,9 +3,10 @@ using System.Collections;
 
 public class TroopStats : MonoBehaviour 
 {
-	//HP
+	[SerializeField]private int troopID = 0;
 	[SerializeField]private GameElement element = GameElement.NORMAL;
 
+	//HP
 	[SerializeField]private int currentHealth = 100;
 	[SerializeField]private int maxHealth = 100;
 
@@ -18,9 +19,16 @@ public class TroopStats : MonoBehaviour
 
 	[SerializeField]private float spawnTime = 1f;
 
-	public GameElement MyElement
+	public int TroopID
+	{
+		get{return troopID;}
+		set{troopID = value;}
+	}
+
+	public GameElement TroopElement
 	{
 		get{return element;}
+		set{element = value;}
 	}
 
 	public int CurrentHealth
@@ -38,30 +46,36 @@ public class TroopStats : MonoBehaviour
 	public float RangeOfSight
 	{
 		get{return rangeOfSight;}
+		set{rangeOfSight = value;}
 	}
 
 	public float MovementSpeed
 	{
 		get{return movementSpeed;}
+		set{movementSpeed = value;}
 	}
 
 	public int AttackDamage
 	{
 		get{return attackDamage;}
+		set{attackSpeed = value;}
 	}
 
 	public float AttackSpeed
 	{
 		get{return 1/attackSpeed;}
+		set{attackSpeed = 1/value;}
 	}
 
 	public float Deffense
 	{
-		get{ return deffense*.01f; }
+		get{ return deffense*0.01f; }
+		set{deffense = value*0.01f;}
 	}
 
 	public float SpawnTime
 	{
 		get{return spawnTime;}
+		set{spawnTime = value;}
 	}
 }

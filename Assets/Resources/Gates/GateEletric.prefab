@@ -95,6 +95,7 @@ MonoBehaviour:
   troopsFolder: {fileID: 0}
   troopPrefabs: []
   path: {fileID: 0}
+  stats: {fileID: 11400002}
   gateSprite: {fileID: 21200000}
 --- !u!114 &11400002
 MonoBehaviour:
@@ -107,13 +108,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb5623a0b4318864b9f140a9d76334b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  element: 5
+  id: 100
+  element: 1
   currentHealth: 500
   maxHealth: 500
   xp: 100
-  level: 2
+  level: 1
   defeatGivenXp: 0
-  deffense: 10
+  deffense: 9.99999884e-06
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

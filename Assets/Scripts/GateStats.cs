@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GateStats : MonoBehaviour 
 {
-
+	[SerializeField]private int id = 0;
 	[SerializeField]private GameElement element = GameElement.NORMAL;
 
 	//HP
@@ -20,7 +20,13 @@ public class GateStats : MonoBehaviour
 	[SerializeField]private float deffense = 10f;
 
 
-	public GameElement MyElement
+	public int ID
+	{
+		get{return id;}
+		set{id = value;}
+	}
+
+	public GameElement GateElement
 	{
 		get{return element;}
 		set{element = value;}
@@ -63,9 +69,9 @@ public class GateStats : MonoBehaviour
 
 	void Start()
 	{
-		currentHealth = maxHealth;
+		//currentHealth = maxHealth;
 	}
-	void Update()
+	void FixedUpdate()
 	{
 		currentHealth = (currentHealth<0) ? 0:currentHealth;
 	}

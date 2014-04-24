@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class GameMatch : MonoBehaviour {
@@ -6,40 +6,50 @@ public class GameMatch : MonoBehaviour {
 	[SerializeField] private TroopManager matchTroopManager = null;
 	private bool matchIsOver = false;
 
+	GameObject playerGate;
+
 	void Awake()
 	{
-
-
-		if(PlayerManager.control.SelectedTroops.Count == 0)
+		if(PlayerManager.control.SelectedTroopsIds.Count == 0)
 		{
-			foreach(GameObject troop in PlayerManager.control.TotalTroops)
+			foreach(int troop in PlayerManager.control.TotalOwnedTroopsIds)
 			{
-				PlayerManager.control.SelectedTroops.Add(troop);
+				PlayerManager.control.SelectedTroopsIds.Add(troop);
 			}
 		}
 
-		Transform playerGatePosition = GameObject.Find("PlayerGate").transform;
+		playerGate = GameObject.Find("PlayerGate");
 
 		GameObject path = GameObject.Find("Path1");
-		
-		GameObject playerGate = (GameObject)Instantiate(Resources.Load("Gates/"+PlayerManager.control.SelectedGate.name), playerGatePosition.position, Quaternion.identity);
+
 		Gate gateScript = playerGate.GetComponent<Gate>();
 
+		gateScript.gateSprite.sprite = DataManager.Control.GetSpriteFromGateId (PlayerManager.control.SelectedGateId);
+
+		gateScript.Stats.ID = PlayerManager.control.SelectedGateId;
 		gateScript.IsPlayer = true;
 		gateScript.GateTeam = Team.TeamA;
 		gateScript.Path = path;
 
+		//print (PlayerManager.control.SelectedGateId);
+
+		DataManager.Control.AssignGateDataToGateStats (gateScript.Stats);
+
 		gateScript.TroopPrefabs.Clear();
-		foreach(GameObject troop in PlayerManager.control.SelectedTroops)
+		foreach(int troopID in PlayerManager.control.SelectedTroopsIds)
 		{
-			gateScript.TroopPrefabs.Add(troop);
+			gateScript.TroopPrefabs.Add(DataManager.Control.GetTroopPrefabByID(troopID));
 		}
 	}
 
 	void Start ()
 	{
-
 		matchIsOver = false;
+	}
+	void OnDisable()
+	{
+		//DataManager.Control.SetGateStats(playerGate.GetComponent<GateStats>());
+		//DataManager.Control.SaveData();
 	}
 
 	void Update()
@@ -48,6 +58,17 @@ public class GameMatch : MonoBehaviour {
 		{
 			matchTroopManager.ManageTroops ();
 		}
+
+		if(Input.GetKeyDown(KeyCode.UpArrow))
+			Time.timeScale++;
+		
+		if(Input.GetKeyDown(KeyCode.DownArrow))
+			Time.timeScale--;
+		if(Input.GetKeyDown(KeyCode.LeftArrow))
+			playerGate.GetComponent<GateStats>().CurrentHealth-= 10;
+		
+		if(Input.GetKeyDown(KeyCode.RightArrow))
+			playerGate.GetComponent<GateStats>().CurrentHealth+= 10;
 	}
 
 	void OnGUI ()
@@ -62,6 +83,9 @@ public class GameMatch : MonoBehaviour {
 
 	public void SetMatchOver(int totalGameXP)
 	{
+		DataManager.Control.SetGateStats(playerGate.GetComponent<GateStats>());
+		DataManager.Control.SaveData();
+
 		matchIsOver = true;
 		foreach (Gate g in matchTroopManager.gates)
 		{

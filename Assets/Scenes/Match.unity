@@ -174,19 +174,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb577eb5e12a3464e9f60bd17486a51b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalTroops:
-  - {fileID: 100000, guid: 20b2206bd325e224dbdbb2a63f1b9184, type: 2}
-  - {fileID: 100000, guid: 1d4262f81e59008478d0037566649fb2, type: 2}
-  - {fileID: 100000, guid: 924795f36b12c264bbe360d3bba1cc3e, type: 2}
-  - {fileID: 100000, guid: b48ba85f4b9bedb41a8446e204a9ba2d, type: 2}
-  - {fileID: 100000, guid: 21f13df3cdfbb884d8e453c880e54046, type: 2}
-  totalGates:
-  - {fileID: 100000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
-  - {fileID: 100000, guid: e0f341f8f87a20e4ca5e35fc0d48d1bd, type: 2}
-  - {fileID: 100000, guid: 11551b254e71f64498678512e22a31bf, type: 2}
-  - {fileID: 100000, guid: c56e42fd7fbf9134981a59a5df1690f9, type: 2}
-  - {fileID: 100000, guid: f768c92c2916efb4f9cfac837d5c3c7b, type: 2}
-  selectedGate: {fileID: 100000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+  totalOwnedTroopsIds: 
+  totalOwnedGatesIds: 
+  selectedGateId: -1
   maxNumberOfTroops: 3
 --- !u!4 &79317972
 Transform:
@@ -195,7 +185,7 @@ Transform:
   m_PrefabInternal: {fileID: 1606260259}
   m_GameObject: {fileID: 79317970}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .314994037, y: -.183646858, z: 3.7765398}
+  m_LocalPosition: {x: .314994037, y: -32.948082, z: 3.7765398}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -288,6 +278,57 @@ Transform:
   m_Children:
   - {fileID: 1656535142}
   m_Father: {fileID: 1425478674}
+--- !u!1 &309674108
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100002, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+  m_PrefabInternal: {fileID: 653721346}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 309674109}
+  - 212: {fileID: 309674110}
+  m_Layer: 0
+  m_Name: Sprite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &309674109
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400002, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+  m_PrefabInternal: {fileID: 653721346}
+  m_GameObject: {fileID: 309674108}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: .800000012, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2136635369}
+--- !u!212 &309674110
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 21200000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598,
+    type: 2}
+  m_PrefabInternal: {fileID: 653721346}
+  m_GameObject: {fileID: 309674108}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+  m_Sprite: {fileID: 21300018, guid: 286ad1242210f8a4aa38c18c328afb09, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &312849862
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,6 +405,7 @@ MonoBehaviour:
   - {fileID: 100000, guid: 20b2206bd325e224dbdbb2a63f1b9184, type: 2}
   - {fileID: 100000, guid: 1d4262f81e59008478d0037566649fb2, type: 2}
   path: {fileID: 2040320732}
+  stats: {fileID: 312849866}
   gateSprite: {fileID: 1281044680}
 --- !u!114 &312849866
 MonoBehaviour:
@@ -377,13 +419,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb5623a0b4318864b9f140a9d76334b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  element: 4
+  id: 0
+  element: 0
   currentHealth: 50
   maxHealth: 50
-  xp: 100
+  xp: 600
   level: 0
   defeatGivenXp: 500
-  deffense: .000999999931
+  deffense: 0
 --- !u!114 &312849867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -532,6 +575,58 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   matchTroopManager: {fileID: 506575931}
+--- !u!1001 &653721346
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1425478674}
+    m_Modifications:
+    - target: {fileID: 400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: m_Name
+      value: PlayerGate
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: gateTeam
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+      propertyPath: isPlayer
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+  m_RootGameObject: {fileID: 2136635368}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &970301335
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,32 +721,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   correctionFactor: .0250000004
---- !u!1 &1128817448
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1128817449}
-  m_Layer: 0
-  m_Name: PlayerGate
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1128817449
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1128817448}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10, y: 1, z: 4}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1425478674}
 --- !u!1 &1155914087
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,7 +828,7 @@ Transform:
   - {fileID: 312849863}
   - {fileID: 2040320733}
   - {fileID: 472732809}
-  - {fileID: 1128817449}
+  - {fileID: 2136635369}
   m_Father: {fileID: 0}
 --- !u!1001 &1606260259
 Prefab:
@@ -778,7 +847,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -.183646858
+      value: -32.948082
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1029,3 +1098,95 @@ Transform:
   m_Children:
   - {fileID: 1155914088}
   m_Father: {fileID: 1425478674}
+--- !u!1 &2136635368
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+  m_PrefabInternal: {fileID: 653721346}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2136635369}
+  - 114: {fileID: 2136635372}
+  - 114: {fileID: 2136635371}
+  - 23: {fileID: 2136635370}
+  m_Layer: 0
+  m_Name: PlayerGate
+  m_TagString: Untagged
+  m_Icon: {fileID: -1016138426, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2136635369
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
+  m_PrefabInternal: {fileID: 653721346}
+  m_GameObject: {fileID: 2136635368}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10, y: 1, z: 4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 309674109}
+  m_Father: {fileID: 1425478674}
+--- !u!23 &2136635370
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2300000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598,
+    type: 2}
+  m_PrefabInternal: {fileID: 653721346}
+  m_GameObject: {fileID: 2136635368}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
+--- !u!114 &2136635371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400002, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598,
+    type: 2}
+  m_PrefabInternal: {fileID: 653721346}
+  m_GameObject: {fileID: 2136635368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb5623a0b4318864b9f140a9d76334b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+  element: 0
+  currentHealth: 500
+  maxHealth: 500
+  xp: 600
+  level: 6
+  defeatGivenXp: 0
+  deffense: 0
+--- !u!114 &2136635372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598,
+    type: 2}
+  m_PrefabInternal: {fileID: 653721346}
+  m_GameObject: {fileID: 2136635368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f48ed5d783c3fd848bf63609f612200f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayer: 1
+  gateTeam: 0
+  tm: {fileID: 0}
+  troopsFolder: {fileID: 0}
+  troopPrefabs: []
+  path: {fileID: 0}
+  stats: {fileID: 2136635371}
+  gateSprite: {fileID: 309674110}

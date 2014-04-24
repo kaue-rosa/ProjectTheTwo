@@ -7,6 +7,15 @@ public class KillParticle : MonoBehaviour
 
 	void Start () 
 	{
+		if(GameObject.Find("Particles"))
+			transform.parent = GameObject.Find("Particles").transform;
+		else
+		{
+			GameObject parent = new GameObject("Particles");
+			transform.parent = parent.transform;
+		}
+
+
 		particle = GetComponent <ParticleSystem>();
 	}
 
