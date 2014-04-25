@@ -19,11 +19,8 @@ public class Element : MonoBehaviour
 	[SerializeField] private TextAsset elementsSchemeCSV = null;
 	
 	void Start () {
-		if (!newElementClass){newElementClass = this;}
-		else{return;}
-
+		if (!newElementClass){newElementClass = this;}else{return;}
 		elementsMultiplier = CSVReader.SplitCsvGrid (elementsSchemeCSV.text);
-		GetMultiplayerForAttackerElement (GameElement.NORMAL,GameElement.NORMAL);
 	}
 
 	public static float GetMultiplayerForAttackerElement (GameElement attacker, GameElement defender) {

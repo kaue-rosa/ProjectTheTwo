@@ -174,9 +174,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb577eb5e12a3464e9f60bd17486a51b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalOwnedTroopsIds: 
+  totalOwnedTroopsIds: 00000000
   totalOwnedGatesIds: 
-  selectedGateId: -1
+  selectedGateId: 0
   maxNumberOfTroops: 3
 --- !u!4 &79317972
 Transform:
@@ -841,6 +841,10 @@ Prefab:
       propertyPath: totalGates.Array.size
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
+      propertyPath: totalOwnedTroopsIds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
       propertyPath: m_LocalPosition.x
       value: .314994037
@@ -893,6 +897,10 @@ Prefab:
       propertyPath: totalGates.Array.data[4]
       value: 
       objectReference: {fileID: 100000, guid: f768c92c2916efb4f9cfac837d5c3c7b, type: 2}
+    - target: {fileID: 11400000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
+      propertyPath: selectedGateId
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4e5925043ec1c9b47829ebbd07d6334a, type: 2}
   m_RootGameObject: {fileID: 79317970}
