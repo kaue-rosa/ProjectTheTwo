@@ -21,6 +21,7 @@ public class Gate : MonoBehaviour
 	private float currentTimer = 0;
 	private float timeToSpawn = 0;
 	private bool visible = false;
+	private HealthBar gateHealthBar = null;
 
 	public bool IsPlayer
 	{
@@ -78,6 +79,12 @@ public class Gate : MonoBehaviour
 		get{return this.Stats.CurrentHealth > 0;}
 	}
 
+	public HealthBar GateHealthBar
+	{
+		get{return gateHealthBar;}
+		set{gateHealthBar = value;}
+	}
+
 	void Start()
 	{
 		//only if we didn't assign, try to do it automatically
@@ -120,9 +127,8 @@ public class Gate : MonoBehaviour
 	public void TakeDamage (int damage, GameElement attakerElement)
 	{
 		int trueDamage = (int) Mathf.Round(damage * Element.GetMultiplayerForAttackerElement(attakerElement,this.stats.GateElement));
-
 		stats.CurrentHealth -= (int) (trueDamage - (trueDamage*stats.Deffense));
-
+		UpdateHealthBar ();
 		if (stats.CurrentHealth <= 0) {
 			this.Die();
 		}
@@ -138,6 +144,15 @@ public class Gate : MonoBehaviour
 		foreach(Troop t in gateTroops)
 		{
 			t.Celebrate();
+		}
+	}
+
+	void UpdateHealthBar ()
+	{
+		if (gateHealthBar)
+		{
+			float percentage = (float)stats.CurrentHealth/stats.MaxHealth;
+			gateHealthBar.SetHealthBarByPercentage(percentage);
 		}
 	}
 

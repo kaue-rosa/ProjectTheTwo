@@ -78,7 +78,7 @@ MonoBehaviour:
   attackDamage: 50
   attackSpeed: 1
   deffense: 10
-  spawnTime: 2.5
+  spawnTime: 20.5
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -103,7 +103,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 21200000}
-  playOnStart: 1
   walkCicleSprites:
   - {fileID: 21300000, guid: e5778d0c80d2aa445b8c364db7acefac, type: 3}
   - {fileID: 21300002, guid: e5778d0c80d2aa445b8c364db7acefac, type: 3}

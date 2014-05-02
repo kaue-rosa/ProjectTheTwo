@@ -1,0 +1,126 @@
+fileFormatVersion: 2
+guid: 3951cd56beedcf540abcd6a3392e7b80
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 0
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 25
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: menu_bg
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 382
+        width: 193
+        height: 130
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: token_0
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 481
+        width: 110
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: token_1
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 450
+        width: 110
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: token_2
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 419
+        width: 110
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: token_3
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 388
+        width: 110
+        height: 30
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: health_bg
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 502
+        width: 135
+        height: 9
+      alignment: 4
+      pivot: {x: 0, y: .5}
+    - name: health_bar
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 494
+        width: 133
+        height: 7
+      alignment: 4
+      pivot: {x: 0, y: .5}
+    - name: xp_bg
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 484
+        width: 135
+        height: 9
+      alignment: 4
+      pivot: {x: 0, y: .5}
+    - name: xp_bar
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 476
+        width: 133
+        height: 7
+      alignment: 4
+      pivot: {x: 0, y: .5}
+  spritePackingTag: 
+  userData: 
