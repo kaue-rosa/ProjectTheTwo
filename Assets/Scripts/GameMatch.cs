@@ -7,6 +7,7 @@ public class GameMatch : MonoBehaviour {
 	private bool matchIsOver = false;
 
 	GameObject playerGate;
+	Gate playerGateScript;
 
 	void Awake()
 	{
@@ -22,23 +23,23 @@ public class GameMatch : MonoBehaviour {
 
 		GameObject path = GameObject.Find("Path1");
 
-		Gate gateScript = playerGate.GetComponent<Gate>();
+		playerGateScript = playerGate.GetComponent<Gate>();
 
-		gateScript.gateSprite.sprite = DataManager.Control.GetSpriteFromGateId (PlayerManager.control.SelectedGateId);
+		playerGateScript.gateSprite.sprite = DataManager.Control.GetSpriteFromGateId (PlayerManager.control.SelectedGateId);
 
-		gateScript.Stats.ID = PlayerManager.control.SelectedGateId;
-		gateScript.IsPlayer = true;
-		gateScript.GateTeam = Team.TeamA;
-		gateScript.Path = path;
+		playerGateScript.Stats.ID = PlayerManager.control.SelectedGateId;
+		playerGateScript.IsPlayer = true;
+		playerGateScript.GateTeam = Team.TeamA;
+		playerGateScript.Path = path;
 
 		//print (PlayerManager.control.SelectedGateId);
 
-		DataManager.Control.AssignGateDataToGateStats (gateScript.Stats);
+		DataManager.Control.AssignGateDataToGateStats (playerGateScript.Stats);
 
-		gateScript.TroopPrefabs.Clear();
+		playerGateScript.TroopPrefabs.Clear();
 		foreach(int troopID in PlayerManager.control.SelectedTroopsIds)
 		{
-			gateScript.TroopPrefabs.Add(DataManager.Control.GetTroopPrefabByID(troopID));
+			playerGateScript.TroopPrefabs.Add(DataManager.Control.GetTroopPrefabByID(troopID));
 		}
 	}
 
@@ -64,11 +65,12 @@ public class GameMatch : MonoBehaviour {
 		
 		if(Input.GetKeyDown(KeyCode.DownArrow))
 			Time.timeScale--;
-		if(Input.GetKeyDown(KeyCode.LeftArrow))
-			playerGate.GetComponent<GateStats>().CurrentHealth-= 10;
+
+		if(Input.GetKey(KeyCode.LeftArrow))
+			playerGateScript.TakeDamage(10,playerGateScript.Stats.GateElement);
 		
-		if(Input.GetKeyDown(KeyCode.RightArrow))
-			playerGate.GetComponent<GateStats>().CurrentHealth+= 10;
+		if(Input.GetKey(KeyCode.RightArrow))
+			playerGateScript.Heal(10);
 	}
 
 	void OnGUI ()

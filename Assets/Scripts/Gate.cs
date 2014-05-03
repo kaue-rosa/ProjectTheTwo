@@ -94,6 +94,7 @@ public class Gate : MonoBehaviour
 		if (!stats)Debug.LogError ("@Gate.Start(). No reference to stats");
 		CanSpawn = true;
 		IsAlive = true;
+		UpdateHealthBar (false);
 	}
 
 	void Update()
@@ -134,6 +135,14 @@ public class Gate : MonoBehaviour
 		}
 	}
 
+	public void Heal (int heal)
+	{
+		stats.CurrentHealth += heal;
+		if (stats.CurrentHealth >= stats.MaxHealth)stats.CurrentHealth = stats.MaxHealth;
+		UpdateHealthBar ();
+
+	}
+
 	public void TroopRemoved (Troop troop)
 	{
 		gateTroops.Remove (troop);
@@ -149,10 +158,15 @@ public class Gate : MonoBehaviour
 
 	void UpdateHealthBar ()
 	{
+		UpdateHealthBar (true);
+	}
+
+	void UpdateHealthBar (bool animate)
+	{
 		if (gateHealthBar)
 		{
 			float percentage = (float)stats.CurrentHealth/stats.MaxHealth;
-			gateHealthBar.SetHealthBarByPercentage(percentage);
+			gateHealthBar.SetHealthBarByPercentage(percentage,animate);
 		}
 	}
 

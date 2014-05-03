@@ -421,8 +421,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   element: 0
-  currentHealth: 125
-  maxHealth: 125
+  currentHealth: 500
+  maxHealth: 500
   xp: 600
   level: 0
   defeatGivenXp: 500
@@ -1059,11 +1059,11 @@ Prefab:
       objectReference: {fileID: 100000, guid: 1d4262f81e59008478d0037566649fb2, type: 2}
     - target: {fileID: 11400002, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
       propertyPath: maxHealth
-      value: 125
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
       propertyPath: currentHealth
-      value: 125
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: de20ecd4ca1bfe84fa6eaf1d6d9d3598, type: 2}
       propertyPath: defeatGivenXp
