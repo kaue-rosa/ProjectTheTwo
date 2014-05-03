@@ -4,6 +4,8 @@ using System.Collections;
 public class GameMatch : MonoBehaviour {
 
 	[SerializeField] private TroopManager matchTroopManager = null;
+	[SerializeField] private MatchEndScreen matchEndScreen = null;
+
 	private bool matchIsOver = false;
 
 	GameObject playerGate;
@@ -85,8 +87,6 @@ public class GameMatch : MonoBehaviour {
 
 	public void SetMatchOver(int totalGameXP)
 	{
-		DataManager.Control.SetGateStats(playerGate.GetComponent<GateStats>());
-		DataManager.Control.SaveData();
 
 		matchIsOver = true;
 		foreach (Gate g in matchTroopManager.gates)
@@ -98,5 +98,14 @@ public class GameMatch : MonoBehaviour {
 				g.CelebrateVictory();
 			}
 		}
+
+		//bring match end screen
+		GameObject matchEndScreenGmo = (GameObject) Instantiate(matchEndScreen.gameObject);
+		matchEndScreen = matchEndScreenGmo.GetComponent<MatchEndScreen> ();
+		matchEndScreenGmo.transform.parent = Camera.main.transform;
+		matchEndScreen.transform.localPosition = new Vector3 (0,0,0.5f);
+
+		DataManager.Control.SetGateStats(playerGate.GetComponent<GateStats>());
+		DataManager.Control.SaveData();
 	}
 }
